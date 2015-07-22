@@ -3,9 +3,11 @@
 
 //Библиотеки QT
 #include <QStack>
+#include <QList>
 
 //Самописные классы
 #include "statsnapshot.h"
+#include "board.h"
 
 /*!
  * \brief The piece class - класс шахматной фигуры
@@ -61,6 +63,12 @@ public:
      * \param t - тип фигуры
      */
     void turnPawnToOtherPiece(type t);
+    /*!
+     * \brief getLegalMoves - возвращает набор полей в которые может пойти фигура
+     * \param b - доска
+     * \return  - список полей
+     */
+    QList<bordPosition> getLegalMoves(const board &b) const;
 
 protected:
     type    lType;  // Тип фигуры

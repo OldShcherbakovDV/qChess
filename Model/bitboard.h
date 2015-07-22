@@ -4,6 +4,7 @@
 //Самописные классы
 #include "boardposition.h"
 
+typedef unsigned long long mask;
 /*!
  * \brief The bitBoard class - побитовая карта доски. (т.к. тип unsigned long long содержит 64 бита, что равно кол ву полей на доске)
  */
