@@ -13,7 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        gamewindow.cpp \
     GUI/gamewindow.cpp \
     Model/options.cpp \
     Model/board.cpp \
@@ -29,8 +28,7 @@ SOURCES += main.cpp\
     Model/statsnapshot.cpp \
     Model/freefunctions.cpp
 
-HEADERS  += gamewindow.h \
-    GUI/gamewindow.h \
+HEADERS  += GUI/gamewindow.h \
     Model/options.h \
     Model/board.h \
     Model/bitboard.h \
@@ -45,5 +43,4 @@ HEADERS  += gamewindow.h \
     Model/statsnapshot.h \
     Model/freefunctions.h
 
-FORMS    += gamewindow.ui \
-    GUI/gamewindow.ui
+FORMS    += GUI/gamewindow.ui

@@ -24,7 +24,7 @@ public:
      */
     boardPosition(const char &x, const int &y);
     /*!
-     * \brief boardPosition - конструктор из номера позиции номер определяется формулой : x*8 + y
+     * \brief boardPosition - конструктор из номера позиции номер определяется формулой : y*8 + x
      * \param number - номер
      */
     boardPosition(const int number);
@@ -45,7 +45,7 @@ public:
      * \brief number - возвращает номер позиции
      * \return номер
      */
-    inline int number() const { return (8*lX - lY); }
+    inline int number() const { return (8*lY - lX); }
     /*!
      * \brief xToChar - вернуть Х  в виде символа
      * \return Х
@@ -75,7 +75,7 @@ public:
      * \brief setY - Задвет позицию по вертикале
      * \param у - позиция
      */
-    inline void setY(const int &у) { lY = y; }
+    inline void setY(const int &y) { lY = y; }
     /*!
      * \brief setNuber - задает координаты из номера позиции номер определяется формулой : x*8 + y
      * \param number - номер
