@@ -135,6 +135,8 @@ public:
      */
     inline boardPosition getRightBottom() const { return boardPosition(lX + 1, lY - 1); }
 
+    inline bool operator == (const boardPosition &other) const { return (lX == other.lX && lY == other.lY); }
+    inline bool operator != (const boardPosition &other) const { return !(*this == other); }
 private:
     int lX;
     int lY;

@@ -17,13 +17,19 @@ public:
     ~board();
 
     /*!
+     * \brief init - инициализация статических полей класса
+     */
+    static void init();
+    /*!
      * \brief setDefault - задает внутренние значения в исходное состояние
      */
     void setDefault();
     /*!
      * \brief setupPieces - раставляет заново фигуры на доску
      */
-    void resetupPieces();
+    void setupPieces();
+
+    void update(const boardMove &bm);
     /*!
      * \brief getPiece - возвращает фигуру из заданной позиции
      * \param bp - позиция
@@ -53,8 +59,60 @@ public:
      * \return занята ли клетка
      */
     bool isOccupied(const boardPosition &bp) const;
-
+    /*!
+     * \brief isEnPassantSet - содержит ли взятия на проходе
+     * \param bp
+     * \return
+     */
+    inline bool isEnPassantSet(const boardPosition & bp) const
+        { return (0 != (bitBoard::getMask(bp) & lEnpassling)); }
+    /*!
+     * \brief isCheck - проверяет является ли ситуация шаховой для данного цвета
+     * \param c - цвет
+     * \return - является ли ситуация шаховой
+     */
+    bool isCheck(piece::color c) const;
+    /*!
+     * \brief isResultCheck - проверяет является ли ситуация после хода шаховой
+     * \param bm - ход
+     * \return будет ли шах
+     */
+    bool isResultCheck(const boardMove &bm) const;
+    /*!
+     * \brief isAttacked - проверяет находится ли фигура под боем
+     * \param bp - позиция
+     * \param c  - цвет фигуры
+     * \return   - признак атаки
+     */
+    mask isAttacked(const boardPosition& bp, piece::color c) const;
+    /*!
+     * \brief getLegalMoves - возвращает все допустимые ходы для фигуры в этой клетке
+     * \param bp - клетка
+     * \return -список ходов
+     */
     QList<boardMove> getLegalMoves (const boardPosition &bp) const;
+
+    inline int getYState (const boardPosition &bp) const {
+        return ((lColors[piece::WHITE] | lColors[piece::BLACK]) >> bp.y()*8) & 0xff;
+    }
+
+    int getXState (const boardPosition &bp) const;
+
+    int getLeftTopDiagState (const boardPosition &bp) const;
+
+    int getRightTopDiagState (const boardPosition &bp) const;
+
+
+    // Возможные маски атак.
+    static mask pawnAttacks[2][64];
+    static mask knightAttacks[64];
+    static mask kingAttacks[64];
+    static mask xAttacks[64][256];
+    static mask yAttacks[64][256];
+    static mask diagAttacksLeftTop[64][256];
+    static mask diagAttacksRightTop[64][256];
+
+    static int pow2[8];
 
 private:
     static piece *allPieces[2][6]; //Указатель на фигуру каждого типа
@@ -70,5 +128,7 @@ private:
 
     boardPosition kingsPos[2]; //Позиции королей
 };
+
+
 
 #endif // BOARD_H

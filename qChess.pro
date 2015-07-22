@@ -44,3 +44,4 @@ HEADERS  += GUI/gamewindow.h \
     Model/freefunctions.h
 
 FORMS    += GUI/gamewindow.ui
+CONFIG   += c++11

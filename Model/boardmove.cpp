@@ -11,7 +11,7 @@ boardMove::boardMove(const boardPosition &start, const boardPosition &end, piece
 
 }
 
-bool boardMove::needPromotion() const
+bool boardMove::needPromotion(const QList<boardMove> &legals) const
 {
     if (lMovedPiece->getType() != piece::PAWN){
         return false;
@@ -22,14 +22,14 @@ bool boardMove::needPromotion() const
     else if (lPromote != piece::NOTYPE){
         return false;
     }
-    else if (!isLegal()){
+    else if (!isLegal(legals)){
         return false;
     }
     return true;
 }
 
-bool boardMove::isLegal()
+bool boardMove::isLegal(const QList<boardMove> &legals) const
 {
-
+    return legals.contains(*this);
 }
 

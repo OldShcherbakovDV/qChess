@@ -56,13 +56,14 @@ public:
      * \brief needPromotion - необходимо ли задать тип замена
      * \return
      */
-    bool needPromotion() const;
+    bool needPromotion(const QList<boardMove> &legals) const;
     /*!
      * \brief isLegal - проверяет можно ли произвести такой ход
      * \return
      */
-    bool isLegal();
+    bool isLegal(const QList<boardMove> &legals) const;
 
+    inline bool operator == (const boardMove &other) const { return (lStart == other.lStart && lEnd == other.lEnd && lMovedPiece == other.lMovedPiece && lPromote == other.lPromote); }
 private:
     boardPosition lStart; // Начало хода
     boardPosition lEnd;   // Конец хода
