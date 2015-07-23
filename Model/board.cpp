@@ -19,6 +19,11 @@ board::board()
     }
 }
 
+board::~board()
+{
+
+}
+
 void board::init()
 {
     pow2[0] = 1;
@@ -165,9 +170,60 @@ void board::setupPieces()
     isSetup = true;
 }
 
+void board::setSpecialPieceFlags(const boardMove &bm)
+{
+    piece::color c = getPiece(bm.getStart())->getColor();
+    piece::type  t = getPiece(bm.getStart())->getType();
+
+    // Отчищаем отмеченые ходы на
+    lEnpassling = 0LL;
+    // Отмечаем переремещение фигуры в флагах рокировки
+    lCastlingFlags &= ~bitBoard::getMask(bm.getEnd());
+    if (t == piece::KING){
+        lCastlingFlags &= ~bitBoard::getMask(bm.getStart());
+    }
+    else if (t == piece::PAWN){
+        lEnpassling |= bitBoard::getMask((c == piece::WHITE) ? bm.getStart().getTop() : bm.getStart().getBottom());
+    }
+}
+
 void board::update(const boardMove &bm)
 {
-   //Реализовать
+    piece::color c = getPiece(bm.getStart())->getColor();
+    piece::type  t = getPiece(bm.getStart())->getType();
+
+    if (t == piece::PAWN){ // Особые ситуации пешки
+        if (c == piece::WHITE && isEnPassantSet(bm.getEnd())){ // Взятие на проходе белые
+            removePiece(bm.getEnd().getBottom());
+        }
+        else if (c == piece::BLACK && isEnPassantSet(bm.getEnd())){ // Взятие на проходе черные
+            removePiece(bm.getEnd().getTop());
+        }
+        else if (bm.getEnd().y() == 7 || bm.getEnd().y() == 0){ // Замена на другую фигуру
+            t = bm.getPromote();
+        }
+    }
+    else if (t == piece::KING){ // Ракировки
+        int dif = bm.getEnd().x() - bm.getStart().x();
+        if (abs(dif) == 2){
+            boardPosition currRook, newRookPos;
+            currRook.setY((c == piece::WHITE) ? 0 : 7);
+            if (dif == 2){ // Короткая
+                currRook.setX(7);
+                newRookPos = bm.getEnd().getLeft();
+            }
+            else { // Длинная
+                currRook.setX(0);
+                newRookPos = bm.getEnd().getRight();
+            }
+            setPiece(getPiece(currRook), newRookPos);
+            removePiece(currRook);
+        }
+    }
+    piece mp(c, t);
+    setPiece(&mp, bm.getEnd());
+    removePiece(bm.getStart());
+    setSpecialPieceFlags(bm);
 }
 
 void board::setDefault()
@@ -267,6 +323,16 @@ bool board::isResultCheck(const boardMove &bm) const
     board b = *this;
     b.update(bm);
     return (b.isCheck(bm.getMovedPiece()->getColor()));
+}
+
+bool board::isMate(piece::color c) const
+{
+    return (isCheck(c) && isStalemate(c));
+}
+
+bool board::isStalemate(piece::color c) const
+{
+    return getLegalMoves(c, true).isEmpty();
 }
 
 mask board::isAttacked(const boardPosition &bp, piece::color c) const
@@ -507,6 +573,26 @@ QList<boardMove> board::getLegalMoves(const boardPosition &bp) const
     }
     return moves;
 
+}
+
+QList<boardMove> board::getLegalMoves(piece::color c, bool fast) const
+{
+    QList<boardPosition> pos;
+    boardPosition movedPiece;
+    QList<boardMove> goodMoves;
+    //Определяем позиции всех фигур этого цвета
+    for (int i = 0; i < 64; ++i){
+        if ((lColors[c] >> i) & 1){
+            pos.append(boardPosition(i));
+        }
+    }
+    foreach (movedPiece, pos) {
+        goodMoves.append(getLegalMoves(movedPiece));
+        if (!goodMoves.isEmpty() && fast){
+            return goodMoves;
+        }
+    }
+    return goodMoves;
 }
 
 int board::getXState(const boardPosition &bp) const

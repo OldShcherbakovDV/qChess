@@ -28,7 +28,15 @@ public:
      * \brief setupPieces - раставляет заново фигуры на доску
      */
     void setupPieces();
-
+    /*!
+     * \brief setSpecialPieceFlags - отмечает изменения на схемах рокировок и взятий на проходе
+     * \param bm
+     */
+    void setSpecialPieceFlags(const boardMove &bm);
+    /*!
+     * \brief update - совершает ход
+     * \param bm -ход
+     */
     void update(const boardMove &bm);
     /*!
      * \brief getPiece - возвращает фигуру из заданной позиции
@@ -79,6 +87,14 @@ public:
      */
     bool isResultCheck(const boardMove &bm) const;
     /*!
+     * \brief isMate - проверяет является ли ситуация на доске матом для фигуры звдвнного цвета
+     * \param c - цвет
+     * \return результат проверки
+     */
+    bool isMate(piece::color c) const;
+
+    bool isStalemate(piece::color c) const;
+    /*!
      * \brief isAttacked - проверяет находится ли фигура под боем
      * \param bp - позиция
      * \param c  - цвет фигуры
@@ -91,7 +107,13 @@ public:
      * \return -список ходов
      */
     QList<boardMove> getLegalMoves (const boardPosition &bp) const;
-
+    /*!
+     * \brief getLegalMoves - возвращает все допустимые ходы для фигуры для фигур этого цвета
+     * \param c - цвет
+     * \param fast - позволяет не искать все возможные ходы, а возвращает ходы первой попавшейся фигуры
+     * \return -список ходов
+     */
+    QList<boardMove> getLegalMoves (piece::color c, bool fast = false) const;
     inline int getYState (const boardPosition &bp) const {
         return ((lColors[piece::WHITE] | lColors[piece::BLACK]) >> bp.y()*8) & 0xff;
     }
