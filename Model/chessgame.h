@@ -35,13 +35,51 @@ public:
      */
     void startGame();
     /*!
-     * \brief getPlaer1 - возвращает белого игрока
+     * \brief getPlayer2 - возвращает белого игрока
+     * \return - указатель на игрока
      */
-    inline chessPlayer* getPlaer1() const {  return player1; }
+    inline chessPlayer* getPlayer1() const {  return player1; }
     /*!
-     * \brief getPlaer2 - возвращает белого игрока
+     * \brief getPlayer2 - возвращает белого игрока
+     * \return - указатель на игрока
      */
-    inline chessPlayer* getPlaer2() const {  return player2; }
+    inline chessPlayer* getPlayer2() const {  return player2; }
+    /*!
+     * \brief getCurrentPlayer - возвращает текущего игрока
+     * \return - указатель на игрока
+     */
+    inline chessPlayer* getCurrentPlayer() const { return (state.isWhiteStep()) ? player1 : player2; }
+    /*!
+     * \brief getInactivePlayer - возвращает противоположного игрока
+     * \return - указатель на игрока
+     */
+    inline chessPlayer* getInactivePlayer() const { return (state.isWhiteStep()) ? player2 : player1; }
+    /*!
+     * \brief getSate - получит описание игровой ситуации
+     * \return - ситуация
+     */
+    inline chessGameState getSate() const { return state; }
+    /*!
+     * \brief getBoard - получить доску
+     * \return - доска
+     */
+    inline board getBoard() const { return state.getBoard(); }
+    /*!
+     * \brief getColor - получить цвет текущего хода
+     * \return цвет
+     */
+    inline piece::color getColor() { return state.getColor(); }
+    /*!
+     * \brief tryMove - попытаться сделать ход
+     * \param bm - ход
+     * \return - успешность попытки
+     */
+    bool tryMove(const boardMove &bm);
+    /*!
+     * \brief undoMove - отменяет последний ход
+     */
+    void undoMove();
+
 private:
     chessPlayer *player1;
     chessPlayer *player2;

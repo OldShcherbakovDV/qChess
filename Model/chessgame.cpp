@@ -11,7 +11,7 @@ chessGame::chessGame(chessPlayer *p1, chessPlayer *p2) : player1(p1), player2(p2
     p2->setIsWhite(false);
 }
 
-chessGame::~chessPlayer()
+chessGame::~chessGame()
 {
     delete player1;
     player1 = nullptr;
@@ -43,5 +43,26 @@ void chessGame::startGame()
     player1->startGame();
     player2->startGame();
     lIsGameInProgress = true;
+}
+
+bool chessGame::tryMove(const boardMove &bm)
+{
+    if (bm.isLegal(getBoard().getLegalMoves(bm.getStart()))){
+        state.makeMove(bm);
+
+        history.append(state);
+        redo.clear();
+    }
+    return false;
+}
+
+void chessGame::undoMove()
+{
+    if (!history.isEmpty()){
+        redo.append(history.takeLast());
+        state = redo.last();
+    }
+    player1->undoMove();
+    player2->undoMove();
 }
 
