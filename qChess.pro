@@ -22,7 +22,6 @@ SOURCES += main.cpp\
     Model/chessgame.cpp \
     Model/chessgamestate.cpp \
     Model/chessplayer.cpp \
-    Model/chessplayers.cpp \
     Model/piece.cpp \
     Model/pieceset.cpp \
     Model/statsnapshot.cpp \
@@ -37,7 +36,6 @@ HEADERS  += GUI/gamewindow.h \
     Model/chessgame.h \
     Model/chessgamestate.h \
     Model/chessplayer.h \
-    Model/chessplayers.h \
     Model/piece.h \
     Model/pieceset.h \
     Model/statsnapshot.h \

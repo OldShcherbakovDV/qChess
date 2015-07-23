@@ -1,6 +1,9 @@
 #ifndef CHESSPLAYER_H
 #define CHESSPLAYER_H
 
+//Библиотеки QT
+#include <QString>
+
 //Самописные классы
 #include "chessgamestate.h"
 
@@ -11,9 +14,9 @@ class chessPlayer
 {
 public:
 
-   chessPlayer();
+   static chessPlayer *create(QString typeName);
 
-   virtual ~chessPlayer() = 0;
+   virtual ~chessPlayer();
 
    virtual void newGame() = 0;
 
@@ -39,7 +42,7 @@ public:
 
    virtual bool needMove() = 0;
 
-   virtual void sendMove(const boardMove &bm) = 0;
+   inline void sendMove(const boardMove &bm) { lMove = bm; }
 
    virtual void undoMove() = 0;
 
@@ -56,12 +59,63 @@ public:
        { return (lIsWhite ? piece::WHITE : piece::BLACK); }
 
 protected:
+   chessPlayer();
 
    bool lIsWhite;
    bool lIsThinking;
    bool lIsHuman;
    bool lIsTrustworthy;
    boardMove lMove;
+};
+
+/*!
+ * \brief The humen class - описывает игрока человека
+ */
+class humen : private chessPlayer {
+public:
+    humen(){
+        lIsThinking = false;
+        lIsHuman = true;
+        lIsTrustworthy = true;
+    }
+
+    virtual void newGame();
+
+    virtual void startGame();
+
+    virtual void loadGame(const chessGameState &cgs);
+
+    virtual void opponentMove(const boardMove &move, const chessGameState &cgs);
+
+    virtual void think(const chessGameState &cgs);
+
+    virtual bool needMove();
+
+    virtual void undoMove();
+
+};
+/*!
+ * \brief The AI class - описывает игрока искуственного интелекта
+ */
+class AI : private chessPlayer {
+public:
+    AI(){
+
+    }
+
+    virtual void newGame();
+
+    virtual void startGame();
+
+    virtual void loadGame(const chessGameState &cgs);
+
+    virtual void opponentMove(const boardMove &move, const chessGameState &cgs);
+
+    virtual void think(const chessGameState &cgs);
+
+    virtual bool needMove();
+
+    virtual void undoMove();
 };
 
 #endif // CHESSPLAYER_H
