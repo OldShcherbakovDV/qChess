@@ -279,6 +279,13 @@ void board::setPiece(piece *p, const boardPosition &bp)
 
 }
 
+void board::addPiecet(piece *p, const boardPosition &bp)
+{
+    lTotalPiece[p->getColor()]++;
+    lPieceCount[p->getColor()][p->getType()]++;
+    setPiece(p, bp);
+}
+
 void board::removePiece(const boardPosition &bp)
 {
     mask m = ~bitBoard::getMask(bp);
@@ -595,6 +602,24 @@ QList<boardMove> board::getLegalMoves(piece::color c, bool fast) const
     return goodMoves;
 }
 
+serialBoard board::serialize() const
+{
+    serialBoard sb;
+    for(int i=0; i < 2; i++) {
+        sb.pieces[i] = lPieces[i];
+    }
+    sb.color[0] = lColors[0];
+    sb.color[1] = lColors[1];
+
+    sb.whiteEnpassant = (lEnpassling >> 16) & 0xFF;
+    sb.blackEnpassant = (lEnpassling >> 40) & 0xFF;
+    sb.wkCastling = (lCastlingFlags>>0) & (lCastlingFlags>>3) & 1;
+    sb.wqCastling = (lCastlingFlags>>7) & (lCastlingFlags>>3) & 1;
+    sb.bkCastling = (lCastlingFlags>>56) & (lCastlingFlags>>59) & 1;
+    sb.bqCastling = (lCastlingFlags>>63) & (lCastlingFlags>>59) & 1;
+    return sb;
+}
+
 int board::getXState(const boardPosition &bp) const
 {
     mask state = 0LL;
@@ -645,3 +670,19 @@ int board::getRightTopDiagState(const boardPosition &bp) const
     return state;
 }
 
+
+
+bool isEquivalent(const serialBoard &a, const serialBoard &b)
+{
+    for(int i=0; i < 2; i++) {
+        if(a.pieces[i] != a.pieces[i]) {
+            return false;
+        }
+    }
+
+    if((a.color[0] != b.color[0]) || (a.color[1] != b.color[1])) {
+        return false;
+    }
+
+    return a.allFlags == b.allFlags;
+}

@@ -4,8 +4,36 @@
 //Библиотеки QT
 #include <QList>
 
+//Самописные классы
 #include "bitboard.h"
 #include "boardmove.h"
+/*!
+ * \brief The serialBoard struct - упращенная структура представления доски
+ */
+struct serialBoard {
+    mask pieces[6];
+    mask color[2];
+    union {
+        int allFlags;
+        struct {
+            int whiteEnpassant:8;
+            int blackEnpassant:8;
+            int whiteTurn:1;
+            int wkCastling:1;
+            int wqCastling:1;
+            int bkCastling:1;
+            int bqCastling:1;
+            int:11;
+        };
+    };
+};
+/*!
+ * \brief isEquivalent - сравнивает доски
+ * \param a - первая доска
+ * \param b - вторая доска
+ * \return равны ли доски
+ */
+bool isEquivalent (const serialBoard &a, const serialBoard &b);
 
 class board
 {
@@ -51,6 +79,12 @@ public:
      */
     void setPiece(piece *p, const boardPosition &bp);
     /*!
+     * \brief addPiecet - добавляет новую фигуру на доску
+     * \param p - фигура
+     * \param bp - позиция на доске
+     */
+    void addPiecet(piece *p, const boardPosition &bp);
+    /*!
      * \brief removePiece - удаляет фигуру с доски
      * \param bp - удаляет фигуру из заданой позиции
      */
@@ -92,7 +126,11 @@ public:
      * \return результат проверки
      */
     bool isMate(piece::color c) const;
-
+    /*!
+     * \brief isStalemate - проверяет является ли ситуация на доске патом для фигуры звдвнного цвета
+     * \param c - цвет
+     * \return результат проверки
+     */
     bool isStalemate(piece::color c) const;
     /*!
      * \brief isAttacked - проверяет находится ли фигура под боем
@@ -114,6 +152,12 @@ public:
      * \return -список ходов
      */
     QList<boardMove> getLegalMoves (piece::color c, bool fast = false) const;
+    /*!
+     * \brief serialize - получение описания доски в виде структуры
+     * \return
+     */
+    serialBoard serialize() const;
+
     inline int getYState (const boardPosition &bp) const {
         return ((lColors[piece::WHITE] | lColors[piece::BLACK]) >> bp.y()*8) & 0xff;
     }
