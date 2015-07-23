@@ -7,6 +7,9 @@
 //Самописные классы
 #include "board.h"
 
+/*!
+ * \brief The chessGameState class - класс описывающий игровое соостояние
+ */
 class chessGameState
 {
 public:
