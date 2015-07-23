@@ -1,7 +1,6 @@
 #include "chessplayer.h"
 
-chessPlayer::chessPlayer()
-{
+chessPlayer::chessPlayer() : lIsThinking(false), lIsHuman(false)
+{}
 
-}
 
