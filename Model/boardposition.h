@@ -45,7 +45,7 @@ public:
      * \brief number - возвращает номер позиции
      * \return номер
      */
-    inline int number() const { return (8*lY - lX); }
+    inline int number() const { return (8*lY + lX); }
     /*!
      * \brief xToChar - вернуть Х  в виде символа
      * \return Х

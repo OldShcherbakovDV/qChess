@@ -1,16 +1,20 @@
 #ifndef CHESSGAME_H
 #define CHESSGAME_H
 
+//Библиотеки QT
+#include <QObject>
+
 //Самописные классы
 #include "chessplayer.h"
 
 /*!
  * \brief The chessGame class - класс партии
  */
-class chessGame
+class chessGame : public QObject
 {
+        Q_OBJECT
 public:
-    chessGame();
+    chessGame(QObject *parent = nullptr);
     /*!
      * \brief chessGame - конструктор для инициализации парой игроков
      * \param p1 - белый игрок
@@ -68,7 +72,7 @@ public:
      * \brief getColor - получить цвет текущего хода
      * \return цвет
      */
-    inline piece::color getColor() { return state.getColor(); }
+    inline piece::color getColor() const { return state.getColor(); }
     /*!
      * \brief tryMove - попытаться сделать ход
      * \param bm - ход
@@ -79,7 +83,14 @@ public:
      * \brief undoMove - отменяет последний ход
      */
     void undoMove();
-
+    /*!
+     * \brief canCur - можно ли использовать эту позицию для начала хода
+     * \param bp - позиция
+     * \return - можо или нет
+     */
+    inline bool canCur(const boardPosition &bp) const { return getBoard().getPiece(bp) && getBoard().getPiece(bp)->getColor() == getColor(); }
+signals:
+    void madeMove(boardMove bm);
 private:
     chessPlayer *player1;
     chessPlayer *player2;

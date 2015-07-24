@@ -3,6 +3,7 @@
 
 //Библиотеки QT
 #include <QString>
+#include <QDebug>
 
 //Самописные классы
 #include "chessgamestate.h"
@@ -69,14 +70,15 @@ protected:
 };
 
 /*!
- * \brief The humen class - описывает игрока человека
+ * \brief The human class - описывает игрока человека
  */
-class humen : private chessPlayer {
+class human : private chessPlayer {
 public:
-    humen(){
+    human(){
         lIsThinking = false;
         lIsHuman = true;
         lIsTrustworthy = true;
+        lIsWhite = true;
     }
 
     virtual void newGame();

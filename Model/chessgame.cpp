@@ -1,14 +1,16 @@
 #include "chessgame.h"
 
-chessGame::chessGame() : player1(nullptr), player2(nullptr)
+chessGame::chessGame(QObject *parent) : player1(nullptr), player2(nullptr)
 {
 
 }
 
-chessGame::chessGame(chessPlayer *p1, chessPlayer *p2) : player1(p1), player2(p2), lIsGameInProgress(true)
+chessGame::chessGame(chessPlayer *p1, chessPlayer *p2) : lIsGameInProgress(true)
 {
-    p1->setIsWhite(true);
-    p2->setIsWhite(false);
+    player1 = p1;
+    player2 = p2;
+    player1->setIsWhite(true);
+    player2->setIsWhite(false);
 }
 
 chessGame::~chessGame()
@@ -21,7 +23,7 @@ chessGame::~chessGame()
 
 void chessGame::newGame()
 {
-    state.init();
+    //state.init();
 
     lIsGameInProgress = false;
     player1->newGame();
@@ -52,6 +54,8 @@ bool chessGame::tryMove(const boardMove &bm)
 
         history.append(state);
         redo.clear();
+
+        emit madeMove(bm);
     }
     return false;
 }

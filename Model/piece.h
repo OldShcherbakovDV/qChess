@@ -44,12 +44,12 @@ public:
      * \brief getColor - вернуть цвет
      * \return -цвет
      */
-    inline color getColor() { return lColor; }
+    inline color getColor() const { return lColor; }
     /*!
      * \brief getType - вернуть тип
      * \return тип
      */
-    inline type getType() { return lType; }
+    inline type getType() const { return lType; }
 
     // Методы работы с классом
 

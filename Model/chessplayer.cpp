@@ -5,8 +5,8 @@ chessPlayer *chessPlayer::create(QString typeName)
     if (typeName == "AI"){
         return (chessPlayer*)(new AI());
     }
-    else if (typeName == "humen"){
-        return (chessPlayer*)(new humen());
+    else if (typeName == "human"){
+        return (chessPlayer*)(new human());
     }
     return nullptr;
 }
@@ -21,37 +21,37 @@ chessPlayer::chessPlayer() : lIsThinking(false), lIsHuman(false), lIsTrustworthy
 
 
 
-void humen::newGame()
+void human::newGame()
+{
+    qDebug() << "start";
+}
+
+void human::startGame()
 {
 
 }
 
-void humen::startGame()
+void human::loadGame(const chessGameState &cgs)
 {
 
 }
 
-void humen::loadGame(const chessGameState &cgs)
+void human::opponentMove(const boardMove &move, const chessGameState &cgs)
 {
 
 }
 
-void humen::opponentMove(const boardMove &move, const chessGameState &cgs)
+void human::think(const chessGameState &cgs)
 {
 
 }
 
-void humen::think(const chessGameState &cgs)
+bool human::needMove()
 {
 
 }
 
-bool humen::needMove()
-{
-
-}
-
-void humen::undoMove()
+void human::undoMove()
 {
 
 }

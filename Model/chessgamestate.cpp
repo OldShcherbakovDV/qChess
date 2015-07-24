@@ -27,7 +27,7 @@ void chessGameState::init()
             if (y == 1 || y == 6){
                 t = piece::PAWN;
             }
-            else if(y != 0 || y != 7){
+            else if(y != 0 && y != 7){
                 lPieces[bp.number()] = nullptr;
                 break;
             }
@@ -103,7 +103,7 @@ void chessGameState::makeMove(const boardMove &bm)
     sb = lBoard.serialize();
     sb.whiteTurn = lIsWhiteStep ? 1 : 0;
     int i;
-    for(; i < lThreefoldCount.size(); ++i) {
+    for( i = 0; i < lThreefoldCount.size(); ++i) {
         if(isEquivalent(sb, lThreefoldCount[i].first)) {
             lThreefoldCount[i].second++;
             if(lThreefoldCount[i].second >= 3) {

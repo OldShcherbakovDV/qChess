@@ -144,14 +144,14 @@ public:
      * \param bp - клетка
      * \return -список ходов
      */
-    QList<boardMove> getLegalMoves (const boardPosition &bp) const;
+    QList<boardMove> getLegalMoves (const boardPosition &bp, bool cheks = true) const;
     /*!
      * \brief getLegalMoves - возвращает все допустимые ходы для фигуры для фигур этого цвета
      * \param c - цвет
      * \param fast - позволяет не искать все возможные ходы, а возвращает ходы первой попавшейся фигуры
      * \return -список ходов
      */
-    QList<boardMove> getLegalMoves (piece::color c, bool fast = false) const;
+    QList<boardMove> getLegalMoves (piece::color c, bool cheks = true, bool fast = false) const;
     /*!
      * \brief serialize - получение описания доски в виде структуры
      * \return
