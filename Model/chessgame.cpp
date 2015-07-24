@@ -56,6 +56,11 @@ bool chessGame::tryMove(const boardMove &bm)
         redo.clear();
 
         emit madeMove(bm);
+
+        if (!getCurrentPlayer()->isHuman()){
+            getCurrentPlayer()->think(state);
+            tryMove(getCurrentPlayer()->getMove());
+        }
     }
     return false;
 }

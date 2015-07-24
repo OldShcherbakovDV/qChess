@@ -628,6 +628,11 @@ serialBoard board::serialize() const
     return sb;
 }
 
+boardPosition board::getKing(piece::color c) const
+{
+    return kingsPos[c];
+}
+
 int board::getXState(const boardPosition &bp) const
 {
     mask state = 0LL;

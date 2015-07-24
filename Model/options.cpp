@@ -3,7 +3,7 @@
 options::options()
 {
     player1 = "human";
-    player2 = "human";
+    player2 = "AI";
 
     //Конфигурации внешнего вида
     blackPiece = QColor(1,1,1);

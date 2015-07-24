@@ -63,6 +63,9 @@ public:
      */
     bool isLegal(const QList<boardMove> &legals) const;
 
+    inline int yDiff() const { return abs(lStart.y() - lEnd.y()); }
+    inline int xDiff() const { return abs(lStart.x() - lEnd.x()); }
+
     inline bool operator == (const boardMove &other) const { return (lStart == other.lStart && lEnd == other.lEnd && lMovedPiece == other.lMovedPiece && lPromote == other.lPromote); }
 private:
     boardPosition lStart; // Начало хода

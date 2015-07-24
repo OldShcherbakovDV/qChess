@@ -48,13 +48,13 @@ public:
      * \param bp - текущая позиция
      * \return - битовая маска
      */
-    unsigned long long getXMask(const boardPosition & bp) const;
+    static unsigned long long getXMask(const boardPosition & bp);
     /*!
      * \brief getYMask - вернет все битовую маску для всех позицы с координатой y равной bp.x()
      * \param bp - текущая позиция
      * \return - битовая маска
      */
-    unsigned long long getYMask(const boardPosition & bp) const;
+    static unsigned long long getYMask(const boardPosition & bp);
     /*!
      * \brief getMask - возвращает маску заданного бита
      * \param bp - позиция бита

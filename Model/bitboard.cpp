@@ -27,7 +27,7 @@ void bitBoard::invert()
     lBoard = ~lBoard;
 }
 
-unsigned long long bitBoard::getXMask(const boardPosition &bp) const
+unsigned long long bitBoard::getXMask(const boardPosition &bp)
 {
     unsigned long long mask = 0LL;
 
@@ -37,7 +37,7 @@ unsigned long long bitBoard::getXMask(const boardPosition &bp) const
     return mask;
 }
 
-unsigned long long bitBoard::getYMask(const boardPosition &bp) const
+unsigned long long bitBoard::getYMask(const boardPosition &bp)
 {
     return (0xffLL << bp.x()*8);
 }

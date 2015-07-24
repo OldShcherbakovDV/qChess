@@ -158,6 +158,8 @@ public:
      */
     serialBoard serialize() const;
 
+    boardPosition getKing(piece::color c) const;
+
     inline int getYState (const boardPosition &bp) const {
         return ((lColors[piece::WHITE] | lColors[piece::BLACK]) >> bp.y()*8) & 0xff;
     }
@@ -179,6 +181,7 @@ public:
     static mask diagAttacksRightTop[64][256];
 
     static int pow2[8];
+    friend class AI;
 
 private:
     static piece *allPieces[2][6]; //Указатель на фигуру каждого типа
