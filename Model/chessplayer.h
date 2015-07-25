@@ -104,7 +104,7 @@ public:
     AI(){
         lIsHuman = false;
         lIsTrustworthy = true;
-        lPly = 1;
+        lPly = 3;
     }
 
     virtual void newGame();

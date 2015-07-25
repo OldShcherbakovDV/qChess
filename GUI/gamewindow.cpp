@@ -23,6 +23,8 @@ gameWindow::gameWindow(QWidget *parent) :
 
     connect(game, SIGNAL(madeMove(boardMove)), this, SLOT(makeMove(boardMove)));
 
+
+
 }
 
 gameWindow::~gameWindow()
@@ -33,6 +35,7 @@ gameWindow::~gameWindow()
 void gameWindow::paintBox(const boardPosition &bp, bool wantGoHere)
 {
     QTableWidgetItem * cell = ui->board->item(7 - bp.y(),bp.x());
+    cell->setTextAlignment(Qt::AlignCenter);
     bool isWhite = ((bp.x() + bp.y())%2 != 0);
     if (wantGoHere){
         cell->setBackgroundColor( isWhite ? opts->getWhiteCellCanMove() : opts->getBlackCellCanMove());
@@ -114,8 +117,29 @@ void gameWindow::on_board_cellClicked(int y, int x)
 void gameWindow::makeMove(boardMove bm)
 {
     paintBox(bm.getStart());
+    if (!ui->board->item(7 - bm.getEnd().y(), bm.getEnd().x())->text().isEmpty()){
+        QTableWidget *t = (game->getColor() == piece::WHITE) ? ui->white :ui->black;
+        t->insertRow(0);
+        t->setItem(0,0, new QTableWidgetItem(*ui->board->item(7 - bm.getEnd().y(), bm.getEnd().x())));
+        t->item(0,0)->setBackground(opts->getDeadCell());
+    }
     paintBox(bm.getEnd());
     if (bm.getMovedPiece()->getType() == piece::KING || bm.getMovedPiece()->getType() == piece::PAWN){
         paintBoard(game->getBoard());
+    }
+    //Обнавляем запись в заголовке
+    ui->step->setText("Ход №"+QString::number(1+ (game->getSate().getStepNumber() - 1)*2 + (game->getSate().isWhiteStep() ? 0 : 1))+".");
+    ui->color->setText(game->getSate().isWhiteStep() ? "Ходят белые." : "Ходят черные.");
+    if (game->getSate().getBoard().isMate(game->getColor())){
+        ui->sit->setText("Мат " + (game->getSate().isWhiteStep() ? QString("белым."): QString("черным.")));
+    }
+    else if (game->getSate().getBoard().isCheck(game->getColor())){
+        ui->sit->setText("Шах " + (game->getSate().isWhiteStep() ? QString("белым.") : QString("черным.")));
+    }
+    else if (game->getSate().getBoard().isStalemate(game->getColor())){
+        ui->sit->setText("Пат " + (game->getSate().isWhiteStep() ? QString("белым.") : QString("черным.")));
+    }
+    else{
+        ui->sit->clear();
     }
 }

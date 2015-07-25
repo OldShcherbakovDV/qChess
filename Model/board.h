@@ -3,6 +3,7 @@
 
 //Библиотеки QT
 #include <QList>
+#include <QDebug>
 
 //Самописные классы
 #include "bitboard.h"

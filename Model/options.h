@@ -19,7 +19,8 @@ public:
     inline QColor  getBlackCellAttacked() const { return blackCellAttacked; }
     inline QColor  getWhiteCellAttacked() const { return whiteCellAttacked; }
     inline QColor  getBlackCellCanMove() const { return blackCellCanMove; }
-    inline QColor  getWhiteCellCanMove() const { return blackPiece; }
+    inline QColor  getWhiteCellCanMove() const { return whiteCellCanMove; }
+    inline QColor  getDeadCell() const { return deadCell; }
 
 private:
     // Игровые настройки
@@ -29,6 +30,7 @@ private:
     QColor  blackCell, whiteCell;
     QColor  blackCellAttacked, whiteCellAttacked;
     QColor  blackCellCanMove, whiteCellCanMove;
+    QColor  deadCell;
 };
 
 #endif // OPTIONS_H

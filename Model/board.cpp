@@ -290,8 +290,11 @@ void board::removePiece(const boardPosition &bp)
 {
     mask m = ~bitBoard::getMask(bp);
     piece *p = getPiece(bp);
-    lPieces[p->getType()] &= m;
-    lColors[p->getColor()] &= m;
+    if (p != nullptr){
+        lPieces[p->getType()] &= m;
+        lColors[p->getColor()] &= m;
+    }
+
 
 
 }
@@ -377,6 +380,9 @@ mask board::isAttacked(const boardPosition &bp, piece::color c) const
 
 QList<boardMove> board::getLegalMoves(const boardPosition &bp, bool cheks) const
 {
+    if (bp.x() == 3 && bp.y() == 6 && cheks){
+        qDebug() << "bug";
+    }
     QList<boardMove> moves;
     boardMove move;
     piece *curPiece = getPiece(bp);
@@ -582,6 +588,10 @@ QList<boardMove> board::getLegalMoves(const boardPosition &bp, bool cheks) const
     }
 
     for (int i = moves.count() - 1; i >= 0 && cheks; --i){
+        move = moves[i];
+        if (move.getEnd().x() == 3 && move.getEnd().y() == 5){
+            qDebug() << "bug";
+        }
         if (isResultCheck(moves[i])){
             moves.removeAt(i);
         }
