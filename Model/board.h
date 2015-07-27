@@ -8,6 +8,7 @@
 //Самописные классы
 #include "bitboard.h"
 #include "boardmove.h"
+
 /*!
  * \brief The serialBoard struct - упращенная структура представления доски
  */
@@ -108,7 +109,7 @@ public:
      * \return
      */
     inline bool isEnPassantSet(const boardPosition & bp) const
-        { return (0 != (bitBoard::getMask(bp) & lEnpassling)); }
+    { return (0 != (bitBoard::getMask(bp) & lEnpassling)); }
     /*!
      * \brief isCheck - проверяет является ли ситуация шаховой для данного цвета
      * \param c - цвет
@@ -161,6 +162,8 @@ public:
 
     boardPosition getKing(piece::color c) const;
 
+    bool haveCastling(piece::color c, bool isLeft) const;
+
     inline int getYState (const boardPosition &bp) const {
         return ((lColors[piece::WHITE] | lColors[piece::BLACK]) >> bp.y()*8) & 0xff;
     }
@@ -180,25 +183,81 @@ public:
     static mask yAttacks[64][256];
     static mask diagAttacksLeftTop[64][256];
     static mask diagAttacksRightTop[64][256];
-
+    /*!
+     * \brief pow2 - Необходима для прощета шахов
+     */
     static int pow2[8];
     friend class AI;
 
 private:
+    /*!
+     * \brief allPieces - Указатель на фигуру каждого типа и каждого цвета
+     */
     static piece *allPieces[2][6]; //Указатель на фигуру каждого типа
+    /*!
+     * \brief isSetup -
+     */
     static bool isSetup;
+    /*!
+     * \brief lTotalPiece - Полное количество фигур по цветам
+     */
+    int lTotalPiece[2];
+    /*!
+     * \brief lPieceCount - Количество фигур по цветам и типам
+     */
+    int lPieceCount[2][6];
 
-    int lTotalPiece[2];     //Полное количество фигур цвета
-    int lPieceCount[2][6];  //количество фигур данного типа и цвета
-
-    mask lPieces[6];        //Маска доски по типам фигур
+    /*!
+     * \brief lPieces - Маски доски по типам фигур
+     */
+    mask lPieces[6];
+    /*!
+     * \brief lColors - Маски доски по цветам фигур
+     */
     mask lColors[2];        //Маска доски по цветам фигур
-    mask lCastlingFlags;    //Маска доски по допустимым ракировкам
+    /*!
+     * \brief lCastlingFlags - Маска доски по допустимым ракировкам
+     */
+    mask lCastlingFlags;
+    /*!
+     * \brief lEnpassling - Маска доски с помечеными взятиями на проходе
+     */
     mask lEnpassling;
-
+    /*!
+     * \brief kingsPos - Позиции королей по цветам
+     */
     boardPosition kingsPos[2]; //Позиции королей
+
+    /*!
+     * \brief getPawnLegalMoves - Вернуть возможные ходы пешки, стоящей в этой позиции
+     * \param bp - Позиция
+     * \return - Список ходов
+     */
+    QList<boardMove> getPawnLegalMoves (const boardPosition &bp) const;
+    /*!
+     * \brief getRookLegalMoves - возвращает допустимые ходы ладьи, стоящей в этой позиции
+     * \param bp - Позиция
+     * \return - Список ходов
+     */
+    QList<boardMove> getRookLegalMoves (const boardPosition &bp) const;
+    /*!
+     * \brief getBishopLegalMoves - возвращает допустимые ходы слона, стоящей в этой позиции
+     * \param bp - Позиция
+     * \return - Список ходов
+     */
+    QList<boardMove> getBishopLegalMoves (const boardPosition &bp) const;
+    /*!
+     * \brief getKnightLegalMoves - возвращает допустимые ходы коня, стоящей в этой позиции
+     * \param bp - Позиция
+     * \return - Список ходов
+     */
+    QList<boardMove> getKnightLegalMoves (const boardPosition &bp) const;
+    /*!
+     * \brief getKingLegalMoves - возвращает допустимые ходы короля, стоящей в этой позиции
+     * \param bp - Позиция
+     * \return - Список ходов
+     */
+    QList<boardMove> getKingLegalMoves (const boardPosition &bp) const;
 };
-
-
 
 #endif // BOARD_H

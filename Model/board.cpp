@@ -204,17 +204,18 @@ void board::update(const boardMove &bm)
         }
     }
     else if (t == piece::KING){ // Ракировки
+
         int dif = bm.getEnd().x() - bm.getStart().x();
         if (abs(dif) == 2){
             boardPosition currRook, newRookPos;
             currRook.setY((c == piece::WHITE) ? 0 : 7);
-            if (dif == 2){ // Короткая
-                currRook.setX(7);
-                newRookPos = bm.getEnd().getLeft();
-            }
-            else { // Длинная
+            if (dif != 2){ // Короткая
                 currRook.setX(0);
                 newRookPos = bm.getEnd().getRight();
+            }
+            else { // Длинная
+                currRook.setX(7);
+                newRookPos = bm.getEnd().getLeft();
             }
             setPiece(getPiece(currRook), newRookPos);
             removePiece(currRook);
@@ -224,6 +225,7 @@ void board::update(const boardMove &bm)
     setPiece(&mp, bm.getEnd());
     removePiece(bm.getStart());
     setSpecialPieceFlags(bm);
+
 }
 
 void board::setDefault()
@@ -347,28 +349,28 @@ bool board::isStalemate(piece::color c) const
 
 mask board::isAttacked(const boardPosition &bp, piece::color c) const
 {
-// НУЖНО ОТЛАДИТЬ
-//    piece::color attacker = piece::opponentColor(c);
-//    int pos = bp.number();
-//    int y = getYState(bp);
-//    int x = getXState(bp);
-//    int diagLeftTop = getLeftTopDiagState(bp);
-//    int diagRightTop = getRightTopDiagState(bp);
+    // НУЖНО ОТЛАДИТЬ
+    //    piece::color attacker = piece::opponentColor(c);
+    //    int pos = bp.number();
+    //    int y = getYState(bp);
+    //    int x = getXState(bp);
+    //    int diagLeftTop = getLeftTopDiagState(bp);
+    //    int diagRightTop = getRightTopDiagState(bp);
 
-//    mask lboard = 0LL;
-//    lboard |= pawnAttacks[c][pos] & lPieces[piece::PAWN] & lColors[attacker];
-//    lboard |= knightAttacks[pos] & lPieces[piece::KNIGHT] & lColors[attacker];
-//    lboard |= kingAttacks[pos] & lPieces[piece::KING] & lColors[attacker];
-//    lboard |= yAttacks[pos][y] & lPieces[piece::ROOK] & lColors[attacker];
-//    lboard |= yAttacks[pos][y] & lPieces[piece::QUEEN] & lColors[attacker];
-//    lboard |= xAttacks[pos][x] & lPieces[piece::ROOK] & lColors[attacker];
-//    lboard |= xAttacks[pos][x] & lPieces[piece::QUEEN] & lColors[attacker];
-//    lboard |= diagAttacksLeftTop[pos][diagLeftTop] & lPieces[piece::BISHOP] & lColors[attacker];
-//    lboard |= diagAttacksLeftTop[pos][diagLeftTop] & lPieces[piece::QUEEN] & lColors[attacker];
-//    lboard |= diagAttacksRightTop[pos][diagRightTop] & lPieces[piece::BISHOP] & lColors[attacker];
-//    lboard |= diagAttacksRightTop[pos][diagRightTop] & lPieces[piece::QUEEN] & lColors[attacker];
+    //    mask lboard = 0LL;
+    //    lboard |= pawnAttacks[c][pos] & lPieces[piece::PAWN] & lColors[attacker];
+    //    lboard |= knightAttacks[pos] & lPieces[piece::KNIGHT] & lColors[attacker];
+    //    lboard |= kingAttacks[pos] & lPieces[piece::KING] & lColors[attacker];
+    //    lboard |= yAttacks[pos][y] & lPieces[piece::ROOK] & lColors[attacker];
+    //    lboard |= yAttacks[pos][y] & lPieces[piece::QUEEN] & lColors[attacker];
+    //    lboard |= xAttacks[pos][x] & lPieces[piece::ROOK] & lColors[attacker];
+    //    lboard |= xAttacks[pos][x] & lPieces[piece::QUEEN] & lColors[attacker];
+    //    lboard |= diagAttacksLeftTop[pos][diagLeftTop] & lPieces[piece::BISHOP] & lColors[attacker];
+    //    lboard |= diagAttacksLeftTop[pos][diagLeftTop] & lPieces[piece::QUEEN] & lColors[attacker];
+    //    lboard |= diagAttacksRightTop[pos][diagRightTop] & lPieces[piece::BISHOP] & lColors[attacker];
+    //    lboard |= diagAttacksRightTop[pos][diagRightTop] & lPieces[piece::QUEEN] & lColors[attacker];
 
-//    return lboard;
+    //    return lboard;
     QList<boardMove> bml = getLegalMoves(piece::opponentColor(c), false);
     boardMove bm;
     foreach (bm, bml) {
@@ -380,9 +382,6 @@ mask board::isAttacked(const boardPosition &bp, piece::color c) const
 
 QList<boardMove> board::getLegalMoves(const boardPosition &bp, bool cheks) const
 {
-    if (bp.x() == 3 && bp.y() == 6 && cheks){
-        qDebug() << "bug";
-    }
     QList<boardMove> moves;
     boardMove move;
     piece *curPiece = getPiece(bp);
@@ -392,206 +391,28 @@ QList<boardMove> board::getLegalMoves(const boardPosition &bp, bool cheks) const
 
     switch (curPiece->getType()) { // По типу фигуры моделируем её поведение
     case piece::PAWN: //Пешка
-        if (curPiece->getColor() == piece::BLACK){
-            if (!isOccupied(bp.getBottom())){ // ход на одну позицию вперет
-                move = boardMove(bp, bp.getBottom(), curPiece);
-                moves.append(move);
-            }
-            move = boardMove(bp, bp.getBottom().getBottom(),curPiece);
-            if (bp.y() == 6 && isPathClear(move)){ // ход на две позицию вперет
-                if (move.getEnd().isValid())
-                    moves.append(move);
-            }
-            move = boardMove(bp, bp.getRightBottom(), curPiece); // Взятие вправо
-            if (move.getEnd().isValid() && (isOccupied(move.getEnd()) &&getPiece(move.getEnd())->getColor() != curPiece->getColor()) || isEnPassantSet(move.getEnd())){
-                moves.append(move);
-            }
-            move = boardMove(bp, bp.getLeftBottom(), curPiece); // Взятие влево
-            if (move.getEnd().isValid() && (isOccupied(move.getEnd()) &&getPiece(move.getEnd())->getColor() != curPiece->getColor()) || isEnPassantSet(move.getEnd())){
-                moves.append(move);
-            }
-        }
-        else {
-            if (!isOccupied(bp.getTop())){ // ход на одну позицию вперет
-                move = boardMove(bp, bp.getTop(), curPiece);
-                moves.append(move);
-            }
-            move = boardMove(bp, bp.getTop().getTop(), curPiece);
-            if (bp.y() == 1 && isPathClear(move)){ // ход на две позицию вперет
-                if (move.getEnd().isValid())
-                    moves.append(move);
-            }
-            move = boardMove(bp, bp.getRightTop(), curPiece); // Взятие вправо
-            if (move.getEnd().isValid() && (isOccupied(move.getEnd()) &&getPiece(move.getEnd())->getColor() != curPiece->getColor()) || isEnPassantSet(move.getEnd())){
-                moves.append(move);
-            }
-            move = boardMove(bp, bp.getLeftTop(), curPiece); // Взятие влево
-            if (move.getEnd().isValid() && (isOccupied(move.getEnd()) &&getPiece(move.getEnd())->getColor() != curPiece->getColor()) || isEnPassantSet(move.getEnd())){
-                moves.append(move);
-            }
-        }
+        moves = getPawnLegalMoves(bp);
         break;
     case piece::QUEEN: //Ферзь
     case piece::ROOK: //Ладья
-        for (move = boardMove(bp, bp.getTop(), curPiece); move.getEnd().isValid() && isPathClear(move); move = boardMove(bp, move.getEnd().getTop(), curPiece)){//Вверх
-            moves.append(move);
-        }
-        if (move.getEnd().isValid() && isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-            moves.append(move);
-        }
-        for (move = boardMove(bp, bp.getBottom(), curPiece); move.getEnd().isValid() && isPathClear(move); move = boardMove(bp, move.getEnd().getBottom(), curPiece)){//Вниз
-            moves.append(move);
-        }
-        if (move.getEnd().isValid() && isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-            moves.append(move);
-        }
-        for (move = boardMove(bp, bp.getRight(), curPiece); move.getEnd().isValid() && isPathClear(move); move = boardMove(bp, move.getEnd().getRight(), curPiece)){//Вправо
-            moves.append(move);
-        }
-        if (move.getEnd().isValid() && isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-            moves.append(move);
-        }
-        for (move = boardMove(bp, bp.getLeft(), curPiece); move.getEnd().isValid() && isPathClear(move); move = boardMove(bp, move.getEnd().getLeft(), curPiece)){//Влево
-            moves.append(move);
-        }
-        if (move.getEnd().isValid() && isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-            moves.append(move);
-        }
+        moves = getRookLegalMoves(bp);
         if (curPiece->getType() == piece::ROOK)
             break;
     case piece::BISHOP: //Слон
-        for (move = boardMove(bp, bp.getRightTop(), curPiece); move.getEnd().isValid() && isPathClear(move); move = boardMove(bp, move.getEnd().getRightTop(), curPiece)){//Вверх вправо
-            moves.append(move);
-        }
-        if (move.getEnd().isValid() && isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-            moves.append(move);
-        }
-        for (move = boardMove(bp, bp.getLeftTop(), curPiece); move.getEnd().isValid() && isPathClear(move); move = boardMove(bp, move.getEnd().getLeftTop(), curPiece)){//Вверх влево
-            moves.append(move);
-        }
-        if (move.getEnd().isValid() && isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-            moves.append(move);
-        }
-        for (move = boardMove(bp, bp.getRightBottom(), curPiece); move.getEnd().isValid() && isPathClear(move); move = boardMove(bp, move.getEnd().getRightBottom(), curPiece)){//Вверх
-            moves.append(move);
-        }
-        if (move.getEnd().isValid() && isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-            moves.append(move);
-        }
-        for (move = boardMove(bp, bp.getLeftBottom(), curPiece); move.getEnd().isValid() && isPathClear(move); move = boardMove(bp, move.getEnd().getLeftBottom(), curPiece)){//Вверх влево
-            moves.append(move);
-        }
-        if (move.getEnd().isValid() && isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-            moves.append(move);
-        }
+        moves.append(getBishopLegalMoves(bp));
         break;
     case piece::KNIGHT: //Конь
-        move = boardMove(bp, bp.getTop().getLeftTop(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getTop().getRightTop(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getBottom().getLeftBottom(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getBottom().getRightBottom(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getLeft().getLeftTop(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getRight().getRightTop(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getLeft().getLeftBottom(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getRight().getRightBottom(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
+        moves = getKnightLegalMoves(bp);
         break;
     case piece::KING:
-        move = boardMove(bp, bp.getTop(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getBottom(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getRight(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getLeft(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getLeftTop(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getLeftBottom(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getRightBottom(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
-        move = boardMove(bp, bp.getRightTop(), curPiece);
-        if (move.getEnd().isValid()){
-            if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
-                moves.append(move);
-            }
-        }
+        moves = getKingLegalMoves(bp);
+        break;
+    default:
         break;
     }
 
     for (int i = moves.count() - 1; i >= 0 && cheks; --i){
         move = moves[i];
-        if (move.getEnd().x() == 3 && move.getEnd().y() == 5){
-            qDebug() << "bug";
-        }
         if (isResultCheck(moves[i])){
             moves.removeAt(i);
         }
@@ -641,6 +462,15 @@ serialBoard board::serialize() const
 boardPosition board::getKing(piece::color c) const
 {
     return kingsPos[c];
+}
+
+bool board::haveCastling(piece::color c, bool isLeft) const
+{
+    boardPosition rookPos(isLeft ? 0 : 7, (c == piece::WHITE) ? 0 : 7);
+    bool kingDontMoved = lCastlingFlags & bitBoard::getMask(kingsPos[c]);
+    bool rookDontMoved = lCastlingFlags & bitBoard::getMask(rookPos);
+    return kingDontMoved && rookDontMoved && isPathClear(boardMove(kingsPos[c], isLeft ? rookPos.getRight() : rookPos.getLeft(), allPieces[c][piece::KING]));
+
 }
 
 int board::getXState(const boardPosition &bp) const
@@ -693,7 +523,256 @@ int board::getRightTopDiagState(const boardPosition &bp) const
     return state;
 }
 
+QList<boardMove> board::getPawnLegalMoves(const boardPosition &bp) const
+{
+    QList<boardMove> moves;
+    piece *curPiece = getPiece(bp);
+    bool isWhite = (curPiece->getColor() == piece::WHITE);
+    int defaultPosition = isWhite ? 1 : 6;
+    boardPosition movep = isWhite ? bp.getTop() : bp.getBottom();
+    boardPosition doubleMovep = isWhite ? movep.getTop() : movep.getBottom();
+    boardMove move;
 
+    if (!isOccupied(movep)){ // ход на одну позицию вперет
+        move = boardMove(bp, movep, curPiece);
+        moves.append(move);
+    }
+    move = boardMove(bp, doubleMovep,curPiece);
+    if (bp.y() == defaultPosition && isPathClear(move)){ // ход на две позицию вперет
+        if (move.getEnd().isValid())
+            moves.append(move);
+    }
+    move = boardMove(bp, movep.getRight(), curPiece); // Взятие вправо
+    if (move.getEnd().isValid() && ((isOccupied(move.getEnd()) && getPiece(move.getEnd())->getColor() != curPiece->getColor()) || isEnPassantSet(move.getEnd()))){
+        moves.append(move);
+    }
+    move = boardMove(bp, movep.getLeft(), curPiece); // Взятие влево
+    if (move.getEnd().isValid() && ((isOccupied(move.getEnd()) &&getPiece(move.getEnd())->getColor() != curPiece->getColor()) || isEnPassantSet(move.getEnd()))){
+        moves.append(move);
+    }
+
+    return moves;
+}
+
+QList<boardMove> board::getRookLegalMoves(const boardPosition &bp) const
+{
+    QList<boardMove>  moves;
+    boardMove move;
+    piece *curPiece = getPiece(bp);
+    for (move = boardMove(bp, bp.getTop(), curPiece);
+         move.getEnd().isValid() && isPathClear(move);
+         move = boardMove(bp, move.getEnd().getTop(), curPiece)){//Вверх
+        moves.append(move);
+    }
+    if (move.getEnd().isValid()
+            && isOccupied(move.getEnd())
+            && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+        moves.append(move);
+    }
+    for (move = boardMove(bp, bp.getBottom(), curPiece);
+         move.getEnd().isValid() && isPathClear(move);
+         move = boardMove(bp, move.getEnd().getBottom(), curPiece)){//Вниз
+        moves.append(move);
+    }
+    if (move.getEnd().isValid()
+            && isOccupied(move.getEnd())
+            && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+        moves.append(move);
+    }
+    for (move = boardMove(bp, bp.getRight(), curPiece);
+         move.getEnd().isValid() && isPathClear(move);
+         move = boardMove(bp, move.getEnd().getRight(), curPiece)){//Вправо
+        moves.append(move);
+    }
+    if (move.getEnd().isValid()
+            && isOccupied(move.getEnd())
+            && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+        moves.append(move);
+    }
+    for (move = boardMove(bp, bp.getLeft(), curPiece);
+         move.getEnd().isValid() && isPathClear(move);
+         move = boardMove(bp, move.getEnd().getLeft(), curPiece)){//Влево
+        moves.append(move);
+    }
+    if (move.getEnd().isValid()
+            && isOccupied(move.getEnd())
+            && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+        moves.append(move);
+    }
+    return moves;
+}
+
+QList<boardMove> board::getBishopLegalMoves(const boardPosition &bp) const
+{
+    QList<boardMove>  moves;
+    boardMove move;
+    piece *curPiece = getPiece(bp);
+    for (move = boardMove(bp, bp.getRightTop(), curPiece);
+         move.getEnd().isValid() && isPathClear(move);
+         move = boardMove(bp, move.getEnd().getRightTop(), curPiece)){//Вверх вправо
+        moves.append(move);
+    }
+    if (move.getEnd().isValid()
+            && isOccupied(move.getEnd())
+            && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+        moves.append(move);
+    }
+    for (move = boardMove(bp, bp.getLeftTop(), curPiece);
+         move.getEnd().isValid() && isPathClear(move);
+         move = boardMove(bp, move.getEnd().getLeftTop(), curPiece)){//Вверх влево
+        moves.append(move);
+    }
+    if (move.getEnd().isValid()
+            && isOccupied(move.getEnd())
+            && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+        moves.append(move);
+    }
+    for (move = boardMove(bp, bp.getRightBottom(), curPiece);
+         move.getEnd().isValid() && isPathClear(move);
+         move = boardMove(bp, move.getEnd().getRightBottom(), curPiece)){//Вверх
+        moves.append(move);
+    }
+    if (move.getEnd().isValid()
+            && isOccupied(move.getEnd())
+            && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+        moves.append(move);
+    }
+    for (move = boardMove(bp, bp.getLeftBottom(), curPiece);
+         move.getEnd().isValid() && isPathClear(move);
+         move = boardMove(bp, move.getEnd().getLeftBottom(), curPiece)){//Вверх влево
+        moves.append(move);
+    }
+    if (move.getEnd().isValid()
+            && isOccupied(move.getEnd())
+            && getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+        moves.append(move);
+    }
+    return moves;
+}
+
+QList<boardMove> board::getKnightLegalMoves(const boardPosition &bp) const
+{
+    QList<boardMove>  moves;
+    boardMove move;
+    piece *curPiece = getPiece(bp);
+    move = boardMove(bp, bp.getTop().getLeftTop(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getTop().getRightTop(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getBottom().getLeftBottom(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getBottom().getRightBottom(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getLeft().getLeftTop(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getRight().getRightTop(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getLeft().getLeftBottom(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getRight().getRightBottom(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    return moves;
+}
+
+QList<boardMove> board::getKingLegalMoves(const boardPosition &bp) const
+{
+    QList<boardMove>  moves;
+    boardMove move;
+    piece *curPiece = getPiece(bp);
+    move = boardMove(bp, bp.getTop(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getBottom(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getRight(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getLeft(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getLeftTop(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getLeftBottom(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getRightBottom(), curPiece);
+    if (move.getEnd().isValid()){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getRightTop(), curPiece);
+    if (move.getEnd().isValid()){
+        if ((lCastlingFlags & bitBoard::getMask(bp)) && (lCastlingFlags & bitBoard::getMask(boardPosition(7, bp.y())))){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getRight().getRight(), curPiece);
+    if (move.getEnd().isValid()){
+        if (haveCastling(curPiece->getColor(), false)){
+            moves.append(move);
+        }
+    }
+    move = boardMove(bp, bp.getLeft().getLeft(), curPiece);
+    if (move.getEnd().isValid()){
+        if (haveCastling(curPiece->getColor(), true)){
+            moves.append(move);
+        }
+    }
+    return moves;
+}
 
 bool isEquivalent(const serialBoard &a, const serialBoard &b)
 {

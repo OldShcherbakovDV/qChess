@@ -21,7 +21,7 @@ public:
     explicit gameWindow(QWidget *parent = 0);
     ~gameWindow();
     void paintBox(const boardPosition &bp, bool wantGoHere = false);
-    void paintBoard(const board &b);
+    void paintBoard();
     void paintSet(const QList<boardMove> &set, bool wantGoHere = false);
     QString getUnicodPiece(const piece &p) const;
 

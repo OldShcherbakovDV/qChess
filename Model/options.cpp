@@ -1,5 +1,6 @@
 #include "options.h"
 
+
 options::options()
 {
     player1 = "human";

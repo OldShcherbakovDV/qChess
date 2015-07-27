@@ -1,6 +1,6 @@
 #include "chessgame.h"
 
-chessGame::chessGame(QObject *parent) : player1(nullptr), player2(nullptr)
+chessGame::chessGame(QObject *parent) : QObject(parent), player1(nullptr), player2(nullptr)
 {
 
 }

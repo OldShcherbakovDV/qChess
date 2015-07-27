@@ -4,7 +4,11 @@
 #include <QDebug>
 
 #include "chessgame.h"
-
-void outputField(chessGame* game);
+/*!
+ * \brief outputField - функция для отладочного вывода поля
+ * \param game - указатель на игру
+ * \return поле строкой
+ */
+QString outputField(board *game);
 
 #endif // FREEFUNCTIONS_H

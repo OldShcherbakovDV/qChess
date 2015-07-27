@@ -19,7 +19,7 @@ gameWindow::gameWindow(QWidget *parent) :
             ui->board->setItem(i,j, new QTableWidgetItem);
         }
     }
-    paintBoard(game->getBoard());
+    paintBoard();
 
     connect(game, SIGNAL(madeMove(boardMove)), this, SLOT(makeMove(boardMove)));
 
@@ -56,7 +56,7 @@ void gameWindow::paintBox(const boardPosition &bp, bool wantGoHere)
     }
 }
 
-void gameWindow::paintBoard(const board &b)
+void gameWindow::paintBoard()
 {
     for (int i = 0; i < 8; ++i){
         for (int j = 0; j < 8; ++j){
@@ -88,6 +88,8 @@ QString gameWindow::getUnicodPiece(const piece &p) const
         return "♕";
     case piece::KING:
         return "♚";
+    default:
+        break;
     }
     return 0;
 }
@@ -106,7 +108,6 @@ void gameWindow::on_board_cellClicked(int y, int x)
             lastGoodCurCell.setInvalidData();
             ui->board->setCurrentCell(8,8);
             game->tryMove(bm);
-            outputField(game)    ;
         }
     }
     else{
@@ -125,7 +126,7 @@ void gameWindow::makeMove(boardMove bm)
     }
     paintBox(bm.getEnd());
     if (bm.getMovedPiece()->getType() == piece::KING || bm.getMovedPiece()->getType() == piece::PAWN){
-        paintBoard(game->getBoard());
+        paintBoard();
     }
     //Обнавляем запись в заголовке
     ui->step->setText("Ход №"+QString::number(1+ (game->getSate().getStepNumber() - 1)*2 + (game->getSate().isWhiteStep() ? 0 : 1))+".");

@@ -142,6 +142,8 @@ int AI::evaluateBoard(const board &b, piece::color c)
                     balance -= kingval;
                 }
                 break;
+            default:
+                break;
             }
         }
     }

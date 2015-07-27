@@ -1,47 +1,35 @@
 #include "freefunctions.h"
 
-void outputField(chessGame *game){
+QString outputField(board *game){
     QString state;
+    QString res;
+    qDebug() << "--============--";
     for (int i = 0; i < 8; ++i){
         state.clear();
         for (int j = 0; j < 8; ++j){
-            piece *p = game->getBoard().getPiece(boardPosition(j, i));
+            piece *p = game->getPiece(boardPosition(j, i));
             if (p != nullptr){
-                if (p->getType() == piece::KING){
-                    if (p->getColor() == piece::WHITE)
-                        state +="K|";
-                    else
-                        state +="k|";
-                }
-                else if (p->getType() == piece::QUEEN){
-                    if (p->getColor() == piece::WHITE)
-                        state +="Q|";
-                    else
-                        state +="q|";
-                }
-                else if (p->getType() == piece::BISHOP){
-                    if (p->getColor() == piece::WHITE)
-                        state +="B|";
-                    else
-                        state +="b|";
-                }
-                else if (p->getType() == piece::KNIGHT){
-                    if (p->getColor() == piece::WHITE)
-                        state +="H|";
-                    else
-                        state +="h|";
-                }
-                else if (p->getType() == piece::ROOK){
-                    if (p->getColor() == piece::WHITE)
-                        state +="R|";
-                    else
-                        state +="r|";
-                }
-                else if (p->getType() == piece::PAWN){
-                    if (p->getColor() == piece::WHITE)
-                        state +="P|";
-                    else
-                        state +="p|";
+                switch (p->getType()) {
+                case piece::KING:
+                    state += p->getColor() == piece::WHITE ? "K|" : "k|";
+                    break;
+                case piece::QUEEN:
+                    state += p->getColor() == piece::WHITE ? "Q|" : "q|";
+                    break;
+                case piece::BISHOP:
+                    state += p->getColor() == piece::WHITE ? "B|" : "b|";
+                    break;
+                case piece::KNIGHT:
+                    state += p->getColor() == piece::WHITE ? "H|" : "h|";
+                    break;
+                case piece::ROOK:
+                    state += p->getColor() == piece::WHITE ? "R|" : "r|";
+                    break;
+                case piece::PAWN:
+                    state += p->getColor() == piece::WHITE ? "P|" : "p|";
+                    break;
+                default:
+                    break;
                 }
             }
             else{
@@ -49,5 +37,7 @@ void outputField(chessGame *game){
             }
         }
         qDebug()<< state;
+        res += "\n" + state;
     }
+    return res;
 }
