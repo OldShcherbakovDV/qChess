@@ -60,12 +60,42 @@ public:
       */
      bool isPositionSelectable(const boardPosition& bp) const;
 private:
-    QList<QPair<serialBoard, int> > lThreefoldCount; // История "бесполезных" ходов
-    piece* lPieces[64]; // Фигуры на 'хеше'
-    board lBoard; // Доска
-    boardMove lLastMove; // последний сделаный ход
-    bool lIsWhiteStep, lIsCheck, isThreefold; // Цвет, шах, удавлетворяет ли ход правилу 50 ходов
-    int lStepNumber, l50Moves; // Номер хода, Счетчик для правила 50 ходов
+     /*!
+     * \brief lThreefoldCount - История "бесполезных" ходов
+     */
+    QList<QPair<serialBoard, int> > lThreefoldCount;
+    /*!
+     * \brief lPieces - Фигуры на 'хеше'
+     */
+    piece* lPieces[64];
+    /*!
+     * \brief lBoard - Доска
+     */
+    board lBoard;
+    /*!
+     * \brief lLastMove - Последний сделаный ход
+     */
+    boardMove lLastMove;
+    /*!
+     * \brief lIsWhiteStep - Цвет
+     */
+    bool lIsWhiteStep;
+    /*!
+     * \brief lIsCheck - Шах
+     */
+    bool lIsCheck;
+    /*!
+     * \brief isThreefold - Удавлетворяет ли ход правилу 50 ходов
+     */
+    bool isThreefold;
+    /*!
+     * \brief lStepNumber - Номер хода
+     */
+    int lStepNumber;
+    /*!
+     * \brief l50Moves - Счетчик для правила 50 ходов
+     */
+    int l50Moves;
 };
 
 #endif // CHESSGAMESTATE_H

@@ -23,9 +23,8 @@ SOURCES += main.cpp\
     Model/chessgamestate.cpp \
     Model/chessplayer.cpp \
     Model/piece.cpp \
-    Model/pieceset.cpp \
-    Model/statsnapshot.cpp \
-    Model/freefunctions.cpp
+    Model/freefunctions.cpp \
+    GUI/menuwindow.cpp
 
 HEADERS  += GUI/gamewindow.h \
     Model/options.h \
@@ -37,9 +36,9 @@ HEADERS  += GUI/gamewindow.h \
     Model/chessgamestate.h \
     Model/chessplayer.h \
     Model/piece.h \
-    Model/pieceset.h \
-    Model/statsnapshot.h \
-    Model/freefunctions.h
+    Model/freefunctions.h \
+    GUI/menuwindow.h
 
-FORMS    += GUI/gamewindow.ui
+FORMS    += GUI/gamewindow.ui \
+    GUI/menuwindow.ui
 CONFIG   += c++11

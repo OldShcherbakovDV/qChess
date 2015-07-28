@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Исходный файл Model/piece.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_312950da3f243a51cc00f4a947545131.html">Model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">piece.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PIECE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PIECE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//Библиотеки QT</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QStack&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//Самописные классы</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;statsnapshot.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classpiece.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classpiece.html">piece</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">   21</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a> {PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING, NOTYPE};</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">   25</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a> {BLACK, WHITE, NOCOLOR};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classpiece.html#abc6324159644ab0c0aad7f2c84e122e5">   32</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a> <a class="code" href="classpiece.html#abc6324159644ab0c0aad7f2c84e122e5">opponentColor</a> (<a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a> c) { <span class="keywordflow">return</span> c == WHITE ? BLACK : WHITE; }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classpiece.html#ab950ed5525196aa83c59cfe04f5891db">piece</a>(<a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c, <a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a> t);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Методы доступа</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classpiece.html#a71cc356d37aaadad54d0c20714a4f407">   47</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a> <a class="code" href="classpiece.html#a71cc356d37aaadad54d0c20714a4f407">getColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classpiece.html#a8a250da59070e11f3e301c623afffac6">lColor</a>; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classpiece.html#a60c80dd266bdd0a51df294263ee639d4">   52</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a> <a class="code" href="classpiece.html#a60c80dd266bdd0a51df294263ee639d4">getType</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classpiece.html#a454fc10cb5287d35c1cea5890061ce41">lType</a>; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Методы работы с классом</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classpiece.html#a72b1969c42c8fa89f41cb8c54b2438c3">   59</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classpiece.html#a72b1969c42c8fa89f41cb8c54b2438c3">clearState</a>() { <a class="code" href="classpiece.html#afa0cccea76767519bb297420eb12bf1b">lStat</a>.clear(); }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classpiece.html#a4771f62c2b12989f5051d7e96387159f">turnPawnToOtherPiece</a>(<a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a> t);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classpiece.html#a454fc10cb5287d35c1cea5890061ce41">   72</a></span>&#160;    <a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a>    <a class="code" href="classpiece.html#a454fc10cb5287d35c1cea5890061ce41">lType</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classpiece.html#a8a250da59070e11f3e301c623afffac6">   76</a></span>&#160;    <a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a>   <a class="code" href="classpiece.html#a8a250da59070e11f3e301c623afffac6">lColor</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classpiece.html#afa0cccea76767519bb297420eb12bf1b">   80</a></span>&#160;    QStack&lt;statSnapshot&gt;    <a class="code" href="classpiece.html#afa0cccea76767519bb297420eb12bf1b">lStat</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // PIECE_H</span></div>
+<div class="ttc" id="classpiece_html_afa0cccea76767519bb297420eb12bf1b"><div class="ttname"><a href="classpiece.html#afa0cccea76767519bb297420eb12bf1b">piece::lStat</a></div><div class="ttdeci">QStack&lt; statSnapshot &gt; lStat</div><div class="ttdoc">lStat - Хранит статистику </div><div class="ttdef"><b>Definition:</b> piece.h:80</div></div>
+<div class="ttc" id="classpiece_html_abc6324159644ab0c0aad7f2c84e122e5"><div class="ttname"><a href="classpiece.html#abc6324159644ab0c0aad7f2c84e122e5">piece::opponentColor</a></div><div class="ttdeci">static color opponentColor(color c)</div><div class="ttdoc">opponentColor - возвращает противоположный цвет </div><div class="ttdef"><b>Definition:</b> piece.h:32</div></div>
+<div class="ttc" id="classpiece_html_a0e121e5952345fd0e7014a8e6a1fbbda"><div class="ttname"><a href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a></div><div class="ttdeci">color</div><div class="ttdoc">The сolor enum - цвета фигур </div><div class="ttdef"><b>Definition:</b> piece.h:25</div></div>
+<div class="ttc" id="classpiece_html_a71cc356d37aaadad54d0c20714a4f407"><div class="ttname"><a href="classpiece.html#a71cc356d37aaadad54d0c20714a4f407">piece::getColor</a></div><div class="ttdeci">color getColor() const </div><div class="ttdoc">getColor - вернуть цвет </div><div class="ttdef"><b>Definition:</b> piece.h:47</div></div>
+<div class="ttc" id="classpiece_html"><div class="ttname"><a href="classpiece.html">piece</a></div><div class="ttdoc">The piece class - класс шахматной фигуры </div><div class="ttdef"><b>Definition:</b> piece.h:15</div></div>
+<div class="ttc" id="classpiece_html_ab950ed5525196aa83c59cfe04f5891db"><div class="ttname"><a href="classpiece.html#ab950ed5525196aa83c59cfe04f5891db">piece::piece</a></div><div class="ttdeci">piece(piece::color c, type t)</div><div class="ttdoc">piece - конструктор </div><div class="ttdef"><b>Definition:</b> piece.cpp:3</div></div>
+<div class="ttc" id="classpiece_html_a454fc10cb5287d35c1cea5890061ce41"><div class="ttname"><a href="classpiece.html#a454fc10cb5287d35c1cea5890061ce41">piece::lType</a></div><div class="ttdeci">type lType</div><div class="ttdoc">lType - Тип фигуры </div><div class="ttdef"><b>Definition:</b> piece.h:72</div></div>
+<div class="ttc" id="classpiece_html_a4771f62c2b12989f5051d7e96387159f"><div class="ttname"><a href="classpiece.html#a4771f62c2b12989f5051d7e96387159f">piece::turnPawnToOtherPiece</a></div><div class="ttdeci">void turnPawnToOtherPiece(type t)</div><div class="ttdoc">turnPawnToOtherPiece - превращает пешку в фигуру с заданным типом кроме короля </div><div class="ttdef"><b>Definition:</b> piece.cpp:8</div></div>
+<div class="ttc" id="classpiece_html_a8a250da59070e11f3e301c623afffac6"><div class="ttname"><a href="classpiece.html#a8a250da59070e11f3e301c623afffac6">piece::lColor</a></div><div class="ttdeci">color lColor</div><div class="ttdoc">lColor - Цвет фигуры </div><div class="ttdef"><b>Definition:</b> piece.h:76</div></div>
+<div class="ttc" id="classpiece_html_a72b1969c42c8fa89f41cb8c54b2438c3"><div class="ttname"><a href="classpiece.html#a72b1969c42c8fa89f41cb8c54b2438c3">piece::clearState</a></div><div class="ttdeci">void clearState()</div><div class="ttdoc">clearState - отчистка статистики </div><div class="ttdef"><b>Definition:</b> piece.h:59</div></div>
+<div class="ttc" id="classpiece_html_a60bdcec91f595c164fe08c6705f192d0"><div class="ttname"><a href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">piece::type</a></div><div class="ttdeci">type</div><div class="ttdoc">The type enum - типы фигур </div><div class="ttdef"><b>Definition:</b> piece.h:21</div></div>
+<div class="ttc" id="classpiece_html_a60c80dd266bdd0a51df294263ee639d4"><div class="ttname"><a href="classpiece.html#a60c80dd266bdd0a51df294263ee639d4">piece::getType</a></div><div class="ttdeci">type getType() const </div><div class="ttdoc">getType - вернуть тип </div><div class="ttdef"><b>Definition:</b> piece.h:52</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

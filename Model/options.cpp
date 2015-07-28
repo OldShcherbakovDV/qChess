@@ -6,6 +6,9 @@ options::options()
     player1 = "human";
     player2 = "AI";
 
+    aiCof1 = 1;
+    aiCof2 = 1;
+
     //Конфигурации внешнего вида
     blackPiece = QColor(0,0,0);
     whitePiece = QColor(175,144,91);

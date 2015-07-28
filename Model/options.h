@@ -70,7 +70,36 @@ public:
      * \return цвет
      */
     inline QColor  getDeadCell() const { return deadCell; }
-
+    /*!
+     * \brief getAiCof1 - получить коофициент сложности белого игрока
+     * \return коофициент от 1 до 3
+     */
+    inline int  getAiCof1() const { return aiCof1; }
+    /*!
+     * \brief getAiCof1 - получить коофициент сложности черного игрока
+     * \return коофициент от 1 до 3
+     */
+    inline int  getAiCof2() const { return aiCof2; }
+    /*!
+     * \brief setAiCof1 - задать коофициент сложности белого игрока
+     * \param c - коофициент от 1 до 3
+     */
+    inline void setAiCof1(int c) { aiCof1 = c; }
+    /*!
+     * \brief setAiCof2 - задать коофициент сложности белого игрока
+     * \param c - коофициент от 1 до 3
+     */
+    inline void setAiCof2(int c) { aiCof2 = c; }
+    /*!
+     * \brief setPlayer1 - задать тип белого игрока
+     * \param p - имя типа строкой
+     */
+    inline void setPlayer1(QString p) { player1 = p; }
+    /*!
+     * \brief setPlayer2 - задать тип черного игрока
+     * \param p - имя типа строкой
+     */
+    inline void setPlayer2(QString p) { player2 = p; }
 private:
     // Игровые настройки
     /*!
@@ -117,6 +146,14 @@ private:
      * \brief deadCell - Цвет поля мертвой фигуры
      */
     QColor  deadCell;
+    /*!
+     * \brief aiCof1 - коофициент сложности ИИ белого игрока
+     */
+    int aiCof1;
+    /*!
+     * \brief aiCof2 - коофициент сложности ИИ черного игрока
+     */
+    int aiCof2;
 };
 
 #endif // OPTIONS_H

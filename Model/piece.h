@@ -66,9 +66,18 @@ public:
 
 
 protected:
-    type    lType;  // Тип фигуры
-    color   lColor; // Цвет фигуры
-    QStack<statSnapshot>    lStat; // Хранить статистику
+    /*!
+     * \brief lType - Тип фигуры
+     */
+    type    lType;
+    /*!
+     * \brief lColor - Цвет фигуры
+     */
+    color   lColor;
+    /*!
+     * \brief lStat - Хранит статистику
+     */
+    QStack<statSnapshot>    lStat;
 };
 
 #endif // PIECE_H

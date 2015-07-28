@@ -1,0 +1,47 @@
+\hypertarget{structserial_board}{}\section{Структура serial\+Board}
+\label{structserial_board}\index{serial\+Board@{serial\+Board}}
+
+
+The \hyperlink{structserial_board}{serial\+Board} struct -\/ упращенная структура представления доски  
+
+
+
+
+{\ttfamily \#include $<$board.\+h$>$}
+
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structserial_board_a0a27eb05a8303039ae133c24c99e5665}{}mask {\bfseries pieces} \mbox{[}6\mbox{]}\label{structserial_board_a0a27eb05a8303039ae133c24c99e5665}
+
+\item 
+\hypertarget{structserial_board_a902c488370344e2ba5d48a64e3d4aa75}{}mask {\bfseries color} \mbox{[}2\mbox{]}\label{structserial_board_a902c488370344e2ba5d48a64e3d4aa75}
+
+\item 
+\hypertarget{structserial_board_a362750c1f255e200d28d4b2f34699c92}{}\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>int {\bfseries allFlags}\\
+\hypertarget{unionserial_board_1_1@0_a24409ca85bea9c6dab79a506c491785d}{}\>struct \{\\
+\>\>int {\bfseries whiteEnpassant}:8\\
+\>\>int {\bfseries blackEnpassant}:8\\
+\>\>int {\bfseries whiteTurn}:1\\
+\>\>int {\bfseries wkCastling}:1\\
+\>\>int {\bfseries wqCastling}:1\\
+\>\>int {\bfseries bkCastling}:1\\
+\>\>int {\bfseries bqCastling}:1\\
+\>\>int {\bfseries \_\_pad0\_\_}:11\\
+\>\} \label{unionserial_board_1_1@0_a24409ca85bea9c6dab79a506c491785d}
+\\
+\}; \label{structserial_board_a362750c1f255e200d28d4b2f34699c92}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{structserial_board}{serial\+Board} struct -\/ упращенная структура представления доски 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Model/board.\+h\end{DoxyCompactItemize}

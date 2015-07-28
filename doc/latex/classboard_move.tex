@@ -1,0 +1,226 @@
+\hypertarget{classboard_move}{}\section{Класс board\+Move}
+\label{classboard_move}\index{board\+Move@{board\+Move}}
+
+
+The \hyperlink{classboard_move}{board\+Move} class -\/ класс игрового хода  
+
+
+
+
+{\ttfamily \#include $<$boardmove.\+h$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classboard_move_a2e7ec427f296755d8a2ff553802aa381}{}\hyperlink{classboard_move_a2e7ec427f296755d8a2ff553802aa381}{board\+Move} ()\label{classboard_move_a2e7ec427f296755d8a2ff553802aa381}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classboard_move}{board\+Move} -\/ конструктор по умолчанию \end{DoxyCompactList}\item 
+\hyperlink{classboard_move_a9cd15affd99174cc2a3c16732685ebb4}{board\+Move} (const \hyperlink{classboard_position}{board\+Position} \&start, const \hyperlink{classboard_position}{board\+Position} \&end, \hyperlink{classpiece}{piece} $\ast$moved, \hyperlink{classpiece_a60bdcec91f595c164fe08c6705f192d0}{piece\+::type} promote=piece\+::\+Q\+U\+E\+E\+N)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classboard_move}{board\+Move} -\/ конструктор по параметрам \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_move_a5ff01edf33101210e4696df6da9deb96}{get\+Start} () const 
+\begin{DoxyCompactList}\small\item\em start -\/ вернуть стартовую позицию \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_move_a4a4b131bae70142a31a43cfa3761c19d}{get\+End} () const 
+\begin{DoxyCompactList}\small\item\em end -\/ вернуть конечную позицию \end{DoxyCompactList}\item 
+\hyperlink{classpiece}{piece} $\ast$ \hyperlink{classboard_move_a5d08192556a8167d800d43b5a69f6b6f}{get\+Moved\+Piece} () const 
+\begin{DoxyCompactList}\small\item\em get\+Moved\+Piece -\/ вернуть фигуру \end{DoxyCompactList}\item 
+\hyperlink{classpiece_a60bdcec91f595c164fe08c6705f192d0}{piece\+::type} \hyperlink{classboard_move_aaf7f4911fddc16bbd4555eafdd6321b2}{get\+Promote} () const 
+\begin{DoxyCompactList}\small\item\em get\+Promote -\/ возвращает тип фигуры в поле end \end{DoxyCompactList}\item 
+void \hyperlink{classboard_move_a8ce468f874b246675cb5b1449e7385af}{set\+Promote} (const \hyperlink{classpiece_a60bdcec91f595c164fe08c6705f192d0}{piece\+::type} \&t)
+\begin{DoxyCompactList}\small\item\em set\+Promote -\/ задает тип получаемой фигуры \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_move_ac4a4970efc03ec1a3c8c488c3a0e23de}{need\+Promotion} (const Q\+List$<$ \hyperlink{classboard_move}{board\+Move} $>$ \&legals) const 
+\begin{DoxyCompactList}\small\item\em need\+Promotion -\/ необходимо ли задать тип замена \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_move_aab1e6f7a49fafc05e17af43ce9ab975d}{is\+Legal} (const Q\+List$<$ \hyperlink{classboard_move}{board\+Move} $>$ \&legals) const 
+\begin{DoxyCompactList}\small\item\em is\+Legal -\/ проверяет можно ли произвести такой ход \end{DoxyCompactList}\item 
+int \hyperlink{classboard_move_a8c8c96b47ef3afe63bca6d329003ec73}{y\+Diff} () const 
+\begin{DoxyCompactList}\small\item\em y\+Diff -\/ Изменение положение по вертикали \end{DoxyCompactList}\item 
+int \hyperlink{classboard_move_aef1b5f3e0bfc46deb712f411d18975e7}{x\+Diff} () const 
+\begin{DoxyCompactList}\small\item\em x\+Diff -\/ Изменение положение по горизонтали \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_move_a23d6831f03a4a730061d5f278d2fdd57}{operator==} (const \hyperlink{classboard_move}{board\+Move} \&other) const 
+\begin{DoxyCompactList}\small\item\em operator == -\/ Оператор сравнения ходов \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{classboard_move}{board\+Move} class -\/ класс игрового хода 
+
+\subsection{Конструктор(ы)}
+\hypertarget{classboard_move_a9cd15affd99174cc2a3c16732685ebb4}{}\index{board\+Move@{board\+Move}!board\+Move@{board\+Move}}
+\index{board\+Move@{board\+Move}!board\+Move@{board\+Move}}
+\subsubsection[{board\+Move}]{\setlength{\rightskip}{0pt plus 5cm}board\+Move\+::board\+Move (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{start, }
+\item[{const {\bf board\+Position} \&}]{end, }
+\item[{{\bf piece} $\ast$}]{moved, }
+\item[{{\bf piece\+::type}}]{promote = {\ttfamily piece\+:\+:QUEEN}}
+\end{DoxyParamCaption}
+)}\label{classboard_move_a9cd15affd99174cc2a3c16732685ebb4}
+
+
+\hyperlink{classboard_move}{board\+Move} -\/ конструктор по параметрам 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em start} & -\/ позиция начала хода \\
+\hline
+{\em end} & -\/ позиция конца хода \\
+\hline
+{\em moved} & -\/ фигура которая ходит \\
+\hline
+{\em promote} & -\/ тип вигуры в поле замены пешки \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\hypertarget{classboard_move_a4a4b131bae70142a31a43cfa3761c19d}{}\index{board\+Move@{board\+Move}!get\+End@{get\+End}}
+\index{get\+End@{get\+End}!board\+Move@{board\+Move}}
+\subsubsection[{get\+End}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Move\+::get\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_move_a4a4b131bae70142a31a43cfa3761c19d}
+
+
+end -\/ вернуть конечную позицию 
+
+\begin{DoxyReturn}{Возвращает}
+конечная позиция 
+\end{DoxyReturn}
+\hypertarget{classboard_move_a5d08192556a8167d800d43b5a69f6b6f}{}\index{board\+Move@{board\+Move}!get\+Moved\+Piece@{get\+Moved\+Piece}}
+\index{get\+Moved\+Piece@{get\+Moved\+Piece}!board\+Move@{board\+Move}}
+\subsubsection[{get\+Moved\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}{\bf piece}$\ast$ board\+Move\+::get\+Moved\+Piece (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_move_a5d08192556a8167d800d43b5a69f6b6f}
+
+
+get\+Moved\+Piece -\/ вернуть фигуру 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ указатель на фигуру 
+\end{DoxyReturn}
+\hypertarget{classboard_move_aaf7f4911fddc16bbd4555eafdd6321b2}{}\index{board\+Move@{board\+Move}!get\+Promote@{get\+Promote}}
+\index{get\+Promote@{get\+Promote}!board\+Move@{board\+Move}}
+\subsubsection[{get\+Promote}]{\setlength{\rightskip}{0pt plus 5cm}{\bf piece\+::type} board\+Move\+::get\+Promote (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_move_aaf7f4911fddc16bbd4555eafdd6321b2}
+
+
+get\+Promote -\/ возвращает тип фигуры в поле end 
+
+\begin{DoxyReturn}{Возвращает}
+тип фигуры 
+\end{DoxyReturn}
+\hypertarget{classboard_move_a5ff01edf33101210e4696df6da9deb96}{}\index{board\+Move@{board\+Move}!get\+Start@{get\+Start}}
+\index{get\+Start@{get\+Start}!board\+Move@{board\+Move}}
+\subsubsection[{get\+Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Move\+::get\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_move_a5ff01edf33101210e4696df6da9deb96}
+
+
+start -\/ вернуть стартовую позицию 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ стартовая позиция 
+\end{DoxyReturn}
+\hypertarget{classboard_move_aab1e6f7a49fafc05e17af43ce9ab975d}{}\index{board\+Move@{board\+Move}!is\+Legal@{is\+Legal}}
+\index{is\+Legal@{is\+Legal}!board\+Move@{board\+Move}}
+\subsubsection[{is\+Legal}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+Move\+::is\+Legal (
+\begin{DoxyParamCaption}
+\item[{const Q\+List$<$ {\bf board\+Move} $>$ \&}]{legals}
+\end{DoxyParamCaption}
+) const}\label{classboard_move_aab1e6f7a49fafc05e17af43ce9ab975d}
+
+
+is\+Legal -\/ проверяет можно ли произвести такой ход 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_move_ac4a4970efc03ec1a3c8c488c3a0e23de}{}\index{board\+Move@{board\+Move}!need\+Promotion@{need\+Promotion}}
+\index{need\+Promotion@{need\+Promotion}!board\+Move@{board\+Move}}
+\subsubsection[{need\+Promotion}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+Move\+::need\+Promotion (
+\begin{DoxyParamCaption}
+\item[{const Q\+List$<$ {\bf board\+Move} $>$ \&}]{legals}
+\end{DoxyParamCaption}
+) const}\label{classboard_move_ac4a4970efc03ec1a3c8c488c3a0e23de}
+
+
+need\+Promotion -\/ необходимо ли задать тип замена 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_move_a23d6831f03a4a730061d5f278d2fdd57}{}\index{board\+Move@{board\+Move}!operator==@{operator==}}
+\index{operator==@{operator==}!board\+Move@{board\+Move}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+Move\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Move} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_move_a23d6831f03a4a730061d5f278d2fdd57}
+
+
+operator == -\/ Оператор сравнения ходов 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em other} & -\/ Ход с которым сравниваем \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ Равны ли? 
+\end{DoxyReturn}
+\hypertarget{classboard_move_a8ce468f874b246675cb5b1449e7385af}{}\index{board\+Move@{board\+Move}!set\+Promote@{set\+Promote}}
+\index{set\+Promote@{set\+Promote}!board\+Move@{board\+Move}}
+\subsubsection[{set\+Promote}]{\setlength{\rightskip}{0pt plus 5cm}void board\+Move\+::set\+Promote (
+\begin{DoxyParamCaption}
+\item[{const {\bf piece\+::type} \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_move_a8ce468f874b246675cb5b1449e7385af}
+
+
+set\+Promote -\/ задает тип получаемой фигуры 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em t} & -\/ тип получаемой фигуры \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_move_aef1b5f3e0bfc46deb712f411d18975e7}{}\index{board\+Move@{board\+Move}!x\+Diff@{x\+Diff}}
+\index{x\+Diff@{x\+Diff}!board\+Move@{board\+Move}}
+\subsubsection[{x\+Diff}]{\setlength{\rightskip}{0pt plus 5cm}int board\+Move\+::x\+Diff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_move_aef1b5f3e0bfc46deb712f411d18975e7}
+
+
+x\+Diff -\/ Изменение положение по горизонтали 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ Разница между начальным и конечным положением по X 
+\end{DoxyReturn}
+\hypertarget{classboard_move_a8c8c96b47ef3afe63bca6d329003ec73}{}\index{board\+Move@{board\+Move}!y\+Diff@{y\+Diff}}
+\index{y\+Diff@{y\+Diff}!board\+Move@{board\+Move}}
+\subsubsection[{y\+Diff}]{\setlength{\rightskip}{0pt plus 5cm}int board\+Move\+::y\+Diff (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_move_a8c8c96b47ef3afe63bca6d329003ec73}
+
+
+y\+Diff -\/ Изменение положение по вертикали 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ Разница между начальным и конечным положением по Y 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/boardmove.\+h\item 
+Model/boardmove.\+cpp\end{DoxyCompactItemize}

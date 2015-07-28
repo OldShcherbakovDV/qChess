@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Исходный файл Model/chessgame.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_312950da3f243a51cc00f4a947545131.html">Model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">chessgame.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CHESSGAME_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CHESSGAME_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//Библиотеки QT</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//Самописные классы</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;chessplayer.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classchess_game.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classchess_game.html">chessGame</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        Q_OBJECT</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classchess_game.html">chessGame</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classchess_game.html">chessGame</a>(<a class="code" href="classchess_player.html">chessPlayer</a> *p1, <a class="code" href="classchess_player.html">chessPlayer</a> *p2);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classchess_game.html#ab8015aeeb33def6b01df544d5de76c62">~chessGame</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classchess_game.html#ac4434ee888280b15097641146900aedf">newGame</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classchess_game.html#a7d444b87ac60a620f3ae3b03893478e1">loadGame</a>(<span class="keyword">const</span> <a class="code" href="classchess_game_state.html">chessGameState</a> &amp;cgs);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classchess_game.html#aca8e8ecb362a1a21232e5221ad9f6870">startGame</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classchess_game.html#ae818720664a4aaaad9654c63ee138c39">   45</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classchess_player.html">chessPlayer</a>* <a class="code" href="classchess_game.html#ae818720664a4aaaad9654c63ee138c39">getPlayer1</a>()<span class="keyword"> const </span>{  <span class="keywordflow">return</span> player1; }</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classchess_game.html#abe4bece4c525cd770a8b8c455cd2b462">   50</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classchess_player.html">chessPlayer</a>* <a class="code" href="classchess_game.html#abe4bece4c525cd770a8b8c455cd2b462">getPlayer2</a>()<span class="keyword"> const </span>{  <span class="keywordflow">return</span> player2; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classchess_game.html#a1c5a201d0868ad9002b8e2ee1be8476f">   55</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classchess_player.html">chessPlayer</a>* <a class="code" href="classchess_game.html#a1c5a201d0868ad9002b8e2ee1be8476f">getCurrentPlayer</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (state.<a class="code" href="classchess_game_state.html#a70098682d6f3a2cad6b2ac1832ae99c2">isWhiteStep</a>()) ? player1 : player2; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classchess_game.html#a3c7f8d99a70c6bc579e11c7a80498b20">   60</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classchess_player.html">chessPlayer</a>* <a class="code" href="classchess_game.html#a3c7f8d99a70c6bc579e11c7a80498b20">getInactivePlayer</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (state.<a class="code" href="classchess_game_state.html#a70098682d6f3a2cad6b2ac1832ae99c2">isWhiteStep</a>()) ? player2 : player1; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classchess_game.html#aa63acf0a17cc89fcc0e7535a369ebca2">   65</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classchess_game_state.html">chessGameState</a> <a class="code" href="classchess_game.html#aa63acf0a17cc89fcc0e7535a369ebca2">getSate</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state; }</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classchess_game.html#ab217741c1342afad766efdc680b46712">   70</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard.html">board</a> <a class="code" href="classchess_game.html#ab217741c1342afad766efdc680b46712">getBoard</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state.<a class="code" href="classchess_game_state.html#a711c3cf730b86934e2a194d34c0c5e16">getBoard</a>(); }</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classchess_game.html#a78099d4054ffd3bca6de2290504712e4">   75</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> <a class="code" href="classchess_game.html#a78099d4054ffd3bca6de2290504712e4">getColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state.<a class="code" href="classchess_game_state.html#ab5011f008dbf3c7bc991a17edc4ceac1">getColor</a>(); }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classchess_game.html#a93374e1eee491081f54793b70563e0e9">tryMove</a>(<span class="keyword">const</span> <a class="code" href="classboard_move.html">boardMove</a> &amp;bm);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classchess_game.html#af9eb38dee7afe0e7adc56c1ad0057de2">undoMove</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classchess_game.html#a139815c8ee6aa7ba7e6408cdf4e82edc">   91</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classchess_game.html#a139815c8ee6aa7ba7e6408cdf4e82edc">canCur</a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classchess_game.html#ab217741c1342afad766efdc680b46712">getBoard</a>().<a class="code" href="classboard.html#a8e2be38a28f6b631815741b70671e197">getPiece</a>(bp) &amp;&amp; <a class="code" href="classchess_game.html#ab217741c1342afad766efdc680b46712">getBoard</a>().<a class="code" href="classboard.html#a8e2be38a28f6b631815741b70671e197">getPiece</a>(bp)-&gt;<a class="code" href="classpiece.html#a71cc356d37aaadad54d0c20714a4f407">getColor</a>() == <a class="code" href="classchess_game.html#a78099d4054ffd3bca6de2290504712e4">getColor</a>(); }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;signals:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classchess_game.html#a8c0d3a3a193aac0635d173b584c97bcd">madeMove</a>(<a class="code" href="classboard_move.html">boardMove</a> bm);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="classchess_player.html">chessPlayer</a> *player1;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="classchess_player.html">chessPlayer</a> *player2;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classchess_game_state.html">chessGameState</a> state;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QList&lt;chessGameState&gt; history;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    QList&lt;chessGameState&gt; redo;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">bool</span> lIsGameInProgress;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif // CHESSGAME_H</span></div>
+<div class="ttc" id="classboard_html_a8e2be38a28f6b631815741b70671e197"><div class="ttname"><a href="classboard.html#a8e2be38a28f6b631815741b70671e197">board::getPiece</a></div><div class="ttdeci">piece * getPiece(const boardPosition &amp;bp) const </div><div class="ttdoc">getPiece - возвращает фигуру из заданной позиции </div><div class="ttdef"><b>Definition:</b> board.cpp:249</div></div>
+<div class="ttc" id="classchess_game_html_abe4bece4c525cd770a8b8c455cd2b462"><div class="ttname"><a href="classchess_game.html#abe4bece4c525cd770a8b8c455cd2b462">chessGame::getPlayer2</a></div><div class="ttdeci">chessPlayer * getPlayer2() const </div><div class="ttdoc">getPlayer2 - возвращает белого игрока </div><div class="ttdef"><b>Definition:</b> chessgame.h:50</div></div>
+<div class="ttc" id="classpiece_html_a0e121e5952345fd0e7014a8e6a1fbbda"><div class="ttname"><a href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a></div><div class="ttdeci">color</div><div class="ttdoc">The сolor enum - цвета фигур </div><div class="ttdef"><b>Definition:</b> piece.h:25</div></div>
+<div class="ttc" id="classpiece_html_a71cc356d37aaadad54d0c20714a4f407"><div class="ttname"><a href="classpiece.html#a71cc356d37aaadad54d0c20714a4f407">piece::getColor</a></div><div class="ttdeci">color getColor() const </div><div class="ttdoc">getColor - вернуть цвет </div><div class="ttdef"><b>Definition:</b> piece.h:47</div></div>
+<div class="ttc" id="classchess_game_html_a8c0d3a3a193aac0635d173b584c97bcd"><div class="ttname"><a href="classchess_game.html#a8c0d3a3a193aac0635d173b584c97bcd">chessGame::madeMove</a></div><div class="ttdeci">void madeMove(boardMove bm)</div><div class="ttdoc">madeMove - Был совершен ход </div></div>
+<div class="ttc" id="classchess_game_html_ae818720664a4aaaad9654c63ee138c39"><div class="ttname"><a href="classchess_game.html#ae818720664a4aaaad9654c63ee138c39">chessGame::getPlayer1</a></div><div class="ttdeci">chessPlayer * getPlayer1() const </div><div class="ttdoc">getPlayer2 - возвращает белого игрока </div><div class="ttdef"><b>Definition:</b> chessgame.h:45</div></div>
+<div class="ttc" id="classchess_game_html_a78099d4054ffd3bca6de2290504712e4"><div class="ttname"><a href="classchess_game.html#a78099d4054ffd3bca6de2290504712e4">chessGame::getColor</a></div><div class="ttdeci">piece::color getColor() const </div><div class="ttdoc">getColor - получить цвет текущего хода </div><div class="ttdef"><b>Definition:</b> chessgame.h:75</div></div>
+<div class="ttc" id="classboard_position_html"><div class="ttname"><a href="classboard_position.html">boardPosition</a></div><div class="ttdoc">The boardPosition class - класс которы описывает позицию на доске </div><div class="ttdef"><b>Definition:</b> boardposition.h:7</div></div>
+<div class="ttc" id="classboard_move_html"><div class="ttname"><a href="classboard_move.html">boardMove</a></div><div class="ttdoc">The boardMove class - класс игрового хода </div><div class="ttdef"><b>Definition:</b> boardmove.h:11</div></div>
+<div class="ttc" id="classchess_game_html_ab217741c1342afad766efdc680b46712"><div class="ttname"><a href="classchess_game.html#ab217741c1342afad766efdc680b46712">chessGame::getBoard</a></div><div class="ttdeci">board getBoard() const </div><div class="ttdoc">getBoard - получить доску </div><div class="ttdef"><b>Definition:</b> chessgame.h:70</div></div>
+<div class="ttc" id="classchess_player_html"><div class="ttname"><a href="classchess_player.html">chessPlayer</a></div><div class="ttdoc">The chessPlayer class - абстрактный класс игрока </div><div class="ttdef"><b>Definition:</b> chessplayer.h:14</div></div>
+<div class="ttc" id="classchess_game_html_ac4434ee888280b15097641146900aedf"><div class="ttname"><a href="classchess_game.html#ac4434ee888280b15097641146900aedf">chessGame::newGame</a></div><div class="ttdeci">void newGame()</div><div class="ttdoc">newGame - запускает новую игру </div><div class="ttdef"><b>Definition:</b> chessgame.cpp:24</div></div>
+<div class="ttc" id="classchess_game_state_html_a711c3cf730b86934e2a194d34c0c5e16"><div class="ttname"><a href="classchess_game_state.html#a711c3cf730b86934e2a194d34c0c5e16">chessGameState::getBoard</a></div><div class="ttdeci">board getBoard() const </div><div class="ttdoc">getBoard - получить доску </div><div class="ttdef"><b>Definition:</b> chessgamestate.h:30</div></div>
+<div class="ttc" id="classchess_game_html_a139815c8ee6aa7ba7e6408cdf4e82edc"><div class="ttname"><a href="classchess_game.html#a139815c8ee6aa7ba7e6408cdf4e82edc">chessGame::canCur</a></div><div class="ttdeci">bool canCur(const boardPosition &amp;bp) const </div><div class="ttdoc">canCur - можно ли использовать эту позицию для начала хода </div><div class="ttdef"><b>Definition:</b> chessgame.h:91</div></div>
+<div class="ttc" id="classchess_game_html_a1c5a201d0868ad9002b8e2ee1be8476f"><div class="ttname"><a href="classchess_game.html#a1c5a201d0868ad9002b8e2ee1be8476f">chessGame::getCurrentPlayer</a></div><div class="ttdeci">chessPlayer * getCurrentPlayer() const </div><div class="ttdoc">getCurrentPlayer - возвращает текущего игрока </div><div class="ttdef"><b>Definition:</b> chessgame.h:55</div></div>
+<div class="ttc" id="classchess_game_html_aca8e8ecb362a1a21232e5221ad9f6870"><div class="ttname"><a href="classchess_game.html#aca8e8ecb362a1a21232e5221ad9f6870">chessGame::startGame</a></div><div class="ttdeci">void startGame()</div><div class="ttdoc">startGame - начинает новую партию </div><div class="ttdef"><b>Definition:</b> chessgame.cpp:43</div></div>
+<div class="ttc" id="classchess_game_state_html"><div class="ttname"><a href="classchess_game_state.html">chessGameState</a></div><div class="ttdoc">The chessGameState class - класс описывающий игровое соостояние </div><div class="ttdef"><b>Definition:</b> chessgamestate.h:13</div></div>
+<div class="ttc" id="classchess_game_html_a7d444b87ac60a620f3ae3b03893478e1"><div class="ttname"><a href="classchess_game.html#a7d444b87ac60a620f3ae3b03893478e1">chessGame::loadGame</a></div><div class="ttdeci">void loadGame(const chessGameState &amp;cgs)</div><div class="ttdoc">loadGame - загружает игру </div><div class="ttdef"><b>Definition:</b> chessgame.cpp:37</div></div>
+<div class="ttc" id="classchess_game_html_af9eb38dee7afe0e7adc56c1ad0057de2"><div class="ttname"><a href="classchess_game.html#af9eb38dee7afe0e7adc56c1ad0057de2">chessGame::undoMove</a></div><div class="ttdeci">void undoMove()</div><div class="ttdoc">undoMove - отменяет последний ход </div><div class="ttdef"><b>Definition:</b> chessgame.cpp:68</div></div>
+<div class="ttc" id="classchess_game_html_aa63acf0a17cc89fcc0e7535a369ebca2"><div class="ttname"><a href="classchess_game.html#aa63acf0a17cc89fcc0e7535a369ebca2">chessGame::getSate</a></div><div class="ttdeci">chessGameState getSate() const </div><div class="ttdoc">getSate - получит описание игровой ситуации </div><div class="ttdef"><b>Definition:</b> chessgame.h:65</div></div>
+<div class="ttc" id="classchess_game_html_ab8015aeeb33def6b01df544d5de76c62"><div class="ttname"><a href="classchess_game.html#ab8015aeeb33def6b01df544d5de76c62">chessGame::~chessGame</a></div><div class="ttdeci">~chessGame()</div><div class="ttdoc">~chessGame корректно разрушает объект </div><div class="ttdef"><b>Definition:</b> chessgame.cpp:16</div></div>
+<div class="ttc" id="classchess_game_html_a93374e1eee491081f54793b70563e0e9"><div class="ttname"><a href="classchess_game.html#a93374e1eee491081f54793b70563e0e9">chessGame::tryMove</a></div><div class="ttdeci">bool tryMove(const boardMove &amp;bm)</div><div class="ttdoc">tryMove - попытаться сделать ход </div><div class="ttdef"><b>Definition:</b> chessgame.cpp:50</div></div>
+<div class="ttc" id="classchess_game_state_html_ab5011f008dbf3c7bc991a17edc4ceac1"><div class="ttname"><a href="classchess_game_state.html#ab5011f008dbf3c7bc991a17edc4ceac1">chessGameState::getColor</a></div><div class="ttdeci">piece::color getColor() const </div><div class="ttdoc">getColor - вернуть цвет хода </div><div class="ttdef"><b>Definition:</b> chessgamestate.h:55</div></div>
+<div class="ttc" id="classboard_html"><div class="ttname"><a href="classboard.html">board</a></div><div class="ttdef"><b>Definition:</b> board.h:40</div></div>
+<div class="ttc" id="classchess_game_html"><div class="ttname"><a href="classchess_game.html">chessGame</a></div><div class="ttdoc">The chessGame class - класс партии </div><div class="ttdef"><b>Definition:</b> chessgame.h:13</div></div>
+<div class="ttc" id="classchess_game_state_html_a70098682d6f3a2cad6b2ac1832ae99c2"><div class="ttname"><a href="classchess_game_state.html#a70098682d6f3a2cad6b2ac1832ae99c2">chessGameState::isWhiteStep</a></div><div class="ttdeci">bool isWhiteStep() const </div><div class="ttdoc">isWhiteStep - какой цвет сходил в последний раз </div><div class="ttdef"><b>Definition:</b> chessgamestate.h:50</div></div>
+<div class="ttc" id="classchess_game_html_a3c7f8d99a70c6bc579e11c7a80498b20"><div class="ttname"><a href="classchess_game.html#a3c7f8d99a70c6bc579e11c7a80498b20">chessGame::getInactivePlayer</a></div><div class="ttdeci">chessPlayer * getInactivePlayer() const </div><div class="ttdoc">getInactivePlayer - возвращает противоположного игрока </div><div class="ttdef"><b>Definition:</b> chessgame.h:60</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

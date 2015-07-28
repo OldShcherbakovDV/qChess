@@ -1,0 +1,101 @@
+\hypertarget{classchess_player}{}\section{Класс chess\+Player}
+\label{classchess_player}\index{chess\+Player@{chess\+Player}}
+
+
+The \hyperlink{classchess_player}{chess\+Player} class -\/ абстрактный класс игрока  
+
+
+
+
+{\ttfamily \#include $<$chessplayer.\+h$>$}
+
+Граф наследования\+:chess\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classchess_player}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classchess_player_aa48ff4eddf1d46cbb989c0c00d779c83}{}virtual void {\bfseries new\+Game} ()=0\label{classchess_player_aa48ff4eddf1d46cbb989c0c00d779c83}
+
+\item 
+\hypertarget{classchess_player_a05e0031986866997afb0b861bda8f344}{}virtual void {\bfseries start\+Game} ()=0\label{classchess_player_a05e0031986866997afb0b861bda8f344}
+
+\item 
+\hypertarget{classchess_player_a0381db4f0afd40017762e9208eeff7b0}{}virtual void {\bfseries load\+Game} (const \hyperlink{classchess_game_state}{chess\+Game\+State} \&cgs)=0\label{classchess_player_a0381db4f0afd40017762e9208eeff7b0}
+
+\item 
+\hypertarget{classchess_player_acbb4583ddc816cf38b56d8c282aad412}{}virtual void {\bfseries opponent\+Move} (const \hyperlink{classboard_move}{board\+Move} \&move, const \hyperlink{classchess_game_state}{chess\+Game\+State} \&cgs)=0\label{classchess_player_acbb4583ddc816cf38b56d8c282aad412}
+
+\item 
+\hypertarget{classchess_player_a87501ca68fe97a4442f0e31e467c1820}{}bool {\bfseries is\+Thinking} () const \label{classchess_player_a87501ca68fe97a4442f0e31e467c1820}
+
+\item 
+\hypertarget{classchess_player_a0259369e1067e023a6f50f078a30cde3}{}bool {\bfseries is\+Human} () const \label{classchess_player_a0259369e1067e023a6f50f078a30cde3}
+
+\item 
+\hypertarget{classchess_player_aeed885d79b86767bc664f5f39c1b7df3}{}virtual void {\bfseries think} (const \hyperlink{classchess_game_state}{chess\+Game\+State} \&cgs)=0\label{classchess_player_aeed885d79b86767bc664f5f39c1b7df3}
+
+\item 
+\hypertarget{classchess_player_a55cdc430ded2d4c874bbd77a5c8d8f63}{}\hyperlink{classboard_move}{board\+Move} {\bfseries get\+Move} ()\label{classchess_player_a55cdc430ded2d4c874bbd77a5c8d8f63}
+
+\item 
+\hypertarget{classchess_player_a0e6d70cf9b9a52087055e755eb90532d}{}void {\bfseries interrupt\+Thinking} ()\label{classchess_player_a0e6d70cf9b9a52087055e755eb90532d}
+
+\item 
+\hypertarget{classchess_player_ad67bfb6b97ef3901d69b3ab86f0ee543}{}virtual bool {\bfseries need\+Move} ()=0\label{classchess_player_ad67bfb6b97ef3901d69b3ab86f0ee543}
+
+\item 
+\hypertarget{classchess_player_a34001badc8835ee50ba3cf7757bd5b49}{}void {\bfseries send\+Move} (const \hyperlink{classboard_move}{board\+Move} \&bm)\label{classchess_player_a34001badc8835ee50ba3cf7757bd5b49}
+
+\item 
+\hypertarget{classchess_player_ade3cee86e542229ac6475867afd8fdde}{}virtual void {\bfseries undo\+Move} ()=0\label{classchess_player_ade3cee86e542229ac6475867afd8fdde}
+
+\item 
+\hypertarget{classchess_player_aef6c947b54414da53ac4491e1f8488b7}{}void {\bfseries set\+Is\+White} (bool is\+White)\label{classchess_player_aef6c947b54414da53ac4491e1f8488b7}
+
+\item 
+\hypertarget{classchess_player_a7b2cb6f6e5c85185fc6ca5f74610eb70}{}bool {\bfseries is\+White} () const \label{classchess_player_a7b2cb6f6e5c85185fc6ca5f74610eb70}
+
+\item 
+\hypertarget{classchess_player_abe6500db94378533534d7bee0e7b9719}{}bool {\bfseries is\+Trustworthy} () const \label{classchess_player_abe6500db94378533534d7bee0e7b9719}
+
+\item 
+\hypertarget{classchess_player_a090b0e10bfcf88f98e4e28109b354947}{}\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} {\bfseries get\+Color} () const \label{classchess_player_a090b0e10bfcf88f98e4e28109b354947}
+
+\end{DoxyCompactItemize}
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classchess_player_a9e9f6a9fb3e7a52bf8704afea2f8bd3e}{}static \hyperlink{classchess_player}{chess\+Player} $\ast$ {\bfseries create} (Q\+String type\+Name)\label{classchess_player_a9e9f6a9fb3e7a52bf8704afea2f8bd3e}
+
+\end{DoxyCompactItemize}
+\subsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classchess_player_a06252c21a45bb0b798b49f84a1d1dd5c}{}bool {\bfseries l\+Is\+White}\label{classchess_player_a06252c21a45bb0b798b49f84a1d1dd5c}
+
+\item 
+\hypertarget{classchess_player_aaeb0f6b585c49c7868040d96d8b9f297}{}bool {\bfseries l\+Is\+Thinking}\label{classchess_player_aaeb0f6b585c49c7868040d96d8b9f297}
+
+\item 
+\hypertarget{classchess_player_a566b824ad83a12cb505a48b2d4e1e4a4}{}bool {\bfseries l\+Is\+Human}\label{classchess_player_a566b824ad83a12cb505a48b2d4e1e4a4}
+
+\item 
+\hypertarget{classchess_player_aa282876d37f09361f03934fbc0cb5465}{}bool {\bfseries l\+Is\+Trustworthy}\label{classchess_player_aa282876d37f09361f03934fbc0cb5465}
+
+\item 
+\hypertarget{classchess_player_ac92aea6b6a84c5fd37c527fc22b441a2}{}\hyperlink{classboard_move}{board\+Move} {\bfseries l\+Move}\label{classchess_player_ac92aea6b6a84c5fd37c527fc22b441a2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{classchess_player}{chess\+Player} class -\/ абстрактный класс игрока 
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/chessplayer.\+h\item 
+Model/chessplayer.\+cpp\end{DoxyCompactItemize}

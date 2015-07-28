@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Исходный файл Model/options.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_312950da3f243a51cc00f4a947545131.html">Model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">options.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OPTIONS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define OPTIONS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//Библиотеки Qt</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classoptions.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classoptions.html">options</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classoptions.html#a41a256b4ba3b2d68a2d72b9245aa0c4d">options</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classoptions.html#aa08f770c27db29c587278cc0f8d3fb4d">   22</a></span>&#160;    <span class="keyword">inline</span> QString <a class="code" href="classoptions.html#aa08f770c27db29c587278cc0f8d3fb4d">getPlayer1</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> player1; }</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classoptions.html#a26d94b8c314df0b355ba4f8dbf65eab5">   27</a></span>&#160;    <span class="keyword">inline</span> QString <a class="code" href="classoptions.html#a26d94b8c314df0b355ba4f8dbf65eab5">getPlayer2</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> player2; }</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classoptions.html#aba7e46667f824c75d1acef548aeac3b4">   32</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#aba7e46667f824c75d1acef548aeac3b4">getBlackPiece</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> blackPiece; }</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classoptions.html#a87429d553ea8c806f0f8623434c156a0">   37</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#a87429d553ea8c806f0f8623434c156a0">getWhitePiece</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> whitePiece; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classoptions.html#afa462be4a4c645b4cb616ae2d175b31c">   42</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#afa462be4a4c645b4cb616ae2d175b31c">getBlackCell</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> blackCell; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classoptions.html#a4297375082b4a84b4e350119254b3c85">   47</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#a4297375082b4a84b4e350119254b3c85">getWhiteCell</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> whiteCell; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classoptions.html#ad26a5fdfdaf092c39ac3d167981bd2b5">   52</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#ad26a5fdfdaf092c39ac3d167981bd2b5">getBlackCellAttacked</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> blackCellAttacked; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classoptions.html#a95fa8aa7c9cbe5ee3a3e82f1bd0fdaee">   57</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#a95fa8aa7c9cbe5ee3a3e82f1bd0fdaee">getWhiteCellAttacked</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> whiteCellAttacked; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classoptions.html#a95a5a628fa05ad2a3ca88f8cb4ef1d79">   62</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#a95a5a628fa05ad2a3ca88f8cb4ef1d79">getBlackCellCanMove</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> blackCellCanMove; }</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classoptions.html#a609c97a120c62486181725426fe92a6b">   67</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#a609c97a120c62486181725426fe92a6b">getWhiteCellCanMove</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> whiteCellCanMove; }</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classoptions.html#a56556f6bdb79fd1ce44be18c7c10ed7f">   72</a></span>&#160;    <span class="keyword">inline</span> QColor  <a class="code" href="classoptions.html#a56556f6bdb79fd1ce44be18c7c10ed7f">getDeadCell</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> deadCell; }</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classoptions.html#ab42e8a4fcf2d37c996cbe2f3158a8a72">   77</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span>  <a class="code" href="classoptions.html#ab42e8a4fcf2d37c996cbe2f3158a8a72">getAiCof1</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> aiCof1; }</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classoptions.html#a401745de111fcebb990a4d365a237c72">   82</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span>  <a class="code" href="classoptions.html#a401745de111fcebb990a4d365a237c72">getAiCof2</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> aiCof2; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classoptions.html#a148197ca3741db3a4117295a3705cbbc">   87</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classoptions.html#a148197ca3741db3a4117295a3705cbbc">setAiCof1</a>(<span class="keywordtype">int</span> c) { aiCof1 = c; }</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classoptions.html#a0ba88f307d3877a0c9c5b4fd71a30dab">   92</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classoptions.html#a0ba88f307d3877a0c9c5b4fd71a30dab">setAiCof2</a>(<span class="keywordtype">int</span> c) { aiCof2 = c; }</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classoptions.html#a44dced3081a60094dfa7a010d7a77ab4">   97</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classoptions.html#a44dced3081a60094dfa7a010d7a77ab4">setPlayer1</a>(QString p) { player1 = p; }</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classoptions.html#a73da82a3067efd5a86bdc04f509570cb">  102</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classoptions.html#a73da82a3067efd5a86bdc04f509570cb">setPlayer2</a>(QString p) { player2 = p; }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// Игровые настройки</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"></span>    QString player1;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QString player2;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    QColor  blackPiece;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    QColor  whitePiece;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    QColor  blackCell;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    QColor  whiteCell;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    QColor  blackCellAttacked;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    QColor  whiteCellAttacked;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    QColor  blackCellCanMove;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    QColor  whiteCellCanMove;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    QColor  deadCell;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">int</span> aiCof1;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">int</span> aiCof2;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;};</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#endif // OPTIONS_H</span></div>
+<div class="ttc" id="classoptions_html_a401745de111fcebb990a4d365a237c72"><div class="ttname"><a href="classoptions.html#a401745de111fcebb990a4d365a237c72">options::getAiCof2</a></div><div class="ttdeci">int getAiCof2() const </div><div class="ttdoc">getAiCof1 - получить коофициент сложности черного игрока </div><div class="ttdef"><b>Definition:</b> options.h:82</div></div>
+<div class="ttc" id="classoptions_html_a73da82a3067efd5a86bdc04f509570cb"><div class="ttname"><a href="classoptions.html#a73da82a3067efd5a86bdc04f509570cb">options::setPlayer2</a></div><div class="ttdeci">void setPlayer2(QString p)</div><div class="ttdoc">setPlayer2 - задать тип черного игрока </div><div class="ttdef"><b>Definition:</b> options.h:102</div></div>
+<div class="ttc" id="classoptions_html_a87429d553ea8c806f0f8623434c156a0"><div class="ttname"><a href="classoptions.html#a87429d553ea8c806f0f8623434c156a0">options::getWhitePiece</a></div><div class="ttdeci">QColor getWhitePiece() const </div><div class="ttdoc">getWhitePiece - Получить цвет белых фигур </div><div class="ttdef"><b>Definition:</b> options.h:37</div></div>
+<div class="ttc" id="classoptions_html_a148197ca3741db3a4117295a3705cbbc"><div class="ttname"><a href="classoptions.html#a148197ca3741db3a4117295a3705cbbc">options::setAiCof1</a></div><div class="ttdeci">void setAiCof1(int c)</div><div class="ttdoc">setAiCof1 - задать коофициент сложности белого игрока </div><div class="ttdef"><b>Definition:</b> options.h:87</div></div>
+<div class="ttc" id="classoptions_html_ab42e8a4fcf2d37c996cbe2f3158a8a72"><div class="ttname"><a href="classoptions.html#ab42e8a4fcf2d37c996cbe2f3158a8a72">options::getAiCof1</a></div><div class="ttdeci">int getAiCof1() const </div><div class="ttdoc">getAiCof1 - получить коофициент сложности белого игрока </div><div class="ttdef"><b>Definition:</b> options.h:77</div></div>
+<div class="ttc" id="classoptions_html_a44dced3081a60094dfa7a010d7a77ab4"><div class="ttname"><a href="classoptions.html#a44dced3081a60094dfa7a010d7a77ab4">options::setPlayer1</a></div><div class="ttdeci">void setPlayer1(QString p)</div><div class="ttdoc">setPlayer1 - задать тип белого игрока </div><div class="ttdef"><b>Definition:</b> options.h:97</div></div>
+<div class="ttc" id="classoptions_html_a26d94b8c314df0b355ba4f8dbf65eab5"><div class="ttname"><a href="classoptions.html#a26d94b8c314df0b355ba4f8dbf65eab5">options::getPlayer2</a></div><div class="ttdeci">QString getPlayer2() const </div><div class="ttdoc">getPlayer2 - Получить имя класса белого игрока </div><div class="ttdef"><b>Definition:</b> options.h:27</div></div>
+<div class="ttc" id="classoptions_html_a41a256b4ba3b2d68a2d72b9245aa0c4d"><div class="ttname"><a href="classoptions.html#a41a256b4ba3b2d68a2d72b9245aa0c4d">options::options</a></div><div class="ttdeci">options()</div><div class="ttdoc">options - Конструктор по умолчанию (в результате получается игра с параметрами по умолчанию) ...</div><div class="ttdef"><b>Definition:</b> options.cpp:4</div></div>
+<div class="ttc" id="classoptions_html_a0ba88f307d3877a0c9c5b4fd71a30dab"><div class="ttname"><a href="classoptions.html#a0ba88f307d3877a0c9c5b4fd71a30dab">options::setAiCof2</a></div><div class="ttdeci">void setAiCof2(int c)</div><div class="ttdoc">setAiCof2 - задать коофициент сложности белого игрока </div><div class="ttdef"><b>Definition:</b> options.h:92</div></div>
+<div class="ttc" id="classoptions_html_aba7e46667f824c75d1acef548aeac3b4"><div class="ttname"><a href="classoptions.html#aba7e46667f824c75d1acef548aeac3b4">options::getBlackPiece</a></div><div class="ttdeci">QColor getBlackPiece() const </div><div class="ttdoc">getBlackPiece - Получить цвет черных фигур </div><div class="ttdef"><b>Definition:</b> options.h:32</div></div>
+<div class="ttc" id="classoptions_html_a4297375082b4a84b4e350119254b3c85"><div class="ttname"><a href="classoptions.html#a4297375082b4a84b4e350119254b3c85">options::getWhiteCell</a></div><div class="ttdeci">QColor getWhiteCell() const </div><div class="ttdoc">getWhiteCell - Получить цвет белых клеток </div><div class="ttdef"><b>Definition:</b> options.h:47</div></div>
+<div class="ttc" id="classoptions_html_ad26a5fdfdaf092c39ac3d167981bd2b5"><div class="ttname"><a href="classoptions.html#ad26a5fdfdaf092c39ac3d167981bd2b5">options::getBlackCellAttacked</a></div><div class="ttdeci">QColor getBlackCellAttacked() const </div><div class="ttdoc">getBlackCellAttacked - Получить цвет черных клеток во время атаки </div><div class="ttdef"><b>Definition:</b> options.h:52</div></div>
+<div class="ttc" id="classoptions_html_a95a5a628fa05ad2a3ca88f8cb4ef1d79"><div class="ttname"><a href="classoptions.html#a95a5a628fa05ad2a3ca88f8cb4ef1d79">options::getBlackCellCanMove</a></div><div class="ttdeci">QColor getBlackCellCanMove() const </div><div class="ttdoc">getBlackCellCanMove - Получить цвет черных клеток на которые можно сделать ход </div><div class="ttdef"><b>Definition:</b> options.h:62</div></div>
+<div class="ttc" id="classoptions_html_a95fa8aa7c9cbe5ee3a3e82f1bd0fdaee"><div class="ttname"><a href="classoptions.html#a95fa8aa7c9cbe5ee3a3e82f1bd0fdaee">options::getWhiteCellAttacked</a></div><div class="ttdeci">QColor getWhiteCellAttacked() const </div><div class="ttdoc">getWhiteCellAttacked - Получить цвет белых клеток во время атаки </div><div class="ttdef"><b>Definition:</b> options.h:57</div></div>
+<div class="ttc" id="classoptions_html"><div class="ttname"><a href="classoptions.html">options</a></div><div class="ttdoc">The options class - класс конфигураций (содержит все конфигурации программы) </div><div class="ttdef"><b>Definition:</b> options.h:11</div></div>
+<div class="ttc" id="classoptions_html_aa08f770c27db29c587278cc0f8d3fb4d"><div class="ttname"><a href="classoptions.html#aa08f770c27db29c587278cc0f8d3fb4d">options::getPlayer1</a></div><div class="ttdeci">QString getPlayer1() const </div><div class="ttdoc">getPlayer1 - Получить имя класса белого игрока </div><div class="ttdef"><b>Definition:</b> options.h:22</div></div>
+<div class="ttc" id="classoptions_html_afa462be4a4c645b4cb616ae2d175b31c"><div class="ttname"><a href="classoptions.html#afa462be4a4c645b4cb616ae2d175b31c">options::getBlackCell</a></div><div class="ttdeci">QColor getBlackCell() const </div><div class="ttdoc">getBlackCell - Получить цвет черных клеток </div><div class="ttdef"><b>Definition:</b> options.h:42</div></div>
+<div class="ttc" id="classoptions_html_a609c97a120c62486181725426fe92a6b"><div class="ttname"><a href="classoptions.html#a609c97a120c62486181725426fe92a6b">options::getWhiteCellCanMove</a></div><div class="ttdeci">QColor getWhiteCellCanMove() const </div><div class="ttdoc">getWhiteCellCanMove - Получить цвет белых клеток на которые можно сделать ход </div><div class="ttdef"><b>Definition:</b> options.h:67</div></div>
+<div class="ttc" id="classoptions_html_a56556f6bdb79fd1ce44be18c7c10ed7f"><div class="ttname"><a href="classoptions.html#a56556f6bdb79fd1ce44be18c7c10ed7f">options::getDeadCell</a></div><div class="ttdeci">QColor getDeadCell() const </div><div class="ttdoc">getBlackPiece - Получить цвет клеток мертвых фигур </div><div class="ttdef"><b>Definition:</b> options.h:72</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

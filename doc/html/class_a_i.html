@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Класс AI</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="#pro-static-attribs">Статические защищенные данные</a> &#124;
+<a href="class_a_i-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс AI</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="class_a_i.html" title="The AI class - описывает игрока искуственного интелекта ">AI</a> class - описывает игрока искуственного интелекта  
+ <a href="class_a_i.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="chessplayer_8h_source.html">chessplayer.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:AI:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_a_i.png" usemap="#AI_map" alt=""/>
+  <map id="AI_map" name="AI_map">
+<area href="classchess_player.html" title="The chessPlayer class - абстрактный класс игрока " alt="chessPlayer" shape="rect" coords="0,0,82,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a6cda26d3bf7238b1a7ea3725bf4aabb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6cda26d3bf7238b1a7ea3725bf4aabb7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>newGame</b> ()</td></tr>
+<tr class="separator:a6cda26d3bf7238b1a7ea3725bf4aabb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522cd4b638779e79a22bdca7c720117e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a522cd4b638779e79a22bdca7c720117e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>startGame</b> ()</td></tr>
+<tr class="separator:a522cd4b638779e79a22bdca7c720117e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8be74c446a6c45782b751603eacfc9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8be74c446a6c45782b751603eacfc9c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>loadGame</b> (const <a class="el" href="classchess_game_state.html">chessGameState</a> &amp;cgs)</td></tr>
+<tr class="separator:aa8be74c446a6c45782b751603eacfc9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e46248e15fae19e4e12905f2b57f29"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86e46248e15fae19e4e12905f2b57f29"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>opponentMove</b> (const <a class="el" href="classboard_move.html">boardMove</a> &amp;move, const <a class="el" href="classchess_game_state.html">chessGameState</a> &amp;cgs)</td></tr>
+<tr class="separator:a86e46248e15fae19e4e12905f2b57f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3438ffaf88c009c07fee1839fabd05"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f3438ffaf88c009c07fee1839fabd05"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>think</b> (const <a class="el" href="classchess_game_state.html">chessGameState</a> &amp;cgs)</td></tr>
+<tr class="separator:a2f3438ffaf88c009c07fee1839fabd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e39220413e38cc5ab65c127422cd5b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e39220413e38cc5ab65c127422cd5b1"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>needMove</b> ()</td></tr>
+<tr class="separator:a4e39220413e38cc5ab65c127422cd5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9d1d6efcece382034e191ed9a6ed78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b9d1d6efcece382034e191ed9a6ed78"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>undoMove</b> ()</td></tr>
+<tr class="separator:a7b9d1d6efcece382034e191ed9a6ed78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77351f99c6ad80f9d675b9affec7f44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad77351f99c6ad80f9d675b9affec7f44"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getPly</b> ()</td></tr>
+<tr class="separator:ad77351f99c6ad80f9d675b9affec7f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d820a70a78d7ce290179c10a869c78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28d820a70a78d7ce290179c10a869c78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPly</b> (int ply)</td></tr>
+<tr class="separator:a28d820a70a78d7ce290179c10a869c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a1c6741642292f898fdf8d7ce6c13683f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c6741642292f898fdf8d7ce6c13683f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>evaluateBoard</b> (const <a class="el" href="classboard.html">board</a> &amp;b, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c)</td></tr>
+<tr class="separator:a1c6741642292f898fdf8d7ce6c13683f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66d3b4e9d52d3025d3e043cb90dfd3e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad66d3b4e9d52d3025d3e043cb90dfd3e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>search</b> (<a class="el" href="classboard.html">board</a> b, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c, int depth, int alpha, int beta, <a class="el" href="classboard_move.html">boardMove</a> &amp;bm)</td></tr>
+<tr class="separator:ad66d3b4e9d52d3025d3e043cb90dfd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a748a22bb7df0c157ac1db36d1357a749"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a748a22bb7df0c157ac1db36d1357a749"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>pawnBonus</b> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, const <a class="el" href="classboard.html">board</a> &amp;b, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> turn, bool endgame)</td></tr>
+<tr class="separator:a748a22bb7df0c157ac1db36d1357a749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27427ae20aa7eb46effbd28fc29917e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27427ae20aa7eb46effbd28fc29917e7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>knightBonus</b> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, const <a class="el" href="classboard.html">board</a> &amp;b, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> turn, bool endgame)</td></tr>
+<tr class="separator:a27427ae20aa7eb46effbd28fc29917e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5a4f19af6bc2d2827db4c7df4b0927"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c5a4f19af6bc2d2827db4c7df4b0927"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>bishopBonus</b> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, const <a class="el" href="classboard.html">board</a> &amp;b, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> turn, bool endgame)</td></tr>
+<tr class="separator:a1c5a4f19af6bc2d2827db4c7df4b0927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af25d9b4511e7c435c9593ca2c1f3335d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af25d9b4511e7c435c9593ca2c1f3335d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>rookBonus</b> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, const <a class="el" href="classboard.html">board</a> &amp;b, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> turn, bool endgame)</td></tr>
+<tr class="separator:af25d9b4511e7c435c9593ca2c1f3335d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada53e6fb423614dc425d33ae7f2f0dcf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada53e6fb423614dc425d33ae7f2f0dcf"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>queenBonus</b> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, const <a class="el" href="classboard.html">board</a> &amp;b, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> turn, bool endgame)</td></tr>
+<tr class="separator:ada53e6fb423614dc425d33ae7f2f0dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6c91d60f9d36a1edafadfb84b67baf5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6c91d60f9d36a1edafadfb84b67baf5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>kingBonus</b> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, const <a class="el" href="classboard.html">board</a> &amp;b, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> turn, bool endgame)</td></tr>
+<tr class="separator:aa6c91d60f9d36a1edafadfb84b67baf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab019ac70f41b6fc7a477286d3d65b9da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab019ac70f41b6fc7a477286d3d65b9da"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numAttackedSquares</b> (const mask &amp;pieceAttacks)</td></tr>
+<tr class="separator:ab019ac70f41b6fc7a477286d3d65b9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a320ff94f5b15c0ed83ba704326ca23d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a320ff94f5b15c0ed83ba704326ca23d3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isIsolatedPawn</b> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, const <a class="el" href="classboard.html">board</a> &amp;b)</td></tr>
+<tr class="separator:a320ff94f5b15c0ed83ba704326ca23d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd477b147adb58a9878b3c1499bf6ea1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd477b147adb58a9878b3c1499bf6ea1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDoubledPawn</b> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, const <a class="el" href="classboard.html">board</a> &amp;b)</td></tr>
+<tr class="separator:acd477b147adb58a9878b3c1499bf6ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a38e07f36c7574a06bf5e1001283fe404"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38e07f36c7574a06bf5e1001283fe404"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>lPly</b></td></tr>
+<tr class="separator:a38e07f36c7574a06bf5e1001283fe404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+Статические защищенные данные</h2></td></tr>
+<tr class="memitem:ab749c006dc52480c5a9a00d17318e533"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><b>m_bishop</b> [64]</td></tr>
+<tr class="separator:ab749c006dc52480c5a9a00d17318e533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe96956dc1a50f47c828c04072cecfe"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><b>m_knight</b> [64]</td></tr>
+<tr class="separator:adbe96956dc1a50f47c828c04072cecfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc5127e7859211a872a6df3fdbe971d0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><b>m_wpawn</b> [64]</td></tr>
+<tr class="separator:afc5127e7859211a872a6df3fdbe971d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed628e02e8d5bdc970bfb01acd6162f2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><b>m_bpawn</b> [64]</td></tr>
+<tr class="separator:aed628e02e8d5bdc970bfb01acd6162f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac30650d294d82469e1c869e76ee7986f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><b>m_wking</b> [64]</td></tr>
+<tr class="separator:ac30650d294d82469e1c869e76ee7986f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816338121fb591918d66bdefb4cda805"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><b>m_bking</b> [64]</td></tr>
+<tr class="separator:a816338121fb591918d66bdefb4cda805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa578831d72d1539297b700dd5c6b37d6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><b>m_end_king</b> [64]</td></tr>
+<tr class="separator:aa578831d72d1539297b700dd5c6b37d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>The <a class="el" href="class_a_i.html" title="The AI class - описывает игрока искуственного интелекта ">AI</a> class - описывает игрока искуственного интелекта </p>
+</div><h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="ab749c006dc52480c5a9a00d17318e533"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AI::m_bishop</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    -5,-5,-5,-5,-5,-5,-5,-5,</div>
+<div class="line">    -5,10,5,10,10,5,10,-5,</div>
+<div class="line">    -5,5,3,12,12,3,5,-5,</div>
+<div class="line">    -5,3,12,3,3,12,3,-5,</div>
+<div class="line">    -5,3,12,3,3,12,3,-5,</div>
+<div class="line">    -5,5,3,12,12,3,5,-5,</div>
+<div class="line">    -5,10,5,10,10,5,10,-5,</div>
+<div class="line">    -5,-5,-5,-5,-5,-5,-5,-5 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a816338121fb591918d66bdefb4cda805"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AI::m_bking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    -55,-55,-89,-89,-89,-89,-55,-55,</div>
+<div class="line">    -34,-34,-55,-55,-55,-55,-34,-34,</div>
+<div class="line">    -21,-21,-34,-34,-34,-34,-21,-21,</div>
+<div class="line">    -13,-13,-21,-21,-21,-21,-13,-13,</div>
+<div class="line">    -8,-8,-13,-13,-13,-13,-8,-8,</div>
+<div class="line">    -5,-5,-8,-8,-8,-8,-5,-5,</div>
+<div class="line">    -3,-3,-5,-5,-5,-5,-3,-3,</div>
+<div class="line">    2,10,4,0,0,7,10,2}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aed628e02e8d5bdc970bfb01acd6162f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AI::m_bpawn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    0,0,0,0,0,0,0,0,</div>
+<div class="line">    5,10,15,20,20,15,10,5,</div>
+<div class="line">    4,8,12,16,16,12,8,4,</div>
+<div class="line">    3,6,9,12,12,9,6,3,</div>
+<div class="line">    2,4,6,8,8,6,4,2,</div>
+<div class="line">    1,2,3,4,4,3,2,1,</div>
+<div class="line">    0,0,0,-5,-5,0,0,0,</div>
+<div class="line">    0,0,0,0,0,0,0,0 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa578831d72d1539297b700dd5c6b37d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AI::m_end_king</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    -5,-3,-1,0,0,-1,-3,-5,</div>
+<div class="line">    -3,5,5,5,5,5,5,-3,</div>
+<div class="line">    -1,5,10,10,10,10,5,-1,</div>
+<div class="line">    0,5,10,15,15,10,5,0,</div>
+<div class="line">    0,5,10,15,15,10,5,0,</div>
+<div class="line">    -1,5,10,10,10,10,5,-1,</div>
+<div class="line">    -3,5,5,5,5,5,5,-3,</div>
+<div class="line">    -5,-3,-1,0,0,-1,-3,-5}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="adbe96956dc1a50f47c828c04072cecfe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AI::m_knight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    -10,-5,-5,-5,-5,-5,-5,-10,</div>
+<div class="line">    -5,0,0,3,3,0,0,-5,</div>
+<div class="line">    -5,0,5,5,5,5,0,-5,</div>
+<div class="line">    -5,0,5,10,10,5,0,-5,</div>
+<div class="line">    -5,0,5,10,10,5,0,-5,</div>
+<div class="line">    -5,0,5,5,5,5,0,-5,</div>
+<div class="line">    -5,0,0,3,3,0,0,-5,</div>
+<div class="line">    -10,-5,-5,-5,-5,-5,-5,-10 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac30650d294d82469e1c869e76ee7986f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AI::m_wking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    2,10,4,0,0,7,10,2,</div>
+<div class="line">    -3,-3,-5,-5,-5,-5,-3,-3,</div>
+<div class="line">    -5,-5,-8,-8,-8,-8,-5,-5,</div>
+<div class="line">    -8,-8,-13,-13,-13,-13,-8,-8,</div>
+<div class="line">    -13,-13,-21,-21,-21,-21,-13,-13,</div>
+<div class="line">    -21,-21,-34,-34,-34,-34,-21,-21,</div>
+<div class="line">    -34,-34,-55,-55,-55,-55,-34,-34,</div>
+<div class="line">    -55,-55,-89,-89,-89,-89,-55,-55}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afc5127e7859211a872a6df3fdbe971d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AI::m_wpawn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    0,0,0,0,0,0,0,0,</div>
+<div class="line">    0,0,0,-5,-5,0,0,0,</div>
+<div class="line">    1,2,3,4,4,3,2,1,</div>
+<div class="line">    2,4,6,8,8,6,4,2,</div>
+<div class="line">    3,6,9,12,12,9,6,3,</div>
+<div class="line">    4,8,12,16,16,12,8,4,</div>
+<div class="line">    5,10,15,20,20,15,10,5,</div>
+<div class="line">    0,0,0,0,0,0,0,0 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>Model/<a class="el" href="chessplayer_8h_source.html">chessplayer.h</a></li>
+<li>Model/chessplayer.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:12. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

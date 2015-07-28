@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Исходный файл Model/board.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_312950da3f243a51cc00f4a947545131.html">Model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">board.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BOARD_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BOARD_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//Библиотеки QT</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//Самописные классы</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;bitboard.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;boardmove.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structserial_board.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structserial_board.html">serialBoard</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    mask pieces[6];</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    mask color[2];</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> allFlags;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">int</span> whiteEnpassant:8;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordtype">int</span> blackEnpassant:8;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordtype">int</span> whiteTurn:1;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordtype">int</span> wkCastling:1;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordtype">int</span> wqCastling:1;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordtype">int</span> bkCastling:1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">int</span> bqCastling:1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordtype">int</span>:11;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">bool</span> isEquivalent (<span class="keyword">const</span> <a class="code" href="structserial_board.html">serialBoard</a> &amp;a, <span class="keyword">const</span> <a class="code" href="structserial_board.html">serialBoard</a> &amp;b);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classboard.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboard.html">board</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classboard.html#a2a97f34e7c9ed8ace6a2508bb2c6e2a2">board</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    ~<a class="code" href="classboard.html">board</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classboard.html#aeb1b89f64f70999d79b8d2c1a26a9fa4">init</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboard.html#a02fbb0cbb90dd7ab753f52c17700efbe">setDefault</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboard.html#ae7c2a8d249f08c8c87d222e55cfd990c">setupPieces</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboard.html#a033c9329179afc730b3d725e54639c7c">setSpecialPieceFlags</a>(<span class="keyword">const</span> <a class="code" href="classboard_move.html">boardMove</a> &amp;bm);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboard.html#a50bdaf6705c56c528f6c5ef8c0e3586e">update</a>(<span class="keyword">const</span> <a class="code" href="classboard_move.html">boardMove</a> &amp;bm);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classpiece.html">piece</a> *<a class="code" href="classboard.html#a8e2be38a28f6b631815741b70671e197">getPiece</a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboard.html#a7f11955cde955b7799fabab9df7224ad">setPiece</a>(<a class="code" href="classpiece.html">piece</a> *p, <span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboard.html#a94bb90ebf9c98575a50d00fe4da3e1b3">addPiecet</a>(<a class="code" href="classpiece.html">piece</a> *p, <span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classboard.html#aa5a3a45d66a0b985446b10c56cd57fdf">removePiece</a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classboard.html#afcf992b9c9ec619099f41513c86cb4a9">isPathClear</a>(<span class="keyword">const</span> <a class="code" href="classboard_move.html">boardMove</a> &amp;bm) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classboard.html#ab7b060ee3893cb79fc4d8376632f0f20">isOccupied</a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classboard.html#a49c3688bb5c36807624e3c5f1669f203">  111</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classboard.html#a49c3688bb5c36807624e3c5f1669f203">isEnPassantSet</a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp; bp)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> (0 != (<a class="code" href="classbit_board.html#a2476b527524fbf53a6c55554e1225b76">bitBoard::getMask</a>(bp) &amp; lEnpassling)); }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classboard.html#ac879df88ca819e95d1a02d676efd59c0">isCheck</a>(<a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classboard.html#a69189b33f0ee2c1b4176583382116aae">isResultCheck</a>(<span class="keyword">const</span> <a class="code" href="classboard_move.html">boardMove</a> &amp;bm) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classboard.html#af9cea4c28839fd5f9b6d5aaec28ba14d">isMate</a>(<a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classboard.html#a50063bac8842217a3acb6d6d7732c6b0">isStalemate</a>(<a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    mask <a class="code" href="classboard.html#ab83d3af8ff3ac068ae086f148fdbcf07">isAttacked</a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a>&amp; bp, <a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    QList&lt;boardMove&gt; <a class="code" href="classboard.html#a8282e47422a657a2683ede9607310c89">getLegalMoves</a> (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp, <span class="keywordtype">bool</span> cheks = <span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    QList&lt;boardMove&gt; <a class="code" href="classboard.html#a8282e47422a657a2683ede9607310c89">getLegalMoves</a> (<a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c, <span class="keywordtype">bool</span> cheks = <span class="keyword">true</span>, <span class="keywordtype">bool</span> fast = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="structserial_board.html">serialBoard</a> <a class="code" href="classboard.html#a9e098dc31fc1f9fc48ac23fafd4834ea">serialize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard.html#ad4b7af35cfca5af432a87a8e28a65d63">getKing</a>(<a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classboard.html#a86dbad33c8e8c28015db47d78a0c2afc">haveCastling</a>(<a class="code" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c, <span class="keywordtype">bool</span> isLeft) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="classboard.html#a02dc94d46def16861d0d8049e074fc8f">  180</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classboard.html#a02dc94d46def16861d0d8049e074fc8f">getYState</a> (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span> ((lColors[piece::WHITE] | lColors[piece::BLACK]) &gt;&gt; bp.<a class="code" href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">y</a>()*8) &amp; 0xff;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classboard.html#a23f6cf511a4ddf7f163949bfb2442f68">getXState</a> (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classboard.html#a5d1437aa494539ee661f00f248cb0a2a">getLeftTopDiagState</a> (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classboard.html#aeb9a53a91c2a34b15bdec9de604e713e">getRightTopDiagState</a> (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// Возможные маски атак.</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="classboard.html#a7335d4d9f22c5d32777fd4b419ed173d">  207</a></span>&#160;<span class="comment"></span>    <span class="keyword">static</span> mask <a class="code" href="classboard.html#a7335d4d9f22c5d32777fd4b419ed173d">pawnAttacks</a>[2][64];</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classboard.html#ac343023f9b20b07922cf5780be2bfe8b">  211</a></span>&#160;    <span class="keyword">static</span> mask <a class="code" href="classboard.html#ac343023f9b20b07922cf5780be2bfe8b">knightAttacks</a>[64];</div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="classboard.html#aeebd1ae59c78f614db0337e4edb5b5d8">  215</a></span>&#160;    <span class="keyword">static</span> mask <a class="code" href="classboard.html#aeebd1ae59c78f614db0337e4edb5b5d8">kingAttacks</a>[64];</div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="classboard.html#acaec3ff166bdb2ae166ac877394908e9">  219</a></span>&#160;    <span class="keyword">static</span> mask <a class="code" href="classboard.html#acaec3ff166bdb2ae166ac877394908e9">xAttacks</a>[64][256];</div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="classboard.html#a804587c2a72537dda9106895acbc6cf8">  223</a></span>&#160;    <span class="keyword">static</span> mask <a class="code" href="classboard.html#a804587c2a72537dda9106895acbc6cf8">yAttacks</a>[64][256];</div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="classboard.html#a60f3b256b2baa81086ba437001bd53d4">  227</a></span>&#160;    <span class="keyword">static</span> mask <a class="code" href="classboard.html#a60f3b256b2baa81086ba437001bd53d4">diagAttacksLeftTop</a>[64][256];</div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="classboard.html#a939941b4d68ab75b4f1f3a87d4df5bf4">  231</a></span>&#160;    <span class="keyword">static</span> mask <a class="code" href="classboard.html#a939941b4d68ab75b4f1f3a87d4df5bf4">diagAttacksRightTop</a>[64][256];</div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="classboard.html#a55368a0178e6c92f6cbd6d7899812e5f">  235</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classboard.html#a55368a0178e6c92f6cbd6d7899812e5f">pow2</a>[8];</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_a_i.html">AI</a>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">static</span> <a class="code" href="classpiece.html">piece</a> *allPieces[2][6]; <span class="comment">//Указатель на фигуру каждого типа</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment"></span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isSetup;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">int</span> lTotalPiece[2];</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">int</span> lPieceCount[2][6];</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    mask lPieces[6];</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    mask lColors[2];        <span class="comment">//Маска доски по цветам фигур</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment"></span>    mask lCastlingFlags;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    mask lEnpassling;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="classboard_position.html">boardPosition</a> kingsPos[2]; <span class="comment">//Позиции королей</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    QList&lt;boardMove&gt; getPawnLegalMoves (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    QList&lt;boardMove&gt; getRookLegalMoves (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    QList&lt;boardMove&gt; getBishopLegalMoves (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    QList&lt;boardMove&gt; getKnightLegalMoves (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    QList&lt;boardMove&gt; getKingLegalMoves (<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;bp) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;};</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#endif // BOARD_H</span></div>
+<div class="ttc" id="classboard_html_ab7b060ee3893cb79fc4d8376632f0f20"><div class="ttname"><a href="classboard.html#ab7b060ee3893cb79fc4d8376632f0f20">board::isOccupied</a></div><div class="ttdeci">bool isOccupied(const boardPosition &amp;bp) const </div><div class="ttdoc">isOccupied - проверяет является ли клетка занятой </div><div class="ttdef"><b>Definition:</b> board.cpp:323</div></div>
+<div class="ttc" id="classboard_html_a86dbad33c8e8c28015db47d78a0c2afc"><div class="ttname"><a href="classboard.html#a86dbad33c8e8c28015db47d78a0c2afc">board::haveCastling</a></div><div class="ttdeci">bool haveCastling(piece::color c, bool isLeft) const </div><div class="ttdoc">haveCastling - проверяет возможность левой или правой роккировки для фигур заданного цвета ...</div><div class="ttdef"><b>Definition:</b> board.cpp:467</div></div>
+<div class="ttc" id="classboard_html_a8e2be38a28f6b631815741b70671e197"><div class="ttname"><a href="classboard.html#a8e2be38a28f6b631815741b70671e197">board::getPiece</a></div><div class="ttdeci">piece * getPiece(const boardPosition &amp;bp) const </div><div class="ttdoc">getPiece - возвращает фигуру из заданной позиции </div><div class="ttdef"><b>Definition:</b> board.cpp:249</div></div>
+<div class="ttc" id="classboard_html_af9cea4c28839fd5f9b6d5aaec28ba14d"><div class="ttname"><a href="classboard.html#af9cea4c28839fd5f9b6d5aaec28ba14d">board::isMate</a></div><div class="ttdeci">bool isMate(piece::color c) const </div><div class="ttdoc">isMate - проверяет является ли ситуация на доске матом для фигуры звдвнного цвета ...</div><div class="ttdef"><b>Definition:</b> board.cpp:340</div></div>
+<div class="ttc" id="classboard_html_a5d1437aa494539ee661f00f248cb0a2a"><div class="ttname"><a href="classboard.html#a5d1437aa494539ee661f00f248cb0a2a">board::getLeftTopDiagState</a></div><div class="ttdeci">int getLeftTopDiagState(const boardPosition &amp;bp) const </div><div class="ttdoc">getLeftTopDiagState - вернуть статус левой верхней наклонной </div><div class="ttdef"><b>Definition:</b> board.cpp:492</div></div>
+<div class="ttc" id="classboard_html_ac879df88ca819e95d1a02d676efd59c0"><div class="ttname"><a href="classboard.html#ac879df88ca819e95d1a02d676efd59c0">board::isCheck</a></div><div class="ttdeci">bool isCheck(piece::color c) const </div><div class="ttdoc">isCheck - проверяет является ли ситуация шаховой для данного цвета </div><div class="ttdef"><b>Definition:</b> board.cpp:328</div></div>
+<div class="ttc" id="classpiece_html_a0e121e5952345fd0e7014a8e6a1fbbda"><div class="ttname"><a href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a></div><div class="ttdeci">color</div><div class="ttdoc">The сolor enum - цвета фигур </div><div class="ttdef"><b>Definition:</b> piece.h:25</div></div>
+<div class="ttc" id="classboard_html_a7335d4d9f22c5d32777fd4b419ed173d"><div class="ttname"><a href="classboard.html#a7335d4d9f22c5d32777fd4b419ed173d">board::pawnAttacks</a></div><div class="ttdeci">static mask pawnAttacks[2][64]</div><div class="ttdoc">pawnAttacks - Атаки пешек по цветам </div><div class="ttdef"><b>Definition:</b> board.h:207</div></div>
+<div class="ttc" id="classpiece_html"><div class="ttname"><a href="classpiece.html">piece</a></div><div class="ttdoc">The piece class - класс шахматной фигуры </div><div class="ttdef"><b>Definition:</b> piece.h:15</div></div>
+<div class="ttc" id="structserial_board_html"><div class="ttname"><a href="structserial_board.html">serialBoard</a></div><div class="ttdoc">The serialBoard struct - упращенная структура представления доски </div><div class="ttdef"><b>Definition:</b> board.h:15</div></div>
+<div class="ttc" id="classboard_html_a7f11955cde955b7799fabab9df7224ad"><div class="ttname"><a href="classboard.html#a7f11955cde955b7799fabab9df7224ad">board::setPiece</a></div><div class="ttdeci">void setPiece(piece *p, const boardPosition &amp;bp)</div><div class="ttdoc">setPiece </div><div class="ttdef"><b>Definition:</b> board.cpp:265</div></div>
+<div class="ttc" id="class_a_i_html"><div class="ttname"><a href="class_a_i.html">AI</a></div><div class="ttdoc">The AI class - описывает игрока искуственного интелекта </div><div class="ttdef"><b>Definition:</b> chessplayer.h:102</div></div>
+<div class="ttc" id="classboard_html_a60f3b256b2baa81086ba437001bd53d4"><div class="ttname"><a href="classboard.html#a60f3b256b2baa81086ba437001bd53d4">board::diagAttacksLeftTop</a></div><div class="ttdeci">static mask diagAttacksLeftTop[64][256]</div><div class="ttdoc">diagAttacksLeftTop - Атаки лежащии на левой верхней диаганали </div><div class="ttdef"><b>Definition:</b> board.h:227</div></div>
+<div class="ttc" id="classboard_html_ab83d3af8ff3ac068ae086f148fdbcf07"><div class="ttname"><a href="classboard.html#ab83d3af8ff3ac068ae086f148fdbcf07">board::isAttacked</a></div><div class="ttdeci">mask isAttacked(const boardPosition &amp;bp, piece::color c) const </div><div class="ttdoc">isAttacked - проверяет находится ли фигура под боем </div><div class="ttdef"><b>Definition:</b> board.cpp:350</div></div>
+<div class="ttc" id="classboard_html_ad4b7af35cfca5af432a87a8e28a65d63"><div class="ttname"><a href="classboard.html#ad4b7af35cfca5af432a87a8e28a65d63">board::getKing</a></div><div class="ttdeci">boardPosition getKing(piece::color c) const </div><div class="ttdoc">getKing - Вернуть позицию короля заданного цвета </div><div class="ttdef"><b>Definition:</b> board.cpp:462</div></div>
+<div class="ttc" id="classboard_html_aa5a3a45d66a0b985446b10c56cd57fdf"><div class="ttname"><a href="classboard.html#aa5a3a45d66a0b985446b10c56cd57fdf">board::removePiece</a></div><div class="ttdeci">void removePiece(const boardPosition &amp;bp)</div><div class="ttdoc">removePiece - удаляет фигуру с доски </div><div class="ttdef"><b>Definition:</b> board.cpp:291</div></div>
+<div class="ttc" id="classboard_html_a55368a0178e6c92f6cbd6d7899812e5f"><div class="ttname"><a href="classboard.html#a55368a0178e6c92f6cbd6d7899812e5f">board::pow2</a></div><div class="ttdeci">static int pow2[8]</div><div class="ttdoc">pow2 - Необходима для оценки приоритетов блоком ии </div><div class="ttdef"><b>Definition:</b> board.h:235</div></div>
+<div class="ttc" id="classboard_html_a69189b33f0ee2c1b4176583382116aae"><div class="ttname"><a href="classboard.html#a69189b33f0ee2c1b4176583382116aae">board::isResultCheck</a></div><div class="ttdeci">bool isResultCheck(const boardMove &amp;bm) const </div><div class="ttdoc">isResultCheck - проверяет является ли ситуация после хода шаховой </div><div class="ttdef"><b>Definition:</b> board.cpp:333</div></div>
+<div class="ttc" id="classboard_html_a9e098dc31fc1f9fc48ac23fafd4834ea"><div class="ttname"><a href="classboard.html#a9e098dc31fc1f9fc48ac23fafd4834ea">board::serialize</a></div><div class="ttdeci">serialBoard serialize() const </div><div class="ttdoc">serialize - получение описания доски в виде структуры </div><div class="ttdef"><b>Definition:</b> board.cpp:444</div></div>
+<div class="ttc" id="classboard_html_acaec3ff166bdb2ae166ac877394908e9"><div class="ttname"><a href="classboard.html#acaec3ff166bdb2ae166ac877394908e9">board::xAttacks</a></div><div class="ttdeci">static mask xAttacks[64][256]</div><div class="ttdoc">xAttacks - атаки по горизонтали </div><div class="ttdef"><b>Definition:</b> board.h:219</div></div>
+<div class="ttc" id="classboard_html_a02fbb0cbb90dd7ab753f52c17700efbe"><div class="ttname"><a href="classboard.html#a02fbb0cbb90dd7ab753f52c17700efbe">board::setDefault</a></div><div class="ttdeci">void setDefault()</div><div class="ttdoc">setDefault - задает внутренние значения в исходное состояние </div><div class="ttdef"><b>Definition:</b> board.cpp:231</div></div>
+<div class="ttc" id="classboard_position_html"><div class="ttname"><a href="classboard_position.html">boardPosition</a></div><div class="ttdoc">The boardPosition class - класс которы описывает позицию на доске </div><div class="ttdef"><b>Definition:</b> boardposition.h:7</div></div>
+<div class="ttc" id="classboard_html_a804587c2a72537dda9106895acbc6cf8"><div class="ttname"><a href="classboard.html#a804587c2a72537dda9106895acbc6cf8">board::yAttacks</a></div><div class="ttdeci">static mask yAttacks[64][256]</div><div class="ttdoc">yAttacks - атаки по вертикали </div><div class="ttdef"><b>Definition:</b> board.h:223</div></div>
+<div class="ttc" id="classboard_html_a94bb90ebf9c98575a50d00fe4da3e1b3"><div class="ttname"><a href="classboard.html#a94bb90ebf9c98575a50d00fe4da3e1b3">board::addPiecet</a></div><div class="ttdeci">void addPiecet(piece *p, const boardPosition &amp;bp)</div><div class="ttdoc">addPiecet - добавляет новую фигуру на доску </div><div class="ttdef"><b>Definition:</b> board.cpp:284</div></div>
+<div class="ttc" id="classboard_move_html"><div class="ttname"><a href="classboard_move.html">boardMove</a></div><div class="ttdoc">The boardMove class - класс игрового хода </div><div class="ttdef"><b>Definition:</b> boardmove.h:11</div></div>
+<div class="ttc" id="classboard_html_a50063bac8842217a3acb6d6d7732c6b0"><div class="ttname"><a href="classboard.html#a50063bac8842217a3acb6d6d7732c6b0">board::isStalemate</a></div><div class="ttdeci">bool isStalemate(piece::color c) const </div><div class="ttdoc">isStalemate - проверяет является ли ситуация на доске патом для фигуры звдвнного цвета ...</div><div class="ttdef"><b>Definition:</b> board.cpp:345</div></div>
+<div class="ttc" id="classbit_board_html_a2476b527524fbf53a6c55554e1225b76"><div class="ttname"><a href="classbit_board.html#a2476b527524fbf53a6c55554e1225b76">bitBoard::getMask</a></div><div class="ttdeci">static unsigned long long getMask(const boardPosition &amp;bp)</div><div class="ttdoc">getMask - возвращает маску заданного бита </div><div class="ttdef"><b>Definition:</b> bitboard.cpp:45</div></div>
+<div class="ttc" id="classboard_html_aeb1b89f64f70999d79b8d2c1a26a9fa4"><div class="ttname"><a href="classboard.html#aeb1b89f64f70999d79b8d2c1a26a9fa4">board::init</a></div><div class="ttdeci">static void init()</div><div class="ttdoc">init - инициализация статических полей класса </div><div class="ttdef"><b>Definition:</b> board.cpp:27</div></div>
+<div class="ttc" id="classboard_html_aeb9a53a91c2a34b15bdec9de604e713e"><div class="ttname"><a href="classboard.html#aeb9a53a91c2a34b15bdec9de604e713e">board::getRightTopDiagState</a></div><div class="ttdeci">int getRightTopDiagState(const boardPosition &amp;bp) const </div><div class="ttdoc">getLeftTopDiagState - вернуть статус правой верхней наклонной </div><div class="ttdef"><b>Definition:</b> board.cpp:509</div></div>
+<div class="ttc" id="classboard_html_a033c9329179afc730b3d725e54639c7c"><div class="ttname"><a href="classboard.html#a033c9329179afc730b3d725e54639c7c">board::setSpecialPieceFlags</a></div><div class="ttdeci">void setSpecialPieceFlags(const boardMove &amp;bm)</div><div class="ttdoc">setSpecialPieceFlags - отмечает изменения на схемах рокировок и взятий на проходе ...</div><div class="ttdef"><b>Definition:</b> board.cpp:173</div></div>
+<div class="ttc" id="classboard_html_afcf992b9c9ec619099f41513c86cb4a9"><div class="ttname"><a href="classboard.html#afcf992b9c9ec619099f41513c86cb4a9">board::isPathClear</a></div><div class="ttdeci">bool isPathClear(const boardMove &amp;bm) const </div><div class="ttdoc">isPathClear - проверяет есть ли на пути другие фигуры </div><div class="ttdef"><b>Definition:</b> board.cpp:304</div></div>
+<div class="ttc" id="classboard_html_a8282e47422a657a2683ede9607310c89"><div class="ttname"><a href="classboard.html#a8282e47422a657a2683ede9607310c89">board::getLegalMoves</a></div><div class="ttdeci">QList&lt; boardMove &gt; getLegalMoves(const boardPosition &amp;bp, bool cheks=true) const </div><div class="ttdoc">getLegalMoves - возвращает все допустимые ходы для фигуры в этой клетке </div><div class="ttdef"><b>Definition:</b> board.cpp:383</div></div>
+<div class="ttc" id="classboard_position_html_a189ee18b8ce9691afc7cc4090e929837"><div class="ttname"><a href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">boardPosition::y</a></div><div class="ttdeci">int y() const </div><div class="ttdoc">y - вернуть Y </div><div class="ttdef"><b>Definition:</b> boardposition.h:43</div></div>
+<div class="ttc" id="classboard_html_a2a97f34e7c9ed8ace6a2508bb2c6e2a2"><div class="ttname"><a href="classboard.html#a2a97f34e7c9ed8ace6a2508bb2c6e2a2">board::board</a></div><div class="ttdeci">board()</div><div class="ttdoc">board - конструктор по умолчанию создает c фигурами в стартовой позиции </div><div class="ttdef"><b>Definition:</b> board.cpp:14</div></div>
+<div class="ttc" id="classboard_html_aeebd1ae59c78f614db0337e4edb5b5d8"><div class="ttname"><a href="classboard.html#aeebd1ae59c78f614db0337e4edb5b5d8">board::kingAttacks</a></div><div class="ttdeci">static mask kingAttacks[64]</div><div class="ttdoc">kingAttacks - атаки короля </div><div class="ttdef"><b>Definition:</b> board.h:215</div></div>
+<div class="ttc" id="classboard_html_a50bdaf6705c56c528f6c5ef8c0e3586e"><div class="ttname"><a href="classboard.html#a50bdaf6705c56c528f6c5ef8c0e3586e">board::update</a></div><div class="ttdeci">void update(const boardMove &amp;bm)</div><div class="ttdoc">update - совершает ход </div><div class="ttdef"><b>Definition:</b> board.cpp:190</div></div>
+<div class="ttc" id="classboard_html_a23f6cf511a4ddf7f163949bfb2442f68"><div class="ttname"><a href="classboard.html#a23f6cf511a4ddf7f163949bfb2442f68">board::getXState</a></div><div class="ttdeci">int getXState(const boardPosition &amp;bp) const </div><div class="ttdoc">getYState - вернуть статус вертикали </div><div class="ttdef"><b>Definition:</b> board.cpp:476</div></div>
+<div class="ttc" id="classboard_html_a02dc94d46def16861d0d8049e074fc8f"><div class="ttname"><a href="classboard.html#a02dc94d46def16861d0d8049e074fc8f">board::getYState</a></div><div class="ttdeci">int getYState(const boardPosition &amp;bp) const </div><div class="ttdoc">getYState - вернуть статус горизонтали </div><div class="ttdef"><b>Definition:</b> board.h:180</div></div>
+<div class="ttc" id="classboard_html_ae7c2a8d249f08c8c87d222e55cfd990c"><div class="ttname"><a href="classboard.html#ae7c2a8d249f08c8c87d222e55cfd990c">board::setupPieces</a></div><div class="ttdeci">void setupPieces()</div><div class="ttdoc">setupPieces - раставляет заново фигуры на доску </div><div class="ttdef"><b>Definition:</b> board.cpp:163</div></div>
+<div class="ttc" id="classboard_html_a49c3688bb5c36807624e3c5f1669f203"><div class="ttname"><a href="classboard.html#a49c3688bb5c36807624e3c5f1669f203">board::isEnPassantSet</a></div><div class="ttdeci">bool isEnPassantSet(const boardPosition &amp;bp) const </div><div class="ttdoc">isEnPassantSet - содержит ли взятия на проходе </div><div class="ttdef"><b>Definition:</b> board.h:111</div></div>
+<div class="ttc" id="classboard_html_a939941b4d68ab75b4f1f3a87d4df5bf4"><div class="ttname"><a href="classboard.html#a939941b4d68ab75b4f1f3a87d4df5bf4">board::diagAttacksRightTop</a></div><div class="ttdeci">static mask diagAttacksRightTop[64][256]</div><div class="ttdoc">diagAttacksRightTop - Атаки лежащии на правой верхней диаганали </div><div class="ttdef"><b>Definition:</b> board.h:231</div></div>
+<div class="ttc" id="classboard_html"><div class="ttname"><a href="classboard.html">board</a></div><div class="ttdef"><b>Definition:</b> board.h:40</div></div>
+<div class="ttc" id="classboard_html_ac343023f9b20b07922cf5780be2bfe8b"><div class="ttname"><a href="classboard.html#ac343023f9b20b07922cf5780be2bfe8b">board::knightAttacks</a></div><div class="ttdeci">static mask knightAttacks[64]</div><div class="ttdoc">knightAttacks - атаки королей </div><div class="ttdef"><b>Definition:</b> board.h:211</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

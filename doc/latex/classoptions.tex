@@ -1,0 +1,309 @@
+\hypertarget{classoptions}{}\section{Класс options}
+\label{classoptions}\index{options@{options}}
+
+
+The options class -\/ класс конфигураций (содержит все конфигурации программы)  
+
+
+
+
+{\ttfamily \#include $<$options.\+h$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classoptions_a41a256b4ba3b2d68a2d72b9245aa0c4d}{}\hyperlink{classoptions_a41a256b4ba3b2d68a2d72b9245aa0c4d}{options} ()\label{classoptions_a41a256b4ba3b2d68a2d72b9245aa0c4d}
+
+\begin{DoxyCompactList}\small\item\em options -\/ Конструктор по умолчанию (в результате получается игра с параметрами по умолчанию) \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classoptions_aa08f770c27db29c587278cc0f8d3fb4d}{get\+Player1} () const 
+\begin{DoxyCompactList}\small\item\em get\+Player1 -\/ Получить имя класса белого игрока \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classoptions_a26d94b8c314df0b355ba4f8dbf65eab5}{get\+Player2} () const 
+\begin{DoxyCompactList}\small\item\em get\+Player2 -\/ Получить имя класса белого игрока \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_aba7e46667f824c75d1acef548aeac3b4}{get\+Black\+Piece} () const 
+\begin{DoxyCompactList}\small\item\em get\+Black\+Piece -\/ Получить цвет черных фигур \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_a87429d553ea8c806f0f8623434c156a0}{get\+White\+Piece} () const 
+\begin{DoxyCompactList}\small\item\em get\+White\+Piece -\/ Получить цвет белых фигур \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_afa462be4a4c645b4cb616ae2d175b31c}{get\+Black\+Cell} () const 
+\begin{DoxyCompactList}\small\item\em get\+Black\+Cell -\/ Получить цвет черных клеток \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_a4297375082b4a84b4e350119254b3c85}{get\+White\+Cell} () const 
+\begin{DoxyCompactList}\small\item\em get\+White\+Cell -\/ Получить цвет белых клеток \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_ad26a5fdfdaf092c39ac3d167981bd2b5}{get\+Black\+Cell\+Attacked} () const 
+\begin{DoxyCompactList}\small\item\em get\+Black\+Cell\+Attacked -\/ Получить цвет черных клеток во время атаки \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_a95fa8aa7c9cbe5ee3a3e82f1bd0fdaee}{get\+White\+Cell\+Attacked} () const 
+\begin{DoxyCompactList}\small\item\em get\+White\+Cell\+Attacked -\/ Получить цвет белых клеток во время атаки \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_a95a5a628fa05ad2a3ca88f8cb4ef1d79}{get\+Black\+Cell\+Can\+Move} () const 
+\begin{DoxyCompactList}\small\item\em get\+Black\+Cell\+Can\+Move -\/ Получить цвет черных клеток на которые можно сделать ход \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_a609c97a120c62486181725426fe92a6b}{get\+White\+Cell\+Can\+Move} () const 
+\begin{DoxyCompactList}\small\item\em get\+White\+Cell\+Can\+Move -\/ Получить цвет белых клеток на которые можно сделать ход \end{DoxyCompactList}\item 
+Q\+Color \hyperlink{classoptions_a56556f6bdb79fd1ce44be18c7c10ed7f}{get\+Dead\+Cell} () const 
+\begin{DoxyCompactList}\small\item\em get\+Black\+Piece -\/ Получить цвет клеток мертвых фигур \end{DoxyCompactList}\item 
+int \hyperlink{classoptions_ab42e8a4fcf2d37c996cbe2f3158a8a72}{get\+Ai\+Cof1} () const 
+\begin{DoxyCompactList}\small\item\em get\+Ai\+Cof1 -\/ получить коофициент сложности белого игрока \end{DoxyCompactList}\item 
+int \hyperlink{classoptions_a401745de111fcebb990a4d365a237c72}{get\+Ai\+Cof2} () const 
+\begin{DoxyCompactList}\small\item\em get\+Ai\+Cof1 -\/ получить коофициент сложности черного игрока \end{DoxyCompactList}\item 
+void \hyperlink{classoptions_a148197ca3741db3a4117295a3705cbbc}{set\+Ai\+Cof1} (int c)
+\begin{DoxyCompactList}\small\item\em set\+Ai\+Cof1 -\/ задать коофициент сложности белого игрока \end{DoxyCompactList}\item 
+void \hyperlink{classoptions_a0ba88f307d3877a0c9c5b4fd71a30dab}{set\+Ai\+Cof2} (int c)
+\begin{DoxyCompactList}\small\item\em set\+Ai\+Cof2 -\/ задать коофициент сложности белого игрока \end{DoxyCompactList}\item 
+void \hyperlink{classoptions_a44dced3081a60094dfa7a010d7a77ab4}{set\+Player1} (Q\+String p)
+\begin{DoxyCompactList}\small\item\em set\+Player1 -\/ задать тип белого игрока \end{DoxyCompactList}\item 
+void \hyperlink{classoptions_a73da82a3067efd5a86bdc04f509570cb}{set\+Player2} (Q\+String p)
+\begin{DoxyCompactList}\small\item\em set\+Player2 -\/ задать тип черного игрока \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The options class -\/ класс конфигураций (содержит все конфигурации программы) 
+
+\subsection{Методы}
+\hypertarget{classoptions_ab42e8a4fcf2d37c996cbe2f3158a8a72}{}\index{options@{options}!get\+Ai\+Cof1@{get\+Ai\+Cof1}}
+\index{get\+Ai\+Cof1@{get\+Ai\+Cof1}!options@{options}}
+\subsubsection[{get\+Ai\+Cof1}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::get\+Ai\+Cof1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_ab42e8a4fcf2d37c996cbe2f3158a8a72}
+
+
+get\+Ai\+Cof1 -\/ получить коофициент сложности белого игрока 
+
+\begin{DoxyReturn}{Возвращает}
+коофициент от 1 до 3 
+\end{DoxyReturn}
+\hypertarget{classoptions_a401745de111fcebb990a4d365a237c72}{}\index{options@{options}!get\+Ai\+Cof2@{get\+Ai\+Cof2}}
+\index{get\+Ai\+Cof2@{get\+Ai\+Cof2}!options@{options}}
+\subsubsection[{get\+Ai\+Cof2}]{\setlength{\rightskip}{0pt plus 5cm}int options\+::get\+Ai\+Cof2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a401745de111fcebb990a4d365a237c72}
+
+
+get\+Ai\+Cof1 -\/ получить коофициент сложности черного игрока 
+
+\begin{DoxyReturn}{Возвращает}
+коофициент от 1 до 3 
+\end{DoxyReturn}
+\hypertarget{classoptions_afa462be4a4c645b4cb616ae2d175b31c}{}\index{options@{options}!get\+Black\+Cell@{get\+Black\+Cell}}
+\index{get\+Black\+Cell@{get\+Black\+Cell}!options@{options}}
+\subsubsection[{get\+Black\+Cell}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+Black\+Cell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_afa462be4a4c645b4cb616ae2d175b31c}
+
+
+get\+Black\+Cell -\/ Получить цвет черных клеток 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_ad26a5fdfdaf092c39ac3d167981bd2b5}{}\index{options@{options}!get\+Black\+Cell\+Attacked@{get\+Black\+Cell\+Attacked}}
+\index{get\+Black\+Cell\+Attacked@{get\+Black\+Cell\+Attacked}!options@{options}}
+\subsubsection[{get\+Black\+Cell\+Attacked}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+Black\+Cell\+Attacked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_ad26a5fdfdaf092c39ac3d167981bd2b5}
+
+
+get\+Black\+Cell\+Attacked -\/ Получить цвет черных клеток во время атаки 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_a95a5a628fa05ad2a3ca88f8cb4ef1d79}{}\index{options@{options}!get\+Black\+Cell\+Can\+Move@{get\+Black\+Cell\+Can\+Move}}
+\index{get\+Black\+Cell\+Can\+Move@{get\+Black\+Cell\+Can\+Move}!options@{options}}
+\subsubsection[{get\+Black\+Cell\+Can\+Move}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+Black\+Cell\+Can\+Move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a95a5a628fa05ad2a3ca88f8cb4ef1d79}
+
+
+get\+Black\+Cell\+Can\+Move -\/ Получить цвет черных клеток на которые можно сделать ход 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_aba7e46667f824c75d1acef548aeac3b4}{}\index{options@{options}!get\+Black\+Piece@{get\+Black\+Piece}}
+\index{get\+Black\+Piece@{get\+Black\+Piece}!options@{options}}
+\subsubsection[{get\+Black\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+Black\+Piece (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_aba7e46667f824c75d1acef548aeac3b4}
+
+
+get\+Black\+Piece -\/ Получить цвет черных фигур 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_a56556f6bdb79fd1ce44be18c7c10ed7f}{}\index{options@{options}!get\+Dead\+Cell@{get\+Dead\+Cell}}
+\index{get\+Dead\+Cell@{get\+Dead\+Cell}!options@{options}}
+\subsubsection[{get\+Dead\+Cell}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+Dead\+Cell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a56556f6bdb79fd1ce44be18c7c10ed7f}
+
+
+get\+Black\+Piece -\/ Получить цвет клеток мертвых фигур 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_aa08f770c27db29c587278cc0f8d3fb4d}{}\index{options@{options}!get\+Player1@{get\+Player1}}
+\index{get\+Player1@{get\+Player1}!options@{options}}
+\subsubsection[{get\+Player1}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String options\+::get\+Player1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_aa08f770c27db29c587278cc0f8d3fb4d}
+
+
+get\+Player1 -\/ Получить имя класса белого игрока 
+
+\begin{DoxyReturn}{Возвращает}
+имя класса (Например\+: \char`\"{}\+A\+I\char`\"{} или \char`\"{}humen\char`\"{}); 
+\end{DoxyReturn}
+\hypertarget{classoptions_a26d94b8c314df0b355ba4f8dbf65eab5}{}\index{options@{options}!get\+Player2@{get\+Player2}}
+\index{get\+Player2@{get\+Player2}!options@{options}}
+\subsubsection[{get\+Player2}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String options\+::get\+Player2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a26d94b8c314df0b355ba4f8dbf65eab5}
+
+
+get\+Player2 -\/ Получить имя класса белого игрока 
+
+\begin{DoxyReturn}{Возвращает}
+имя класса (Например\+: \char`\"{}\+A\+I\char`\"{} или \char`\"{}humen\char`\"{}); 
+\end{DoxyReturn}
+\hypertarget{classoptions_a4297375082b4a84b4e350119254b3c85}{}\index{options@{options}!get\+White\+Cell@{get\+White\+Cell}}
+\index{get\+White\+Cell@{get\+White\+Cell}!options@{options}}
+\subsubsection[{get\+White\+Cell}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+White\+Cell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a4297375082b4a84b4e350119254b3c85}
+
+
+get\+White\+Cell -\/ Получить цвет белых клеток 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_a95fa8aa7c9cbe5ee3a3e82f1bd0fdaee}{}\index{options@{options}!get\+White\+Cell\+Attacked@{get\+White\+Cell\+Attacked}}
+\index{get\+White\+Cell\+Attacked@{get\+White\+Cell\+Attacked}!options@{options}}
+\subsubsection[{get\+White\+Cell\+Attacked}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+White\+Cell\+Attacked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a95fa8aa7c9cbe5ee3a3e82f1bd0fdaee}
+
+
+get\+White\+Cell\+Attacked -\/ Получить цвет белых клеток во время атаки 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_a609c97a120c62486181725426fe92a6b}{}\index{options@{options}!get\+White\+Cell\+Can\+Move@{get\+White\+Cell\+Can\+Move}}
+\index{get\+White\+Cell\+Can\+Move@{get\+White\+Cell\+Can\+Move}!options@{options}}
+\subsubsection[{get\+White\+Cell\+Can\+Move}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+White\+Cell\+Can\+Move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a609c97a120c62486181725426fe92a6b}
+
+
+get\+White\+Cell\+Can\+Move -\/ Получить цвет белых клеток на которые можно сделать ход 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_a87429d553ea8c806f0f8623434c156a0}{}\index{options@{options}!get\+White\+Piece@{get\+White\+Piece}}
+\index{get\+White\+Piece@{get\+White\+Piece}!options@{options}}
+\subsubsection[{get\+White\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color options\+::get\+White\+Piece (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a87429d553ea8c806f0f8623434c156a0}
+
+
+get\+White\+Piece -\/ Получить цвет белых фигур 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classoptions_a148197ca3741db3a4117295a3705cbbc}{}\index{options@{options}!set\+Ai\+Cof1@{set\+Ai\+Cof1}}
+\index{set\+Ai\+Cof1@{set\+Ai\+Cof1}!options@{options}}
+\subsubsection[{set\+Ai\+Cof1}]{\setlength{\rightskip}{0pt plus 5cm}void options\+::set\+Ai\+Cof1 (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a148197ca3741db3a4117295a3705cbbc}
+
+
+set\+Ai\+Cof1 -\/ задать коофициент сложности белого игрока 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ коофициент от 1 до 3 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classoptions_a0ba88f307d3877a0c9c5b4fd71a30dab}{}\index{options@{options}!set\+Ai\+Cof2@{set\+Ai\+Cof2}}
+\index{set\+Ai\+Cof2@{set\+Ai\+Cof2}!options@{options}}
+\subsubsection[{set\+Ai\+Cof2}]{\setlength{\rightskip}{0pt plus 5cm}void options\+::set\+Ai\+Cof2 (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a0ba88f307d3877a0c9c5b4fd71a30dab}
+
+
+set\+Ai\+Cof2 -\/ задать коофициент сложности белого игрока 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ коофициент от 1 до 3 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classoptions_a44dced3081a60094dfa7a010d7a77ab4}{}\index{options@{options}!set\+Player1@{set\+Player1}}
+\index{set\+Player1@{set\+Player1}!options@{options}}
+\subsubsection[{set\+Player1}]{\setlength{\rightskip}{0pt plus 5cm}void options\+::set\+Player1 (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a44dced3081a60094dfa7a010d7a77ab4}
+
+
+set\+Player1 -\/ задать тип белого игрока 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em p} & -\/ имя типа строкой \\
+\hline
+\end{DoxyParams}
+\hypertarget{classoptions_a73da82a3067efd5a86bdc04f509570cb}{}\index{options@{options}!set\+Player2@{set\+Player2}}
+\index{set\+Player2@{set\+Player2}!options@{options}}
+\subsubsection[{set\+Player2}]{\setlength{\rightskip}{0pt plus 5cm}void options\+::set\+Player2 (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classoptions_a73da82a3067efd5a86bdc04f509570cb}
+
+
+set\+Player2 -\/ задать тип черного игрока 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em p} & -\/ имя типа строкой \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/options.\+h\item 
+Model/options.\+cpp\end{DoxyCompactItemize}

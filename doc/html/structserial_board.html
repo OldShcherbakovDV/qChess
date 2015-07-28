@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Структура serialBoard</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="structserial_board-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Структура serialBoard</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="structserial_board.html" title="The serialBoard struct - упращенная структура представления доски ">serialBoard</a> struct - упращенная структура представления доски  
+ <a href="structserial_board.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="board_8h_source.html">board.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a0a27eb05a8303039ae133c24c99e5665"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a27eb05a8303039ae133c24c99e5665"></a>
+mask&#160;</td><td class="memItemRight" valign="bottom"><b>pieces</b> [6]</td></tr>
+<tr class="separator:a0a27eb05a8303039ae133c24c99e5665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a902c488370344e2ba5d48a64e3d4aa75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a902c488370344e2ba5d48a64e3d4aa75"></a>
+mask&#160;</td><td class="memItemRight" valign="bottom"><b>color</b> [2]</td></tr>
+<tr class="separator:a902c488370344e2ba5d48a64e3d4aa75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362750c1f255e200d28d4b2f34699c92"><td class="memItemLeft" ><a class="anchor" id="a362750c1f255e200d28d4b2f34699c92"></a>
+union {</td></tr>
+<tr class="memitem:a3f35d38b7269b5303859c3498e9163c2"><td class="memItemLeft" >
+&#160;&#160;&#160;int&#160;&#160;&#160;<b>allFlags</b></td></tr>
+<tr class="separator:a3f35d38b7269b5303859c3498e9163c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24409ca85bea9c6dab79a506c491785d"><td class="memItemLeft" ><a class="anchor" id="a24409ca85bea9c6dab79a506c491785d"></a>
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a132c7c45c9ffb85d2d45ed159a2773db"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;int&#160;&#160;&#160;<b>whiteEnpassant</b>:8</td></tr>
+<tr class="separator:a132c7c45c9ffb85d2d45ed159a2773db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad920a643425da65eb2895296782a368"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;int&#160;&#160;&#160;<b>blackEnpassant</b>:8</td></tr>
+<tr class="separator:aad920a643425da65eb2895296782a368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bca0f30d6dc28e94f71fc1d374eb8fd"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;int&#160;&#160;&#160;<b>whiteTurn</b>:1</td></tr>
+<tr class="separator:a6bca0f30d6dc28e94f71fc1d374eb8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aded3d530a1cabaf5a7f123e4139037"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;int&#160;&#160;&#160;<b>wkCastling</b>:1</td></tr>
+<tr class="separator:a0aded3d530a1cabaf5a7f123e4139037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308a274083935dd6298d9175031a9151"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;int&#160;&#160;&#160;<b>wqCastling</b>:1</td></tr>
+<tr class="separator:a308a274083935dd6298d9175031a9151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1025634df55560014091a590a7cd292c"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;int&#160;&#160;&#160;<b>bkCastling</b>:1</td></tr>
+<tr class="separator:a1025634df55560014091a590a7cd292c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5dcdf6f803597e67384bec99ae8e57"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;int&#160;&#160;&#160;<b>bqCastling</b>:1</td></tr>
+<tr class="separator:a1d5dcdf6f803597e67384bec99ae8e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca6eea1cff70469b92ec97b40b269df"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;int&#160;&#160;&#160;<b>__pad0__</b>:11</td></tr>
+<tr class="separator:a7ca6eea1cff70469b92ec97b40b269df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24409ca85bea9c6dab79a506c491785d"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a24409ca85bea9c6dab79a506c491785d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362750c1f255e200d28d4b2f34699c92"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a362750c1f255e200d28d4b2f34699c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>The <a class="el" href="structserial_board.html" title="The serialBoard struct - упращенная структура представления доски ">serialBoard</a> struct - упращенная структура представления доски </p>
+</div><hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>Model/<a class="el" href="board_8h_source.html">board.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:13. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

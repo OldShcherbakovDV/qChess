@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Класс board</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="#friends">Друзья</a> &#124;
+<a href="classboard-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс board</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a2a97f34e7c9ed8ace6a2508bb2c6e2a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a97f34e7c9ed8ace6a2508bb2c6e2a2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a2a97f34e7c9ed8ace6a2508bb2c6e2a2">board</a> ()</td></tr>
+<tr class="memdesc:a2a97f34e7c9ed8ace6a2508bb2c6e2a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">board - конструктор по умолчанию создает c фигурами в стартовой позиции <br /></td></tr>
+<tr class="separator:a2a97f34e7c9ed8ace6a2508bb2c6e2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fbb0cbb90dd7ab753f52c17700efbe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02fbb0cbb90dd7ab753f52c17700efbe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a02fbb0cbb90dd7ab753f52c17700efbe">setDefault</a> ()</td></tr>
+<tr class="memdesc:a02fbb0cbb90dd7ab753f52c17700efbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">setDefault - задает внутренние значения в исходное состояние <br /></td></tr>
+<tr class="separator:a02fbb0cbb90dd7ab753f52c17700efbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7c2a8d249f08c8c87d222e55cfd990c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7c2a8d249f08c8c87d222e55cfd990c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#ae7c2a8d249f08c8c87d222e55cfd990c">setupPieces</a> ()</td></tr>
+<tr class="memdesc:ae7c2a8d249f08c8c87d222e55cfd990c"><td class="mdescLeft">&#160;</td><td class="mdescRight">setupPieces - раставляет заново фигуры на доску <br /></td></tr>
+<tr class="separator:ae7c2a8d249f08c8c87d222e55cfd990c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a033c9329179afc730b3d725e54639c7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a033c9329179afc730b3d725e54639c7c">setSpecialPieceFlags</a> (const <a class="el" href="classboard_move.html">boardMove</a> &amp;bm)</td></tr>
+<tr class="memdesc:a033c9329179afc730b3d725e54639c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">setSpecialPieceFlags - отмечает изменения на схемах рокировок и взятий на проходе  <a href="#a033c9329179afc730b3d725e54639c7c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a033c9329179afc730b3d725e54639c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50bdaf6705c56c528f6c5ef8c0e3586e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a50bdaf6705c56c528f6c5ef8c0e3586e">update</a> (const <a class="el" href="classboard_move.html">boardMove</a> &amp;bm)</td></tr>
+<tr class="memdesc:a50bdaf6705c56c528f6c5ef8c0e3586e"><td class="mdescLeft">&#160;</td><td class="mdescRight">update - совершает ход  <a href="#a50bdaf6705c56c528f6c5ef8c0e3586e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a50bdaf6705c56c528f6c5ef8c0e3586e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e2be38a28f6b631815741b70671e197"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpiece.html">piece</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a8e2be38a28f6b631815741b70671e197">getPiece</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp) const </td></tr>
+<tr class="memdesc:a8e2be38a28f6b631815741b70671e197"><td class="mdescLeft">&#160;</td><td class="mdescRight">getPiece - возвращает фигуру из заданной позиции  <a href="#a8e2be38a28f6b631815741b70671e197">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8e2be38a28f6b631815741b70671e197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f11955cde955b7799fabab9df7224ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a7f11955cde955b7799fabab9df7224ad">setPiece</a> (<a class="el" href="classpiece.html">piece</a> *p, const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp)</td></tr>
+<tr class="memdesc:a7f11955cde955b7799fabab9df7224ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">setPiece  <a href="#a7f11955cde955b7799fabab9df7224ad">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7f11955cde955b7799fabab9df7224ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94bb90ebf9c98575a50d00fe4da3e1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a94bb90ebf9c98575a50d00fe4da3e1b3">addPiecet</a> (<a class="el" href="classpiece.html">piece</a> *p, const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp)</td></tr>
+<tr class="memdesc:a94bb90ebf9c98575a50d00fe4da3e1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">addPiecet - добавляет новую фигуру на доску  <a href="#a94bb90ebf9c98575a50d00fe4da3e1b3">Подробнее...</a><br /></td></tr>
+<tr class="separator:a94bb90ebf9c98575a50d00fe4da3e1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a3a45d66a0b985446b10c56cd57fdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#aa5a3a45d66a0b985446b10c56cd57fdf">removePiece</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp)</td></tr>
+<tr class="memdesc:aa5a3a45d66a0b985446b10c56cd57fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">removePiece - удаляет фигуру с доски  <a href="#aa5a3a45d66a0b985446b10c56cd57fdf">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa5a3a45d66a0b985446b10c56cd57fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf992b9c9ec619099f41513c86cb4a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#afcf992b9c9ec619099f41513c86cb4a9">isPathClear</a> (const <a class="el" href="classboard_move.html">boardMove</a> &amp;bm) const </td></tr>
+<tr class="memdesc:afcf992b9c9ec619099f41513c86cb4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">isPathClear - проверяет есть ли на пути другие фигуры  <a href="#afcf992b9c9ec619099f41513c86cb4a9">Подробнее...</a><br /></td></tr>
+<tr class="separator:afcf992b9c9ec619099f41513c86cb4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b060ee3893cb79fc4d8376632f0f20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#ab7b060ee3893cb79fc4d8376632f0f20">isOccupied</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp) const </td></tr>
+<tr class="memdesc:ab7b060ee3893cb79fc4d8376632f0f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">isOccupied - проверяет является ли клетка занятой  <a href="#ab7b060ee3893cb79fc4d8376632f0f20">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab7b060ee3893cb79fc4d8376632f0f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c3688bb5c36807624e3c5f1669f203"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a49c3688bb5c36807624e3c5f1669f203">isEnPassantSet</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp) const </td></tr>
+<tr class="memdesc:a49c3688bb5c36807624e3c5f1669f203"><td class="mdescLeft">&#160;</td><td class="mdescRight">isEnPassantSet - содержит ли взятия на проходе  <a href="#a49c3688bb5c36807624e3c5f1669f203">Подробнее...</a><br /></td></tr>
+<tr class="separator:a49c3688bb5c36807624e3c5f1669f203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac879df88ca819e95d1a02d676efd59c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#ac879df88ca819e95d1a02d676efd59c0">isCheck</a> (<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) const </td></tr>
+<tr class="memdesc:ac879df88ca819e95d1a02d676efd59c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">isCheck - проверяет является ли ситуация шаховой для данного цвета  <a href="#ac879df88ca819e95d1a02d676efd59c0">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac879df88ca819e95d1a02d676efd59c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69189b33f0ee2c1b4176583382116aae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a69189b33f0ee2c1b4176583382116aae">isResultCheck</a> (const <a class="el" href="classboard_move.html">boardMove</a> &amp;bm) const </td></tr>
+<tr class="memdesc:a69189b33f0ee2c1b4176583382116aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">isResultCheck - проверяет является ли ситуация после хода шаховой  <a href="#a69189b33f0ee2c1b4176583382116aae">Подробнее...</a><br /></td></tr>
+<tr class="separator:a69189b33f0ee2c1b4176583382116aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9cea4c28839fd5f9b6d5aaec28ba14d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#af9cea4c28839fd5f9b6d5aaec28ba14d">isMate</a> (<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) const </td></tr>
+<tr class="memdesc:af9cea4c28839fd5f9b6d5aaec28ba14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">isMate - проверяет является ли ситуация на доске матом для фигуры звдвнного цвета  <a href="#af9cea4c28839fd5f9b6d5aaec28ba14d">Подробнее...</a><br /></td></tr>
+<tr class="separator:af9cea4c28839fd5f9b6d5aaec28ba14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50063bac8842217a3acb6d6d7732c6b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a50063bac8842217a3acb6d6d7732c6b0">isStalemate</a> (<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) const </td></tr>
+<tr class="memdesc:a50063bac8842217a3acb6d6d7732c6b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">isStalemate - проверяет является ли ситуация на доске патом для фигуры звдвнного цвета  <a href="#a50063bac8842217a3acb6d6d7732c6b0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a50063bac8842217a3acb6d6d7732c6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83d3af8ff3ac068ae086f148fdbcf07"><td class="memItemLeft" align="right" valign="top">mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#ab83d3af8ff3ac068ae086f148fdbcf07">isAttacked</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) const </td></tr>
+<tr class="memdesc:ab83d3af8ff3ac068ae086f148fdbcf07"><td class="mdescLeft">&#160;</td><td class="mdescRight">isAttacked - проверяет находится ли фигура под боем  <a href="#ab83d3af8ff3ac068ae086f148fdbcf07">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab83d3af8ff3ac068ae086f148fdbcf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8282e47422a657a2683ede9607310c89"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classboard_move.html">boardMove</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a8282e47422a657a2683ede9607310c89">getLegalMoves</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp, bool cheks=true) const </td></tr>
+<tr class="memdesc:a8282e47422a657a2683ede9607310c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLegalMoves - возвращает все допустимые ходы для фигуры в этой клетке  <a href="#a8282e47422a657a2683ede9607310c89">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8282e47422a657a2683ede9607310c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0868c4cf8b6f94269a32cc75d8917016"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classboard_move.html">boardMove</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a0868c4cf8b6f94269a32cc75d8917016">getLegalMoves</a> (<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c, bool cheks=true, bool fast=false) const </td></tr>
+<tr class="memdesc:a0868c4cf8b6f94269a32cc75d8917016"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLegalMoves - возвращает все допустимые ходы для фигуры для фигур этого цвета  <a href="#a0868c4cf8b6f94269a32cc75d8917016">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0868c4cf8b6f94269a32cc75d8917016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e098dc31fc1f9fc48ac23fafd4834ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structserial_board.html">serialBoard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a9e098dc31fc1f9fc48ac23fafd4834ea">serialize</a> () const </td></tr>
+<tr class="memdesc:a9e098dc31fc1f9fc48ac23fafd4834ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">serialize - получение описания доски в виде структуры  <a href="#a9e098dc31fc1f9fc48ac23fafd4834ea">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9e098dc31fc1f9fc48ac23fafd4834ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4b7af35cfca5af432a87a8e28a65d63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboard_position.html">boardPosition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#ad4b7af35cfca5af432a87a8e28a65d63">getKing</a> (<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c) const </td></tr>
+<tr class="memdesc:ad4b7af35cfca5af432a87a8e28a65d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">getKing - Вернуть позицию короля заданного цвета  <a href="#ad4b7af35cfca5af432a87a8e28a65d63">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad4b7af35cfca5af432a87a8e28a65d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86dbad33c8e8c28015db47d78a0c2afc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a86dbad33c8e8c28015db47d78a0c2afc">haveCastling</a> (<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c, bool isLeft) const </td></tr>
+<tr class="memdesc:a86dbad33c8e8c28015db47d78a0c2afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">haveCastling - проверяет возможность левой или правой роккировки для фигур заданного цвета  <a href="#a86dbad33c8e8c28015db47d78a0c2afc">Подробнее...</a><br /></td></tr>
+<tr class="separator:a86dbad33c8e8c28015db47d78a0c2afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02dc94d46def16861d0d8049e074fc8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a02dc94d46def16861d0d8049e074fc8f">getYState</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp) const </td></tr>
+<tr class="memdesc:a02dc94d46def16861d0d8049e074fc8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">getYState - вернуть статус горизонтали  <a href="#a02dc94d46def16861d0d8049e074fc8f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a02dc94d46def16861d0d8049e074fc8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f6cf511a4ddf7f163949bfb2442f68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a23f6cf511a4ddf7f163949bfb2442f68">getXState</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp) const </td></tr>
+<tr class="memdesc:a23f6cf511a4ddf7f163949bfb2442f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">getYState - вернуть статус вертикали  <a href="#a23f6cf511a4ddf7f163949bfb2442f68">Подробнее...</a><br /></td></tr>
+<tr class="separator:a23f6cf511a4ddf7f163949bfb2442f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1437aa494539ee661f00f248cb0a2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a5d1437aa494539ee661f00f248cb0a2a">getLeftTopDiagState</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp) const </td></tr>
+<tr class="memdesc:a5d1437aa494539ee661f00f248cb0a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLeftTopDiagState - вернуть статус левой верхней наклонной  <a href="#a5d1437aa494539ee661f00f248cb0a2a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5d1437aa494539ee661f00f248cb0a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9a53a91c2a34b15bdec9de604e713e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#aeb9a53a91c2a34b15bdec9de604e713e">getRightTopDiagState</a> (const <a class="el" href="classboard_position.html">boardPosition</a> &amp;bp) const </td></tr>
+<tr class="memdesc:aeb9a53a91c2a34b15bdec9de604e713e"><td class="mdescLeft">&#160;</td><td class="mdescRight">getLeftTopDiagState - вернуть статус правой верхней наклонной  <a href="#aeb9a53a91c2a34b15bdec9de604e713e">Подробнее...</a><br /></td></tr>
+<tr class="separator:aeb9a53a91c2a34b15bdec9de604e713e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:aeb1b89f64f70999d79b8d2c1a26a9fa4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb1b89f64f70999d79b8d2c1a26a9fa4"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#aeb1b89f64f70999d79b8d2c1a26a9fa4">init</a> ()</td></tr>
+<tr class="memdesc:aeb1b89f64f70999d79b8d2c1a26a9fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">init - инициализация статических полей класса <br /></td></tr>
+<tr class="separator:aeb1b89f64f70999d79b8d2c1a26a9fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:a7335d4d9f22c5d32777fd4b419ed173d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7335d4d9f22c5d32777fd4b419ed173d"></a>
+static mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a7335d4d9f22c5d32777fd4b419ed173d">pawnAttacks</a> [2][64]</td></tr>
+<tr class="memdesc:a7335d4d9f22c5d32777fd4b419ed173d"><td class="mdescLeft">&#160;</td><td class="mdescRight">pawnAttacks - Атаки пешек по цветам <br /></td></tr>
+<tr class="separator:a7335d4d9f22c5d32777fd4b419ed173d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac343023f9b20b07922cf5780be2bfe8b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac343023f9b20b07922cf5780be2bfe8b"></a>
+static mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#ac343023f9b20b07922cf5780be2bfe8b">knightAttacks</a> [64]</td></tr>
+<tr class="memdesc:ac343023f9b20b07922cf5780be2bfe8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">knightAttacks - атаки королей <br /></td></tr>
+<tr class="separator:ac343023f9b20b07922cf5780be2bfe8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeebd1ae59c78f614db0337e4edb5b5d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeebd1ae59c78f614db0337e4edb5b5d8"></a>
+static mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#aeebd1ae59c78f614db0337e4edb5b5d8">kingAttacks</a> [64]</td></tr>
+<tr class="memdesc:aeebd1ae59c78f614db0337e4edb5b5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">kingAttacks - атаки короля <br /></td></tr>
+<tr class="separator:aeebd1ae59c78f614db0337e4edb5b5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaec3ff166bdb2ae166ac877394908e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acaec3ff166bdb2ae166ac877394908e9"></a>
+static mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#acaec3ff166bdb2ae166ac877394908e9">xAttacks</a> [64][256]</td></tr>
+<tr class="memdesc:acaec3ff166bdb2ae166ac877394908e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">xAttacks - атаки по горизонтали <br /></td></tr>
+<tr class="separator:acaec3ff166bdb2ae166ac877394908e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804587c2a72537dda9106895acbc6cf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a804587c2a72537dda9106895acbc6cf8"></a>
+static mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a804587c2a72537dda9106895acbc6cf8">yAttacks</a> [64][256]</td></tr>
+<tr class="memdesc:a804587c2a72537dda9106895acbc6cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">yAttacks - атаки по вертикали <br /></td></tr>
+<tr class="separator:a804587c2a72537dda9106895acbc6cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f3b256b2baa81086ba437001bd53d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60f3b256b2baa81086ba437001bd53d4"></a>
+static mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a60f3b256b2baa81086ba437001bd53d4">diagAttacksLeftTop</a> [64][256]</td></tr>
+<tr class="memdesc:a60f3b256b2baa81086ba437001bd53d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">diagAttacksLeftTop - Атаки лежащии на левой верхней диаганали <br /></td></tr>
+<tr class="separator:a60f3b256b2baa81086ba437001bd53d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939941b4d68ab75b4f1f3a87d4df5bf4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a939941b4d68ab75b4f1f3a87d4df5bf4"></a>
+static mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a939941b4d68ab75b4f1f3a87d4df5bf4">diagAttacksRightTop</a> [64][256]</td></tr>
+<tr class="memdesc:a939941b4d68ab75b4f1f3a87d4df5bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">diagAttacksRightTop - Атаки лежащии на правой верхней диаганали <br /></td></tr>
+<tr class="separator:a939941b4d68ab75b4f1f3a87d4df5bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55368a0178e6c92f6cbd6d7899812e5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55368a0178e6c92f6cbd6d7899812e5f"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboard.html#a55368a0178e6c92f6cbd6d7899812e5f">pow2</a> [8]</td></tr>
+<tr class="memdesc:a55368a0178e6c92f6cbd6d7899812e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">pow2 - Необходима для оценки приоритетов блоком ии <br /></td></tr>
+<tr class="separator:a55368a0178e6c92f6cbd6d7899812e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Друзья</h2></td></tr>
+<tr class="memitem:a30f980cd5a3847c1fc8b9c49c84af74a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30f980cd5a3847c1fc8b9c49c84af74a"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>AI</b></td></tr>
+<tr class="separator:a30f980cd5a3847c1fc8b9c49c84af74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a94bb90ebf9c98575a50d00fe4da3e1b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void board::addPiecet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html">piece</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>addPiecet - добавляет новую фигуру на доску </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>- фигура </td></tr>
+    <tr><td class="paramname">bp</td><td>- позиция на доске </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad4b7af35cfca5af432a87a8e28a65d63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboard_position.html">boardPosition</a> board::getKing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getKing - Вернуть позицию короля заданного цвета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- Цвет </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>- Позиция короля </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5d1437aa494539ee661f00f248cb0a2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int board::getLeftTopDiagState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getLeftTopDiagState - вернуть статус левой верхней наклонной </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- позиция через которую проходит наклонная </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>статус </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8282e47422a657a2683ede9607310c89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="classboard_move.html">boardMove</a> &gt; board::getLegalMoves </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cheks</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getLegalMoves - возвращает все допустимые ходы для фигуры в этой клетке </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- клетка </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>-список ходов </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0868c4cf8b6f94269a32cc75d8917016"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="classboard_move.html">boardMove</a> &gt; board::getLegalMoves </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cheks</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fast</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getLegalMoves - возвращает все допустимые ходы для фигуры для фигур этого цвета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- цвет </td></tr>
+    <tr><td class="paramname">fast</td><td>- позволяет не искать все возможные ходы, а возвращает ходы первой попавшейся фигуры </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>-список ходов </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e2be38a28f6b631815741b70671e197"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpiece.html">piece</a> * board::getPiece </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getPiece - возвращает фигуру из заданной позиции </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- позиция </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>- указатель на фигуру </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb9a53a91c2a34b15bdec9de604e713e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int board::getRightTopDiagState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getLeftTopDiagState - вернуть статус правой верхней наклонной </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- позиция через которую проходит наклонная </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>статус </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a23f6cf511a4ddf7f163949bfb2442f68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int board::getXState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getYState - вернуть статус вертикали </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- позиция через которую проходит вертикаль </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>статус </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a02dc94d46def16861d0d8049e074fc8f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int board::getYState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getYState - вернуть статус горизонтали </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- позиция через которую проходит горизонталь </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>статус </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a86dbad33c8e8c28015db47d78a0c2afc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool board::haveCastling </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isLeft</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>haveCastling - проверяет возможность левой или правой роккировки для фигур заданного цвета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- цвет </td></tr>
+    <tr><td class="paramname">isLeft</td><td>- Левая ли роккировка проверяется </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>возможна ли такая роккировка </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab83d3af8ff3ac068ae086f148fdbcf07"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mask board::isAttacked </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>isAttacked - проверяет находится ли фигура под боем </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- позиция </td></tr>
+    <tr><td class="paramname">c</td><td>- цвет фигуры </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>- признак атаки </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac879df88ca819e95d1a02d676efd59c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool board::isCheck </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>isCheck - проверяет является ли ситуация шаховой для данного цвета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- цвет </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>- является ли ситуация шаховой </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a49c3688bb5c36807624e3c5f1669f203"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool board::isEnPassantSet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>isEnPassantSet - содержит ли взятия на проходе </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af9cea4c28839fd5f9b6d5aaec28ba14d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool board::isMate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>isMate - проверяет является ли ситуация на доске матом для фигуры звдвнного цвета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- цвет </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>результат проверки </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab7b060ee3893cb79fc4d8376632f0f20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool board::isOccupied </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>isOccupied - проверяет является ли клетка занятой </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- позиция клетки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>занята ли клетка </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afcf992b9c9ec619099f41513c86cb4a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool board::isPathClear </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_move.html">boardMove</a> &amp;&#160;</td>
+          <td class="paramname"><em>bm</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>isPathClear - проверяет есть ли на пути другие фигуры </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bm</td><td>- ход </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>свободен ли путь </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a69189b33f0ee2c1b4176583382116aae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool board::isResultCheck </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_move.html">boardMove</a> &amp;&#160;</td>
+          <td class="paramname"><em>bm</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>isResultCheck - проверяет является ли ситуация после хода шаховой </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bm</td><td>- ход </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>будет ли шах </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a50063bac8842217a3acb6d6d7732c6b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool board::isStalemate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>isStalemate - проверяет является ли ситуация на доске патом для фигуры звдвнного цвета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- цвет </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>результат проверки </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa5a3a45d66a0b985446b10c56cd57fdf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void board::removePiece </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>removePiece - удаляет фигуру с доски </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bp</td><td>- удаляет фигуру из заданой позиции </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e098dc31fc1f9fc48ac23fafd4834ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structserial_board.html">serialBoard</a> board::serialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>serialize - получение описания доски в виде структуры </p>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7f11955cde955b7799fabab9df7224ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void board::setPiece </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html">piece</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboard_position.html">boardPosition</a> &amp;&#160;</td>
+          <td class="paramname"><em>bp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>setPiece </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td></td></tr>
+    <tr><td class="paramname">bp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a033c9329179afc730b3d725e54639c7c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void board::setSpecialPieceFlags </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_move.html">boardMove</a> &amp;&#160;</td>
+          <td class="paramname"><em>bm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>setSpecialPieceFlags - отмечает изменения на схемах рокировок и взятий на проходе </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bm</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a50bdaf6705c56c528f6c5ef8c0e3586e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void board::update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboard_move.html">boardMove</a> &amp;&#160;</td>
+          <td class="paramname"><em>bm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>update - совершает ход </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bm</td><td>-ход </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>Model/<a class="el" href="board_8h_source.html">board.h</a></li>
+<li>Model/board.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:12. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,452 @@
+\hypertarget{classboard_position}{}\section{Класс board\+Position}
+\label{classboard_position}\index{board\+Position@{board\+Position}}
+
+
+The \hyperlink{classboard_position}{board\+Position} class -\/ класс которы описывает позицию на доске  
+
+
+
+
+{\ttfamily \#include $<$boardposition.\+h$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classboard_position_aa90987bb8610bc941f7211d503d95e1d}{}\hyperlink{classboard_position_aa90987bb8610bc941f7211d503d95e1d}{board\+Position} ()\label{classboard_position_aa90987bb8610bc941f7211d503d95e1d}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classboard_position}{board\+Position} -\/ будет получена позиция (-\/1,-\/1) \end{DoxyCompactList}\item 
+\hyperlink{classboard_position_a11c22f3e7d236abf022bc927b59ef5a4}{board\+Position} (const int \&\hyperlink{classboard_position_abf254ede46c202864a513b548bf980c3}{x}, const int \&\hyperlink{classboard_position_a189ee18b8ce9691afc7cc4090e929837}{y})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classboard_position}{board\+Position} -\/ конструктор по координатам \end{DoxyCompactList}\item 
+\hyperlink{classboard_position_ae0d4347de29c13488cd2b275f4f4206a}{board\+Position} (const char \&\hyperlink{classboard_position_abf254ede46c202864a513b548bf980c3}{x}, const int \&\hyperlink{classboard_position_a189ee18b8ce9691afc7cc4090e929837}{y})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classboard_position}{board\+Position} -\/ конструктор из классического шахматного обозначения тип а1 и т.\+д. \end{DoxyCompactList}\item 
+\hyperlink{classboard_position_a621c395c0d7977a547c803e059cffe73}{board\+Position} (const int \hyperlink{classboard_position_afb83b12885a2ec552cecb067573011d4}{number})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classboard_position}{board\+Position} -\/ конструктор из номера позиции номер определяется формулой \+: y$\ast$8 + x \end{DoxyCompactList}\item 
+int \hyperlink{classboard_position_abf254ede46c202864a513b548bf980c3}{x} () const 
+\begin{DoxyCompactList}\small\item\em x -\/ вернуть Х \end{DoxyCompactList}\item 
+int \hyperlink{classboard_position_a189ee18b8ce9691afc7cc4090e929837}{y} () const 
+\begin{DoxyCompactList}\small\item\em y -\/ вернуть Y \end{DoxyCompactList}\item 
+int \hyperlink{classboard_position_afb83b12885a2ec552cecb067573011d4}{number} () const 
+\begin{DoxyCompactList}\small\item\em number -\/ возвращает номер позиции \end{DoxyCompactList}\item 
+char \hyperlink{classboard_position_a2f2f70653d4ef7e098b974e33c4fdcc2}{x\+To\+Char} () const 
+\begin{DoxyCompactList}\small\item\em x\+To\+Char -\/ вернуть Х в виде символа \end{DoxyCompactList}\item 
+char \hyperlink{classboard_position_a1128782cfef05468807b3a4449226894}{x\+To\+Number} () const 
+\begin{DoxyCompactList}\small\item\em x\+To\+Number -\/ вернуть Х в виде позиции от 1 \end{DoxyCompactList}\item 
+int \hyperlink{classboard_position_afce067f97792757bd643a58762e3d362}{y\+To\+Number} () const 
+\begin{DoxyCompactList}\small\item\em y\+To\+Number -\/ вернуть Y в виде позиции от 1 \end{DoxyCompactList}\item 
+void \hyperlink{classboard_position_a1715f2dcd0e8f94dd71998c5c4fd971a}{set\+X} (const int \&\hyperlink{classboard_position_abf254ede46c202864a513b548bf980c3}{x})
+\begin{DoxyCompactList}\small\item\em set\+X -\/ задает горизонтальную позицию по координате \end{DoxyCompactList}\item 
+void \hyperlink{classboard_position_af6ecff0221a8d5952e7fb6fe69f756a2}{set\+X} (const char \&\hyperlink{classboard_position_abf254ede46c202864a513b548bf980c3}{x})
+\begin{DoxyCompactList}\small\item\em set\+X -\/ Задает горизонтальную позицию по букве \end{DoxyCompactList}\item 
+void \hyperlink{classboard_position_ac587538a440a0db117090492d6ee9a48}{set\+Y} (const int \&\hyperlink{classboard_position_a189ee18b8ce9691afc7cc4090e929837}{y})
+\begin{DoxyCompactList}\small\item\em set\+Y -\/ Задвет позицию по вертикале \end{DoxyCompactList}\item 
+void \hyperlink{classboard_position_a9e97897840e379e2206d18cf79c04d1f}{set\+Nuber} (const int \&\hyperlink{classboard_position_afb83b12885a2ec552cecb067573011d4}{number})
+\begin{DoxyCompactList}\small\item\em set\+Nuber -\/ задает координаты из номера позиции номер определяется формулой \+: x$\ast$8 + y \end{DoxyCompactList}\item 
+\hypertarget{classboard_position_a0b6c1e580902f8b4d7aff1477741841c}{}void \hyperlink{classboard_position_a0b6c1e580902f8b4d7aff1477741841c}{set\+Invalid\+Data} ()\label{classboard_position_a0b6c1e580902f8b4d7aff1477741841c}
+
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyItemize}
+\item set\+Invalid\+Data задает координаты не принадлежащие доске 
+\end{DoxyItemize}\end{DoxyCompactList}\item 
+bool \hyperlink{classboard_position_a4a404ab23f49b541ce25941d69472582}{is\+Valid} () const 
+\begin{DoxyCompactList}\small\item\em is\+Valid -\/ проверяет является ли данная позиция позицией доски \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_position_a0eb1fa8e303bc9def2547cd3bb2d2ef7}{get\+Right} () const 
+\begin{DoxyCompactList}\small\item\em get\+Right -\/ возвращает значение позиции на одну клетку правее \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_position_a7bd99b1681779f7af040a9da8aec659a}{get\+Right\+Top} () const 
+\begin{DoxyCompactList}\small\item\em get\+Right\+Top -\/ возвращает значение позиции на одну клетку правее и выше \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_position_a4454d72951643a9ea1baf28473219927}{get\+Top} () const 
+\begin{DoxyCompactList}\small\item\em get\+Top -\/ -\/ возвращает значение позиции на одну клетку выше \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_position_a04b42f0b30728baa2377bc96fd4bb77f}{get\+Left\+Top} () const 
+\begin{DoxyCompactList}\small\item\em get\+Left\+Top -\/ -\/ возвращает значение позиции на одну клетку левее и выше \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_position_aa119bc1c9a676d2dae7e04983e8d77dd}{get\+Left} () const 
+\begin{DoxyCompactList}\small\item\em get\+Left -\/ возвращает значение позиции на одну клетку левее \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_position_ae553cedeba595f4e968ca32830f65d80}{get\+Left\+Bottom} () const 
+\begin{DoxyCompactList}\small\item\em get\+Left\+Bottom -\/ возвращает значение позиции на одну клетку левее и ниже \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_position_a781e1db951f0fd907d96b5d71c115a35}{get\+Bottom} () const 
+\begin{DoxyCompactList}\small\item\em get\+Bottom -\/ возвращает значение позиции на одну клетку ниже \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_position_a4d667aa60ded8c0a9bfbee9f5c9bd43f}{get\+Right\+Bottom} () const 
+\begin{DoxyCompactList}\small\item\em get\+Right\+Bottom-\/ возвращает значение позиции на одну клетку правее ниже \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_position_aed1e4bc43298000671a6dd7266fb7db8}{operator==} (const \hyperlink{classboard_position}{board\+Position} \&other) const 
+\begin{DoxyCompactList}\small\item\em operator == -\/ Оператор сравнения двух позиций \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_position_a51f7343be2f9bf9964f97f147d2c2f21}{operator!=} (const \hyperlink{classboard_position}{board\+Position} \&other) const 
+\begin{DoxyCompactList}\small\item\em operator == -\/ Оператор сравнения двух позиций \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{classboard_position}{board\+Position} class -\/ класс которы описывает позицию на доске 
+
+\subsection{Конструктор(ы)}
+\hypertarget{classboard_position_a11c22f3e7d236abf022bc927b59ef5a4}{}\index{board\+Position@{board\+Position}!board\+Position@{board\+Position}}
+\index{board\+Position@{board\+Position}!board\+Position@{board\+Position}}
+\subsubsection[{board\+Position}]{\setlength{\rightskip}{0pt plus 5cm}board\+Position\+::board\+Position (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{x, }
+\item[{const int \&}]{y}
+\end{DoxyParamCaption}
+)}\label{classboard_position_a11c22f3e7d236abf022bc927b59ef5a4}
+
+
+\hyperlink{classboard_position}{board\+Position} -\/ конструктор по координатам 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & -\/ горизонтальная (от 0 клетки) \\
+\hline
+{\em y} & -\/ вертикальна (от 0 клетки) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_position_ae0d4347de29c13488cd2b275f4f4206a}{}\index{board\+Position@{board\+Position}!board\+Position@{board\+Position}}
+\index{board\+Position@{board\+Position}!board\+Position@{board\+Position}}
+\subsubsection[{board\+Position}]{\setlength{\rightskip}{0pt plus 5cm}board\+Position\+::board\+Position (
+\begin{DoxyParamCaption}
+\item[{const char \&}]{x, }
+\item[{const int \&}]{y}
+\end{DoxyParamCaption}
+)}\label{classboard_position_ae0d4347de29c13488cd2b275f4f4206a}
+
+
+\hyperlink{classboard_position}{board\+Position} -\/ конструктор из классического шахматного обозначения тип а1 и т.\+д. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & -\/ координата маленькой латинской буквой \\
+\hline
+{\em y} & -\/ вертикальная координата \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_position_a621c395c0d7977a547c803e059cffe73}{}\index{board\+Position@{board\+Position}!board\+Position@{board\+Position}}
+\index{board\+Position@{board\+Position}!board\+Position@{board\+Position}}
+\subsubsection[{board\+Position}]{\setlength{\rightskip}{0pt plus 5cm}board\+Position\+::board\+Position (
+\begin{DoxyParamCaption}
+\item[{const int}]{number}
+\end{DoxyParamCaption}
+)}\label{classboard_position_a621c395c0d7977a547c803e059cffe73}
+
+
+\hyperlink{classboard_position}{board\+Position} -\/ конструктор из номера позиции номер определяется формулой \+: y$\ast$8 + x 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em number} & -\/ номер \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\hypertarget{classboard_position_a781e1db951f0fd907d96b5d71c115a35}{}\index{board\+Position@{board\+Position}!get\+Bottom@{get\+Bottom}}
+\index{get\+Bottom@{get\+Bottom}!board\+Position@{board\+Position}}
+\subsubsection[{get\+Bottom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Position\+::get\+Bottom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a781e1db951f0fd907d96b5d71c115a35}
+
+
+get\+Bottom -\/ возвращает значение позиции на одну клетку ниже 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_position_aa119bc1c9a676d2dae7e04983e8d77dd}{}\index{board\+Position@{board\+Position}!get\+Left@{get\+Left}}
+\index{get\+Left@{get\+Left}!board\+Position@{board\+Position}}
+\subsubsection[{get\+Left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Position\+::get\+Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_aa119bc1c9a676d2dae7e04983e8d77dd}
+
+
+get\+Left -\/ возвращает значение позиции на одну клетку левее 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_position_ae553cedeba595f4e968ca32830f65d80}{}\index{board\+Position@{board\+Position}!get\+Left\+Bottom@{get\+Left\+Bottom}}
+\index{get\+Left\+Bottom@{get\+Left\+Bottom}!board\+Position@{board\+Position}}
+\subsubsection[{get\+Left\+Bottom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Position\+::get\+Left\+Bottom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_ae553cedeba595f4e968ca32830f65d80}
+
+
+get\+Left\+Bottom -\/ возвращает значение позиции на одну клетку левее и ниже 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_position_a04b42f0b30728baa2377bc96fd4bb77f}{}\index{board\+Position@{board\+Position}!get\+Left\+Top@{get\+Left\+Top}}
+\index{get\+Left\+Top@{get\+Left\+Top}!board\+Position@{board\+Position}}
+\subsubsection[{get\+Left\+Top}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Position\+::get\+Left\+Top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a04b42f0b30728baa2377bc96fd4bb77f}
+
+
+get\+Left\+Top -\/ -\/ возвращает значение позиции на одну клетку левее и выше 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_position_a0eb1fa8e303bc9def2547cd3bb2d2ef7}{}\index{board\+Position@{board\+Position}!get\+Right@{get\+Right}}
+\index{get\+Right@{get\+Right}!board\+Position@{board\+Position}}
+\subsubsection[{get\+Right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Position\+::get\+Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a0eb1fa8e303bc9def2547cd3bb2d2ef7}
+
+
+get\+Right -\/ возвращает значение позиции на одну клетку правее 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_position_a4d667aa60ded8c0a9bfbee9f5c9bd43f}{}\index{board\+Position@{board\+Position}!get\+Right\+Bottom@{get\+Right\+Bottom}}
+\index{get\+Right\+Bottom@{get\+Right\+Bottom}!board\+Position@{board\+Position}}
+\subsubsection[{get\+Right\+Bottom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Position\+::get\+Right\+Bottom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a4d667aa60ded8c0a9bfbee9f5c9bd43f}
+
+
+get\+Right\+Bottom-\/ возвращает значение позиции на одну клетку правее ниже 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_position_a7bd99b1681779f7af040a9da8aec659a}{}\index{board\+Position@{board\+Position}!get\+Right\+Top@{get\+Right\+Top}}
+\index{get\+Right\+Top@{get\+Right\+Top}!board\+Position@{board\+Position}}
+\subsubsection[{get\+Right\+Top}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Position\+::get\+Right\+Top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a7bd99b1681779f7af040a9da8aec659a}
+
+
+get\+Right\+Top -\/ возвращает значение позиции на одну клетку правее и выше 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_position_a4454d72951643a9ea1baf28473219927}{}\index{board\+Position@{board\+Position}!get\+Top@{get\+Top}}
+\index{get\+Top@{get\+Top}!board\+Position@{board\+Position}}
+\subsubsection[{get\+Top}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+Position\+::get\+Top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a4454d72951643a9ea1baf28473219927}
+
+
+get\+Top -\/ -\/ возвращает значение позиции на одну клетку выше 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_position_a4a404ab23f49b541ce25941d69472582}{}\index{board\+Position@{board\+Position}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!board\+Position@{board\+Position}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+Position\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a4a404ab23f49b541ce25941d69472582}
+
+
+is\+Valid -\/ проверяет является ли данная позиция позицией доски 
+
+\begin{DoxyReturn}{Возвращает}
+является ли данная позиция позицией доски 
+\end{DoxyReturn}
+\hypertarget{classboard_position_afb83b12885a2ec552cecb067573011d4}{}\index{board\+Position@{board\+Position}!number@{number}}
+\index{number@{number}!board\+Position@{board\+Position}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}int board\+Position\+::number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_afb83b12885a2ec552cecb067573011d4}
+
+
+number -\/ возвращает номер позиции 
+
+\begin{DoxyReturn}{Возвращает}
+номер 
+\end{DoxyReturn}
+\hypertarget{classboard_position_a51f7343be2f9bf9964f97f147d2c2f21}{}\index{board\+Position@{board\+Position}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!board\+Position@{board\+Position}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+Position\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a51f7343be2f9bf9964f97f147d2c2f21}
+
+
+operator == -\/ Оператор сравнения двух позиций 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em other} & -\/ Другая позиция \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ Не равны ли? 
+\end{DoxyReturn}
+\hypertarget{classboard_position_aed1e4bc43298000671a6dd7266fb7db8}{}\index{board\+Position@{board\+Position}!operator==@{operator==}}
+\index{operator==@{operator==}!board\+Position@{board\+Position}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+Position\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_aed1e4bc43298000671a6dd7266fb7db8}
+
+
+operator == -\/ Оператор сравнения двух позиций 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em other} & -\/ Другая позиция \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ Равны ли? 
+\end{DoxyReturn}
+\hypertarget{classboard_position_a9e97897840e379e2206d18cf79c04d1f}{}\index{board\+Position@{board\+Position}!set\+Nuber@{set\+Nuber}}
+\index{set\+Nuber@{set\+Nuber}!board\+Position@{board\+Position}}
+\subsubsection[{set\+Nuber}]{\setlength{\rightskip}{0pt plus 5cm}void board\+Position\+::set\+Nuber (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a9e97897840e379e2206d18cf79c04d1f}
+
+
+set\+Nuber -\/ задает координаты из номера позиции номер определяется формулой \+: x$\ast$8 + y 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em number} & -\/ номер \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_position_a1715f2dcd0e8f94dd71998c5c4fd971a}{}\index{board\+Position@{board\+Position}!set\+X@{set\+X}}
+\index{set\+X@{set\+X}!board\+Position@{board\+Position}}
+\subsubsection[{set\+X}]{\setlength{\rightskip}{0pt plus 5cm}void board\+Position\+::set\+X (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a1715f2dcd0e8f94dd71998c5c4fd971a}
+
+
+set\+X -\/ задает горизонтальную позицию по координате 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & -\/ координата \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_position_af6ecff0221a8d5952e7fb6fe69f756a2}{}\index{board\+Position@{board\+Position}!set\+X@{set\+X}}
+\index{set\+X@{set\+X}!board\+Position@{board\+Position}}
+\subsubsection[{set\+X}]{\setlength{\rightskip}{0pt plus 5cm}void board\+Position\+::set\+X (
+\begin{DoxyParamCaption}
+\item[{const char \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_af6ecff0221a8d5952e7fb6fe69f756a2}
+
+
+set\+X -\/ Задает горизонтальную позицию по букве 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em x} & -\/ позиция латинской буквой \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_position_ac587538a440a0db117090492d6ee9a48}{}\index{board\+Position@{board\+Position}!set\+Y@{set\+Y}}
+\index{set\+Y@{set\+Y}!board\+Position@{board\+Position}}
+\subsubsection[{set\+Y}]{\setlength{\rightskip}{0pt plus 5cm}void board\+Position\+::set\+Y (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_ac587538a440a0db117090492d6ee9a48}
+
+
+set\+Y -\/ Задвет позицию по вертикале 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em у} & -\/ позиция \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_position_abf254ede46c202864a513b548bf980c3}{}\index{board\+Position@{board\+Position}!x@{x}}
+\index{x@{x}!board\+Position@{board\+Position}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}int board\+Position\+::x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_abf254ede46c202864a513b548bf980c3}
+
+
+x -\/ вернуть Х 
+
+\begin{DoxyReturn}{Возвращает}
+Х 
+\end{DoxyReturn}
+\hypertarget{classboard_position_a2f2f70653d4ef7e098b974e33c4fdcc2}{}\index{board\+Position@{board\+Position}!x\+To\+Char@{x\+To\+Char}}
+\index{x\+To\+Char@{x\+To\+Char}!board\+Position@{board\+Position}}
+\subsubsection[{x\+To\+Char}]{\setlength{\rightskip}{0pt plus 5cm}char board\+Position\+::x\+To\+Char (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a2f2f70653d4ef7e098b974e33c4fdcc2}
+
+
+x\+To\+Char -\/ вернуть Х в виде символа 
+
+\begin{DoxyReturn}{Возвращает}
+Х 
+\end{DoxyReturn}
+\hypertarget{classboard_position_a1128782cfef05468807b3a4449226894}{}\index{board\+Position@{board\+Position}!x\+To\+Number@{x\+To\+Number}}
+\index{x\+To\+Number@{x\+To\+Number}!board\+Position@{board\+Position}}
+\subsubsection[{x\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}char board\+Position\+::x\+To\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a1128782cfef05468807b3a4449226894}
+
+
+x\+To\+Number -\/ вернуть Х в виде позиции от 1 
+
+\begin{DoxyReturn}{Возвращает}
+Х 
+\end{DoxyReturn}
+\hypertarget{classboard_position_a189ee18b8ce9691afc7cc4090e929837}{}\index{board\+Position@{board\+Position}!y@{y}}
+\index{y@{y}!board\+Position@{board\+Position}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}int board\+Position\+::y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_a189ee18b8ce9691afc7cc4090e929837}
+
+
+y -\/ вернуть Y 
+
+\begin{DoxyReturn}{Возвращает}
+Y 
+\end{DoxyReturn}
+\hypertarget{classboard_position_afce067f97792757bd643a58762e3d362}{}\index{board\+Position@{board\+Position}!y\+To\+Number@{y\+To\+Number}}
+\index{y\+To\+Number@{y\+To\+Number}!board\+Position@{board\+Position}}
+\subsubsection[{y\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int board\+Position\+::y\+To\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_position_afce067f97792757bd643a58762e3d362}
+
+
+y\+To\+Number -\/ вернуть Y в виде позиции от 1 
+
+\begin{DoxyReturn}{Возвращает}
+Y 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/boardposition.\+h\item 
+Model/boardposition.\+cpp\end{DoxyCompactItemize}

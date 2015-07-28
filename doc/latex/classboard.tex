@@ -1,0 +1,542 @@
+\hypertarget{classboard}{}\section{Класс board}
+\label{classboard}\index{board@{board}}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classboard_a2a97f34e7c9ed8ace6a2508bb2c6e2a2}{}\hyperlink{classboard_a2a97f34e7c9ed8ace6a2508bb2c6e2a2}{board} ()\label{classboard_a2a97f34e7c9ed8ace6a2508bb2c6e2a2}
+
+\begin{DoxyCompactList}\small\item\em board -\/ конструктор по умолчанию создает c фигурами в стартовой позиции \end{DoxyCompactList}\item 
+\hypertarget{classboard_a02fbb0cbb90dd7ab753f52c17700efbe}{}void \hyperlink{classboard_a02fbb0cbb90dd7ab753f52c17700efbe}{set\+Default} ()\label{classboard_a02fbb0cbb90dd7ab753f52c17700efbe}
+
+\begin{DoxyCompactList}\small\item\em set\+Default -\/ задает внутренние значения в исходное состояние \end{DoxyCompactList}\item 
+\hypertarget{classboard_ae7c2a8d249f08c8c87d222e55cfd990c}{}void \hyperlink{classboard_ae7c2a8d249f08c8c87d222e55cfd990c}{setup\+Pieces} ()\label{classboard_ae7c2a8d249f08c8c87d222e55cfd990c}
+
+\begin{DoxyCompactList}\small\item\em setup\+Pieces -\/ раставляет заново фигуры на доску \end{DoxyCompactList}\item 
+void \hyperlink{classboard_a033c9329179afc730b3d725e54639c7c}{set\+Special\+Piece\+Flags} (const \hyperlink{classboard_move}{board\+Move} \&bm)
+\begin{DoxyCompactList}\small\item\em set\+Special\+Piece\+Flags -\/ отмечает изменения на схемах рокировок и взятий на проходе \end{DoxyCompactList}\item 
+void \hyperlink{classboard_a50bdaf6705c56c528f6c5ef8c0e3586e}{update} (const \hyperlink{classboard_move}{board\+Move} \&bm)
+\begin{DoxyCompactList}\small\item\em update -\/ совершает ход \end{DoxyCompactList}\item 
+\hyperlink{classpiece}{piece} $\ast$ \hyperlink{classboard_a8e2be38a28f6b631815741b70671e197}{get\+Piece} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em get\+Piece -\/ возвращает фигуру из заданной позиции \end{DoxyCompactList}\item 
+void \hyperlink{classboard_a7f11955cde955b7799fabab9df7224ad}{set\+Piece} (\hyperlink{classpiece}{piece} $\ast$p, const \hyperlink{classboard_position}{board\+Position} \&bp)
+\begin{DoxyCompactList}\small\item\em set\+Piece \end{DoxyCompactList}\item 
+void \hyperlink{classboard_a94bb90ebf9c98575a50d00fe4da3e1b3}{add\+Piecet} (\hyperlink{classpiece}{piece} $\ast$p, const \hyperlink{classboard_position}{board\+Position} \&bp)
+\begin{DoxyCompactList}\small\item\em add\+Piecet -\/ добавляет новую фигуру на доску \end{DoxyCompactList}\item 
+void \hyperlink{classboard_aa5a3a45d66a0b985446b10c56cd57fdf}{remove\+Piece} (const \hyperlink{classboard_position}{board\+Position} \&bp)
+\begin{DoxyCompactList}\small\item\em remove\+Piece -\/ удаляет фигуру с доски \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_afcf992b9c9ec619099f41513c86cb4a9}{is\+Path\+Clear} (const \hyperlink{classboard_move}{board\+Move} \&bm) const 
+\begin{DoxyCompactList}\small\item\em is\+Path\+Clear -\/ проверяет есть ли на пути другие фигуры \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_ab7b060ee3893cb79fc4d8376632f0f20}{is\+Occupied} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em is\+Occupied -\/ проверяет является ли клетка занятой \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_a49c3688bb5c36807624e3c5f1669f203}{is\+En\+Passant\+Set} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em is\+En\+Passant\+Set -\/ содержит ли взятия на проходе \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_ac879df88ca819e95d1a02d676efd59c0}{is\+Check} (\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c) const 
+\begin{DoxyCompactList}\small\item\em is\+Check -\/ проверяет является ли ситуация шаховой для данного цвета \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_a69189b33f0ee2c1b4176583382116aae}{is\+Result\+Check} (const \hyperlink{classboard_move}{board\+Move} \&bm) const 
+\begin{DoxyCompactList}\small\item\em is\+Result\+Check -\/ проверяет является ли ситуация после хода шаховой \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_af9cea4c28839fd5f9b6d5aaec28ba14d}{is\+Mate} (\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c) const 
+\begin{DoxyCompactList}\small\item\em is\+Mate -\/ проверяет является ли ситуация на доске матом для фигуры звдвнного цвета \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_a50063bac8842217a3acb6d6d7732c6b0}{is\+Stalemate} (\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c) const 
+\begin{DoxyCompactList}\small\item\em is\+Stalemate -\/ проверяет является ли ситуация на доске патом для фигуры звдвнного цвета \end{DoxyCompactList}\item 
+mask \hyperlink{classboard_ab83d3af8ff3ac068ae086f148fdbcf07}{is\+Attacked} (const \hyperlink{classboard_position}{board\+Position} \&bp, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c) const 
+\begin{DoxyCompactList}\small\item\em is\+Attacked -\/ проверяет находится ли фигура под боем \end{DoxyCompactList}\item 
+Q\+List$<$ \hyperlink{classboard_move}{board\+Move} $>$ \hyperlink{classboard_a8282e47422a657a2683ede9607310c89}{get\+Legal\+Moves} (const \hyperlink{classboard_position}{board\+Position} \&bp, bool cheks=true) const 
+\begin{DoxyCompactList}\small\item\em get\+Legal\+Moves -\/ возвращает все допустимые ходы для фигуры в этой клетке \end{DoxyCompactList}\item 
+Q\+List$<$ \hyperlink{classboard_move}{board\+Move} $>$ \hyperlink{classboard_a0868c4cf8b6f94269a32cc75d8917016}{get\+Legal\+Moves} (\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c, bool cheks=true, bool fast=false) const 
+\begin{DoxyCompactList}\small\item\em get\+Legal\+Moves -\/ возвращает все допустимые ходы для фигуры для фигур этого цвета \end{DoxyCompactList}\item 
+\hyperlink{structserial_board}{serial\+Board} \hyperlink{classboard_a9e098dc31fc1f9fc48ac23fafd4834ea}{serialize} () const 
+\begin{DoxyCompactList}\small\item\em serialize -\/ получение описания доски в виде структуры \end{DoxyCompactList}\item 
+\hyperlink{classboard_position}{board\+Position} \hyperlink{classboard_ad4b7af35cfca5af432a87a8e28a65d63}{get\+King} (\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c) const 
+\begin{DoxyCompactList}\small\item\em get\+King -\/ Вернуть позицию короля заданного цвета \end{DoxyCompactList}\item 
+bool \hyperlink{classboard_a86dbad33c8e8c28015db47d78a0c2afc}{have\+Castling} (\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c, bool is\+Left) const 
+\begin{DoxyCompactList}\small\item\em have\+Castling -\/ проверяет возможность левой или правой роккировки для фигур заданного цвета \end{DoxyCompactList}\item 
+int \hyperlink{classboard_a02dc94d46def16861d0d8049e074fc8f}{get\+Y\+State} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em get\+Y\+State -\/ вернуть статус горизонтали \end{DoxyCompactList}\item 
+int \hyperlink{classboard_a23f6cf511a4ddf7f163949bfb2442f68}{get\+X\+State} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em get\+Y\+State -\/ вернуть статус вертикали \end{DoxyCompactList}\item 
+int \hyperlink{classboard_a5d1437aa494539ee661f00f248cb0a2a}{get\+Left\+Top\+Diag\+State} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em get\+Left\+Top\+Diag\+State -\/ вернуть статус левой верхней наклонной \end{DoxyCompactList}\item 
+int \hyperlink{classboard_aeb9a53a91c2a34b15bdec9de604e713e}{get\+Right\+Top\+Diag\+State} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em get\+Left\+Top\+Diag\+State -\/ вернуть статус правой верхней наклонной \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classboard_aeb1b89f64f70999d79b8d2c1a26a9fa4}{}static void \hyperlink{classboard_aeb1b89f64f70999d79b8d2c1a26a9fa4}{init} ()\label{classboard_aeb1b89f64f70999d79b8d2c1a26a9fa4}
+
+\begin{DoxyCompactList}\small\item\em init -\/ инициализация статических полей класса \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Статические открытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classboard_a7335d4d9f22c5d32777fd4b419ed173d}{}static mask \hyperlink{classboard_a7335d4d9f22c5d32777fd4b419ed173d}{pawn\+Attacks} \mbox{[}2\mbox{]}\mbox{[}64\mbox{]}\label{classboard_a7335d4d9f22c5d32777fd4b419ed173d}
+
+\begin{DoxyCompactList}\small\item\em pawn\+Attacks -\/ Атаки пешек по цветам \end{DoxyCompactList}\item 
+\hypertarget{classboard_ac343023f9b20b07922cf5780be2bfe8b}{}static mask \hyperlink{classboard_ac343023f9b20b07922cf5780be2bfe8b}{knight\+Attacks} \mbox{[}64\mbox{]}\label{classboard_ac343023f9b20b07922cf5780be2bfe8b}
+
+\begin{DoxyCompactList}\small\item\em knight\+Attacks -\/ атаки королей \end{DoxyCompactList}\item 
+\hypertarget{classboard_aeebd1ae59c78f614db0337e4edb5b5d8}{}static mask \hyperlink{classboard_aeebd1ae59c78f614db0337e4edb5b5d8}{king\+Attacks} \mbox{[}64\mbox{]}\label{classboard_aeebd1ae59c78f614db0337e4edb5b5d8}
+
+\begin{DoxyCompactList}\small\item\em king\+Attacks -\/ атаки короля \end{DoxyCompactList}\item 
+\hypertarget{classboard_acaec3ff166bdb2ae166ac877394908e9}{}static mask \hyperlink{classboard_acaec3ff166bdb2ae166ac877394908e9}{x\+Attacks} \mbox{[}64\mbox{]}\mbox{[}256\mbox{]}\label{classboard_acaec3ff166bdb2ae166ac877394908e9}
+
+\begin{DoxyCompactList}\small\item\em x\+Attacks -\/ атаки по горизонтали \end{DoxyCompactList}\item 
+\hypertarget{classboard_a804587c2a72537dda9106895acbc6cf8}{}static mask \hyperlink{classboard_a804587c2a72537dda9106895acbc6cf8}{y\+Attacks} \mbox{[}64\mbox{]}\mbox{[}256\mbox{]}\label{classboard_a804587c2a72537dda9106895acbc6cf8}
+
+\begin{DoxyCompactList}\small\item\em y\+Attacks -\/ атаки по вертикали \end{DoxyCompactList}\item 
+\hypertarget{classboard_a60f3b256b2baa81086ba437001bd53d4}{}static mask \hyperlink{classboard_a60f3b256b2baa81086ba437001bd53d4}{diag\+Attacks\+Left\+Top} \mbox{[}64\mbox{]}\mbox{[}256\mbox{]}\label{classboard_a60f3b256b2baa81086ba437001bd53d4}
+
+\begin{DoxyCompactList}\small\item\em diag\+Attacks\+Left\+Top -\/ Атаки лежащии на левой верхней диаганали \end{DoxyCompactList}\item 
+\hypertarget{classboard_a939941b4d68ab75b4f1f3a87d4df5bf4}{}static mask \hyperlink{classboard_a939941b4d68ab75b4f1f3a87d4df5bf4}{diag\+Attacks\+Right\+Top} \mbox{[}64\mbox{]}\mbox{[}256\mbox{]}\label{classboard_a939941b4d68ab75b4f1f3a87d4df5bf4}
+
+\begin{DoxyCompactList}\small\item\em diag\+Attacks\+Right\+Top -\/ Атаки лежащии на правой верхней диаганали \end{DoxyCompactList}\item 
+\hypertarget{classboard_a55368a0178e6c92f6cbd6d7899812e5f}{}static int \hyperlink{classboard_a55368a0178e6c92f6cbd6d7899812e5f}{pow2} \mbox{[}8\mbox{]}\label{classboard_a55368a0178e6c92f6cbd6d7899812e5f}
+
+\begin{DoxyCompactList}\small\item\em pow2 -\/ Необходима для оценки приоритетов блоком ии \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classboard_a30f980cd5a3847c1fc8b9c49c84af74a}{}class {\bfseries A\+I}\label{classboard_a30f980cd5a3847c1fc8b9c49c84af74a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Методы}
+\hypertarget{classboard_a94bb90ebf9c98575a50d00fe4da3e1b3}{}\index{board@{board}!add\+Piecet@{add\+Piecet}}
+\index{add\+Piecet@{add\+Piecet}!board@{board}}
+\subsubsection[{add\+Piecet}]{\setlength{\rightskip}{0pt plus 5cm}void board\+::add\+Piecet (
+\begin{DoxyParamCaption}
+\item[{{\bf piece} $\ast$}]{p, }
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+)}\label{classboard_a94bb90ebf9c98575a50d00fe4da3e1b3}
+
+
+add\+Piecet -\/ добавляет новую фигуру на доску 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em p} & -\/ фигура \\
+\hline
+{\em bp} & -\/ позиция на доске \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_ad4b7af35cfca5af432a87a8e28a65d63}{}\index{board@{board}!get\+King@{get\+King}}
+\index{get\+King@{get\+King}!board@{board}}
+\subsubsection[{get\+King}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Position} board\+::get\+King (
+\begin{DoxyParamCaption}
+\item[{{\bf piece\+::color}}]{c}
+\end{DoxyParamCaption}
+) const}\label{classboard_ad4b7af35cfca5af432a87a8e28a65d63}
+
+
+get\+King -\/ Вернуть позицию короля заданного цвета 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ Цвет \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ Позиция короля 
+\end{DoxyReturn}
+\hypertarget{classboard_a5d1437aa494539ee661f00f248cb0a2a}{}\index{board@{board}!get\+Left\+Top\+Diag\+State@{get\+Left\+Top\+Diag\+State}}
+\index{get\+Left\+Top\+Diag\+State@{get\+Left\+Top\+Diag\+State}!board@{board}}
+\subsubsection[{get\+Left\+Top\+Diag\+State}]{\setlength{\rightskip}{0pt plus 5cm}int board\+::get\+Left\+Top\+Diag\+State (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const}\label{classboard_a5d1437aa494539ee661f00f248cb0a2a}
+
+
+get\+Left\+Top\+Diag\+State -\/ вернуть статус левой верхней наклонной 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция через которую проходит наклонная \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+статус 
+\end{DoxyReturn}
+\hypertarget{classboard_a8282e47422a657a2683ede9607310c89}{}\index{board@{board}!get\+Legal\+Moves@{get\+Legal\+Moves}}
+\index{get\+Legal\+Moves@{get\+Legal\+Moves}!board@{board}}
+\subsubsection[{get\+Legal\+Moves}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf board\+Move} $>$ board\+::get\+Legal\+Moves (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp, }
+\item[{bool}]{cheks = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}\label{classboard_a8282e47422a657a2683ede9607310c89}
+
+
+get\+Legal\+Moves -\/ возвращает все допустимые ходы для фигуры в этой клетке 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ клетка \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/список ходов 
+\end{DoxyReturn}
+\hypertarget{classboard_a0868c4cf8b6f94269a32cc75d8917016}{}\index{board@{board}!get\+Legal\+Moves@{get\+Legal\+Moves}}
+\index{get\+Legal\+Moves@{get\+Legal\+Moves}!board@{board}}
+\subsubsection[{get\+Legal\+Moves}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf board\+Move} $>$ board\+::get\+Legal\+Moves (
+\begin{DoxyParamCaption}
+\item[{{\bf piece\+::color}}]{c, }
+\item[{bool}]{cheks = {\ttfamily true}, }
+\item[{bool}]{fast = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const}\label{classboard_a0868c4cf8b6f94269a32cc75d8917016}
+
+
+get\+Legal\+Moves -\/ возвращает все допустимые ходы для фигуры для фигур этого цвета 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ цвет \\
+\hline
+{\em fast} & -\/ позволяет не искать все возможные ходы, а возвращает ходы первой попавшейся фигуры \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/список ходов 
+\end{DoxyReturn}
+\hypertarget{classboard_a8e2be38a28f6b631815741b70671e197}{}\index{board@{board}!get\+Piece@{get\+Piece}}
+\index{get\+Piece@{get\+Piece}!board@{board}}
+\subsubsection[{get\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}{\bf piece} $\ast$ board\+::get\+Piece (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const}\label{classboard_a8e2be38a28f6b631815741b70671e197}
+
+
+get\+Piece -\/ возвращает фигуру из заданной позиции 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ указатель на фигуру 
+\end{DoxyReturn}
+\hypertarget{classboard_aeb9a53a91c2a34b15bdec9de604e713e}{}\index{board@{board}!get\+Right\+Top\+Diag\+State@{get\+Right\+Top\+Diag\+State}}
+\index{get\+Right\+Top\+Diag\+State@{get\+Right\+Top\+Diag\+State}!board@{board}}
+\subsubsection[{get\+Right\+Top\+Diag\+State}]{\setlength{\rightskip}{0pt plus 5cm}int board\+::get\+Right\+Top\+Diag\+State (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const}\label{classboard_aeb9a53a91c2a34b15bdec9de604e713e}
+
+
+get\+Left\+Top\+Diag\+State -\/ вернуть статус правой верхней наклонной 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция через которую проходит наклонная \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+статус 
+\end{DoxyReturn}
+\hypertarget{classboard_a23f6cf511a4ddf7f163949bfb2442f68}{}\index{board@{board}!get\+X\+State@{get\+X\+State}}
+\index{get\+X\+State@{get\+X\+State}!board@{board}}
+\subsubsection[{get\+X\+State}]{\setlength{\rightskip}{0pt plus 5cm}int board\+::get\+X\+State (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const}\label{classboard_a23f6cf511a4ddf7f163949bfb2442f68}
+
+
+get\+Y\+State -\/ вернуть статус вертикали 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция через которую проходит вертикаль \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+статус 
+\end{DoxyReturn}
+\hypertarget{classboard_a02dc94d46def16861d0d8049e074fc8f}{}\index{board@{board}!get\+Y\+State@{get\+Y\+State}}
+\index{get\+Y\+State@{get\+Y\+State}!board@{board}}
+\subsubsection[{get\+Y\+State}]{\setlength{\rightskip}{0pt plus 5cm}int board\+::get\+Y\+State (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_a02dc94d46def16861d0d8049e074fc8f}
+
+
+get\+Y\+State -\/ вернуть статус горизонтали 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция через которую проходит горизонталь \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+статус 
+\end{DoxyReturn}
+\hypertarget{classboard_a86dbad33c8e8c28015db47d78a0c2afc}{}\index{board@{board}!have\+Castling@{have\+Castling}}
+\index{have\+Castling@{have\+Castling}!board@{board}}
+\subsubsection[{have\+Castling}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+::have\+Castling (
+\begin{DoxyParamCaption}
+\item[{{\bf piece\+::color}}]{c, }
+\item[{bool}]{is\+Left}
+\end{DoxyParamCaption}
+) const}\label{classboard_a86dbad33c8e8c28015db47d78a0c2afc}
+
+
+have\+Castling -\/ проверяет возможность левой или правой роккировки для фигур заданного цвета 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ цвет \\
+\hline
+{\em is\+Left} & -\/ Левая ли роккировка проверяется \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+возможна ли такая роккировка 
+\end{DoxyReturn}
+\hypertarget{classboard_ab83d3af8ff3ac068ae086f148fdbcf07}{}\index{board@{board}!is\+Attacked@{is\+Attacked}}
+\index{is\+Attacked@{is\+Attacked}!board@{board}}
+\subsubsection[{is\+Attacked}]{\setlength{\rightskip}{0pt plus 5cm}mask board\+::is\+Attacked (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp, }
+\item[{{\bf piece\+::color}}]{c}
+\end{DoxyParamCaption}
+) const}\label{classboard_ab83d3af8ff3ac068ae086f148fdbcf07}
+
+
+is\+Attacked -\/ проверяет находится ли фигура под боем 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция \\
+\hline
+{\em c} & -\/ цвет фигуры \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ признак атаки 
+\end{DoxyReturn}
+\hypertarget{classboard_ac879df88ca819e95d1a02d676efd59c0}{}\index{board@{board}!is\+Check@{is\+Check}}
+\index{is\+Check@{is\+Check}!board@{board}}
+\subsubsection[{is\+Check}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+::is\+Check (
+\begin{DoxyParamCaption}
+\item[{{\bf piece\+::color}}]{c}
+\end{DoxyParamCaption}
+) const}\label{classboard_ac879df88ca819e95d1a02d676efd59c0}
+
+
+is\+Check -\/ проверяет является ли ситуация шаховой для данного цвета 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ цвет \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ является ли ситуация шаховой 
+\end{DoxyReturn}
+\hypertarget{classboard_a49c3688bb5c36807624e3c5f1669f203}{}\index{board@{board}!is\+En\+Passant\+Set@{is\+En\+Passant\+Set}}
+\index{is\+En\+Passant\+Set@{is\+En\+Passant\+Set}!board@{board}}
+\subsubsection[{is\+En\+Passant\+Set}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+::is\+En\+Passant\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classboard_a49c3688bb5c36807624e3c5f1669f203}
+
+
+is\+En\+Passant\+Set -\/ содержит ли взятия на проходе 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_af9cea4c28839fd5f9b6d5aaec28ba14d}{}\index{board@{board}!is\+Mate@{is\+Mate}}
+\index{is\+Mate@{is\+Mate}!board@{board}}
+\subsubsection[{is\+Mate}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+::is\+Mate (
+\begin{DoxyParamCaption}
+\item[{{\bf piece\+::color}}]{c}
+\end{DoxyParamCaption}
+) const}\label{classboard_af9cea4c28839fd5f9b6d5aaec28ba14d}
+
+
+is\+Mate -\/ проверяет является ли ситуация на доске матом для фигуры звдвнного цвета 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ цвет \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+результат проверки 
+\end{DoxyReturn}
+\hypertarget{classboard_ab7b060ee3893cb79fc4d8376632f0f20}{}\index{board@{board}!is\+Occupied@{is\+Occupied}}
+\index{is\+Occupied@{is\+Occupied}!board@{board}}
+\subsubsection[{is\+Occupied}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+::is\+Occupied (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const}\label{classboard_ab7b060ee3893cb79fc4d8376632f0f20}
+
+
+is\+Occupied -\/ проверяет является ли клетка занятой 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция клетки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+занята ли клетка 
+\end{DoxyReturn}
+\hypertarget{classboard_afcf992b9c9ec619099f41513c86cb4a9}{}\index{board@{board}!is\+Path\+Clear@{is\+Path\+Clear}}
+\index{is\+Path\+Clear@{is\+Path\+Clear}!board@{board}}
+\subsubsection[{is\+Path\+Clear}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+::is\+Path\+Clear (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Move} \&}]{bm}
+\end{DoxyParamCaption}
+) const}\label{classboard_afcf992b9c9ec619099f41513c86cb4a9}
+
+
+is\+Path\+Clear -\/ проверяет есть ли на пути другие фигуры 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bm} & -\/ ход \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+свободен ли путь 
+\end{DoxyReturn}
+\hypertarget{classboard_a69189b33f0ee2c1b4176583382116aae}{}\index{board@{board}!is\+Result\+Check@{is\+Result\+Check}}
+\index{is\+Result\+Check@{is\+Result\+Check}!board@{board}}
+\subsubsection[{is\+Result\+Check}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+::is\+Result\+Check (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Move} \&}]{bm}
+\end{DoxyParamCaption}
+) const}\label{classboard_a69189b33f0ee2c1b4176583382116aae}
+
+
+is\+Result\+Check -\/ проверяет является ли ситуация после хода шаховой 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bm} & -\/ ход \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+будет ли шах 
+\end{DoxyReturn}
+\hypertarget{classboard_a50063bac8842217a3acb6d6d7732c6b0}{}\index{board@{board}!is\+Stalemate@{is\+Stalemate}}
+\index{is\+Stalemate@{is\+Stalemate}!board@{board}}
+\subsubsection[{is\+Stalemate}]{\setlength{\rightskip}{0pt plus 5cm}bool board\+::is\+Stalemate (
+\begin{DoxyParamCaption}
+\item[{{\bf piece\+::color}}]{c}
+\end{DoxyParamCaption}
+) const}\label{classboard_a50063bac8842217a3acb6d6d7732c6b0}
+
+
+is\+Stalemate -\/ проверяет является ли ситуация на доске патом для фигуры звдвнного цвета 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ цвет \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+результат проверки 
+\end{DoxyReturn}
+\hypertarget{classboard_aa5a3a45d66a0b985446b10c56cd57fdf}{}\index{board@{board}!remove\+Piece@{remove\+Piece}}
+\index{remove\+Piece@{remove\+Piece}!board@{board}}
+\subsubsection[{remove\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void board\+::remove\+Piece (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+)}\label{classboard_aa5a3a45d66a0b985446b10c56cd57fdf}
+
+
+remove\+Piece -\/ удаляет фигуру с доски 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ удаляет фигуру из заданой позиции \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_a9e098dc31fc1f9fc48ac23fafd4834ea}{}\index{board@{board}!serialize@{serialize}}
+\index{serialize@{serialize}!board@{board}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf serial\+Board} board\+::serialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classboard_a9e098dc31fc1f9fc48ac23fafd4834ea}
+
+
+serialize -\/ получение описания доски в виде структуры 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\hypertarget{classboard_a7f11955cde955b7799fabab9df7224ad}{}\index{board@{board}!set\+Piece@{set\+Piece}}
+\index{set\+Piece@{set\+Piece}!board@{board}}
+\subsubsection[{set\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void board\+::set\+Piece (
+\begin{DoxyParamCaption}
+\item[{{\bf piece} $\ast$}]{p, }
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+)}\label{classboard_a7f11955cde955b7799fabab9df7224ad}
+
+
+set\+Piece 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em p} & \\
+\hline
+{\em bp} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_a033c9329179afc730b3d725e54639c7c}{}\index{board@{board}!set\+Special\+Piece\+Flags@{set\+Special\+Piece\+Flags}}
+\index{set\+Special\+Piece\+Flags@{set\+Special\+Piece\+Flags}!board@{board}}
+\subsubsection[{set\+Special\+Piece\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}void board\+::set\+Special\+Piece\+Flags (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Move} \&}]{bm}
+\end{DoxyParamCaption}
+)}\label{classboard_a033c9329179afc730b3d725e54639c7c}
+
+
+set\+Special\+Piece\+Flags -\/ отмечает изменения на схемах рокировок и взятий на проходе 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bm} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classboard_a50bdaf6705c56c528f6c5ef8c0e3586e}{}\index{board@{board}!update@{update}}
+\index{update@{update}!board@{board}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void board\+::update (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Move} \&}]{bm}
+\end{DoxyParamCaption}
+)}\label{classboard_a50bdaf6705c56c528f6c5ef8c0e3586e}
+
+
+update -\/ совершает ход 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bm} & -\/ход \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/board.\+h\item 
+Model/board.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,264 @@
+\hypertarget{classchess_game}{}\section{Класс chess\+Game}
+\label{classchess_game}\index{chess\+Game@{chess\+Game}}
+
+
+The \hyperlink{classchess_game}{chess\+Game} class -\/ класс партии  
+
+
+
+
+{\ttfamily \#include $<$chessgame.\+h$>$}
+
+Граф наследования\+:chess\+Game\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classchess_game}
+\end{center}
+\end{figure}
+\subsection*{Сигналы}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classchess_game_a8c0d3a3a193aac0635d173b584c97bcd}{made\+Move} (\hyperlink{classboard_move}{board\+Move} bm)
+\begin{DoxyCompactList}\small\item\em made\+Move -\/ Был совершен ход \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classchess_game_a1e6fc778faac96b97fd66af94baa3a49}{}{\bfseries chess\+Game} (Q\+Object $\ast$parent=nullptr)\label{classchess_game_a1e6fc778faac96b97fd66af94baa3a49}
+
+\item 
+\hyperlink{classchess_game_a3d92d77fbd1f6834e72b64d8a9472a96}{chess\+Game} (\hyperlink{classchess_player}{chess\+Player} $\ast$p1, \hyperlink{classchess_player}{chess\+Player} $\ast$p2)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classchess_game}{chess\+Game} -\/ конструктор для инициализации парой игроков \end{DoxyCompactList}\item 
+\hypertarget{classchess_game_ab8015aeeb33def6b01df544d5de76c62}{}\hyperlink{classchess_game_ab8015aeeb33def6b01df544d5de76c62}{$\sim$chess\+Game} ()\label{classchess_game_ab8015aeeb33def6b01df544d5de76c62}
+
+\begin{DoxyCompactList}\small\item\em $\sim$chess\+Game корректно разрушает объект \end{DoxyCompactList}\item 
+\hypertarget{classchess_game_ac4434ee888280b15097641146900aedf}{}void \hyperlink{classchess_game_ac4434ee888280b15097641146900aedf}{new\+Game} ()\label{classchess_game_ac4434ee888280b15097641146900aedf}
+
+\begin{DoxyCompactList}\small\item\em new\+Game -\/ запускает новую игру \end{DoxyCompactList}\item 
+void \hyperlink{classchess_game_a7d444b87ac60a620f3ae3b03893478e1}{load\+Game} (const \hyperlink{classchess_game_state}{chess\+Game\+State} \&cgs)
+\begin{DoxyCompactList}\small\item\em load\+Game -\/ загружает игру \end{DoxyCompactList}\item 
+\hypertarget{classchess_game_aca8e8ecb362a1a21232e5221ad9f6870}{}void \hyperlink{classchess_game_aca8e8ecb362a1a21232e5221ad9f6870}{start\+Game} ()\label{classchess_game_aca8e8ecb362a1a21232e5221ad9f6870}
+
+\begin{DoxyCompactList}\small\item\em start\+Game -\/ начинает новую партию \end{DoxyCompactList}\item 
+\hyperlink{classchess_player}{chess\+Player} $\ast$ \hyperlink{classchess_game_ae818720664a4aaaad9654c63ee138c39}{get\+Player1} () const 
+\begin{DoxyCompactList}\small\item\em get\+Player2 -\/ возвращает белого игрока \end{DoxyCompactList}\item 
+\hyperlink{classchess_player}{chess\+Player} $\ast$ \hyperlink{classchess_game_abe4bece4c525cd770a8b8c455cd2b462}{get\+Player2} () const 
+\begin{DoxyCompactList}\small\item\em get\+Player2 -\/ возвращает белого игрока \end{DoxyCompactList}\item 
+\hyperlink{classchess_player}{chess\+Player} $\ast$ \hyperlink{classchess_game_a1c5a201d0868ad9002b8e2ee1be8476f}{get\+Current\+Player} () const 
+\begin{DoxyCompactList}\small\item\em get\+Current\+Player -\/ возвращает текущего игрока \end{DoxyCompactList}\item 
+\hyperlink{classchess_player}{chess\+Player} $\ast$ \hyperlink{classchess_game_a3c7f8d99a70c6bc579e11c7a80498b20}{get\+Inactive\+Player} () const 
+\begin{DoxyCompactList}\small\item\em get\+Inactive\+Player -\/ возвращает противоположного игрока \end{DoxyCompactList}\item 
+\hyperlink{classchess_game_state}{chess\+Game\+State} \hyperlink{classchess_game_aa63acf0a17cc89fcc0e7535a369ebca2}{get\+Sate} () const 
+\begin{DoxyCompactList}\small\item\em get\+Sate -\/ получит описание игровой ситуации \end{DoxyCompactList}\item 
+\hyperlink{classboard}{board} \hyperlink{classchess_game_ab217741c1342afad766efdc680b46712}{get\+Board} () const 
+\begin{DoxyCompactList}\small\item\em get\+Board -\/ получить доску \end{DoxyCompactList}\item 
+\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} \hyperlink{classchess_game_a78099d4054ffd3bca6de2290504712e4}{get\+Color} () const 
+\begin{DoxyCompactList}\small\item\em get\+Color -\/ получить цвет текущего хода \end{DoxyCompactList}\item 
+bool \hyperlink{classchess_game_a93374e1eee491081f54793b70563e0e9}{try\+Move} (const \hyperlink{classboard_move}{board\+Move} \&bm)
+\begin{DoxyCompactList}\small\item\em try\+Move -\/ попытаться сделать ход \end{DoxyCompactList}\item 
+\hypertarget{classchess_game_af9eb38dee7afe0e7adc56c1ad0057de2}{}void \hyperlink{classchess_game_af9eb38dee7afe0e7adc56c1ad0057de2}{undo\+Move} ()\label{classchess_game_af9eb38dee7afe0e7adc56c1ad0057de2}
+
+\begin{DoxyCompactList}\small\item\em undo\+Move -\/ отменяет последний ход \end{DoxyCompactList}\item 
+bool \hyperlink{classchess_game_a139815c8ee6aa7ba7e6408cdf4e82edc}{can\+Cur} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em can\+Cur -\/ можно ли использовать эту позицию для начала хода \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{classchess_game}{chess\+Game} class -\/ класс партии 
+
+\subsection{Конструктор(ы)}
+\hypertarget{classchess_game_a3d92d77fbd1f6834e72b64d8a9472a96}{}\index{chess\+Game@{chess\+Game}!chess\+Game@{chess\+Game}}
+\index{chess\+Game@{chess\+Game}!chess\+Game@{chess\+Game}}
+\subsubsection[{chess\+Game}]{\setlength{\rightskip}{0pt plus 5cm}chess\+Game\+::chess\+Game (
+\begin{DoxyParamCaption}
+\item[{{\bf chess\+Player} $\ast$}]{p1, }
+\item[{{\bf chess\+Player} $\ast$}]{p2}
+\end{DoxyParamCaption}
+)}\label{classchess_game_a3d92d77fbd1f6834e72b64d8a9472a96}
+
+
+\hyperlink{classchess_game}{chess\+Game} -\/ конструктор для инициализации парой игроков 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em p1} & -\/ белый игрок \\
+\hline
+{\em p2} & -\/ черный игрок \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\hypertarget{classchess_game_a139815c8ee6aa7ba7e6408cdf4e82edc}{}\index{chess\+Game@{chess\+Game}!can\+Cur@{can\+Cur}}
+\index{can\+Cur@{can\+Cur}!chess\+Game@{chess\+Game}}
+\subsubsection[{can\+Cur}]{\setlength{\rightskip}{0pt plus 5cm}bool chess\+Game\+::can\+Cur (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_a139815c8ee6aa7ba7e6408cdf4e82edc}
+
+
+can\+Cur -\/ можно ли использовать эту позицию для начала хода 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ можо или нет 
+\end{DoxyReturn}
+\hypertarget{classchess_game_ab217741c1342afad766efdc680b46712}{}\index{chess\+Game@{chess\+Game}!get\+Board@{get\+Board}}
+\index{get\+Board@{get\+Board}!chess\+Game@{chess\+Game}}
+\subsubsection[{get\+Board}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board} chess\+Game\+::get\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_ab217741c1342afad766efdc680b46712}
+
+
+get\+Board -\/ получить доску 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ доска 
+\end{DoxyReturn}
+\hypertarget{classchess_game_a78099d4054ffd3bca6de2290504712e4}{}\index{chess\+Game@{chess\+Game}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!chess\+Game@{chess\+Game}}
+\subsubsection[{get\+Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf piece\+::color} chess\+Game\+::get\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_a78099d4054ffd3bca6de2290504712e4}
+
+
+get\+Color -\/ получить цвет текущего хода 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classchess_game_a1c5a201d0868ad9002b8e2ee1be8476f}{}\index{chess\+Game@{chess\+Game}!get\+Current\+Player@{get\+Current\+Player}}
+\index{get\+Current\+Player@{get\+Current\+Player}!chess\+Game@{chess\+Game}}
+\subsubsection[{get\+Current\+Player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf chess\+Player}$\ast$ chess\+Game\+::get\+Current\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_a1c5a201d0868ad9002b8e2ee1be8476f}
+
+
+get\+Current\+Player -\/ возвращает текущего игрока 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ указатель на игрока 
+\end{DoxyReturn}
+\hypertarget{classchess_game_a3c7f8d99a70c6bc579e11c7a80498b20}{}\index{chess\+Game@{chess\+Game}!get\+Inactive\+Player@{get\+Inactive\+Player}}
+\index{get\+Inactive\+Player@{get\+Inactive\+Player}!chess\+Game@{chess\+Game}}
+\subsubsection[{get\+Inactive\+Player}]{\setlength{\rightskip}{0pt plus 5cm}{\bf chess\+Player}$\ast$ chess\+Game\+::get\+Inactive\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_a3c7f8d99a70c6bc579e11c7a80498b20}
+
+
+get\+Inactive\+Player -\/ возвращает противоположного игрока 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ указатель на игрока 
+\end{DoxyReturn}
+\hypertarget{classchess_game_ae818720664a4aaaad9654c63ee138c39}{}\index{chess\+Game@{chess\+Game}!get\+Player1@{get\+Player1}}
+\index{get\+Player1@{get\+Player1}!chess\+Game@{chess\+Game}}
+\subsubsection[{get\+Player1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf chess\+Player}$\ast$ chess\+Game\+::get\+Player1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_ae818720664a4aaaad9654c63ee138c39}
+
+
+get\+Player2 -\/ возвращает белого игрока 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ указатель на игрока 
+\end{DoxyReturn}
+\hypertarget{classchess_game_abe4bece4c525cd770a8b8c455cd2b462}{}\index{chess\+Game@{chess\+Game}!get\+Player2@{get\+Player2}}
+\index{get\+Player2@{get\+Player2}!chess\+Game@{chess\+Game}}
+\subsubsection[{get\+Player2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf chess\+Player}$\ast$ chess\+Game\+::get\+Player2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_abe4bece4c525cd770a8b8c455cd2b462}
+
+
+get\+Player2 -\/ возвращает белого игрока 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ указатель на игрока 
+\end{DoxyReturn}
+\hypertarget{classchess_game_aa63acf0a17cc89fcc0e7535a369ebca2}{}\index{chess\+Game@{chess\+Game}!get\+Sate@{get\+Sate}}
+\index{get\+Sate@{get\+Sate}!chess\+Game@{chess\+Game}}
+\subsubsection[{get\+Sate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf chess\+Game\+State} chess\+Game\+::get\+Sate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_aa63acf0a17cc89fcc0e7535a369ebca2}
+
+
+get\+Sate -\/ получит описание игровой ситуации 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ ситуация 
+\end{DoxyReturn}
+\hypertarget{classchess_game_a7d444b87ac60a620f3ae3b03893478e1}{}\index{chess\+Game@{chess\+Game}!load\+Game@{load\+Game}}
+\index{load\+Game@{load\+Game}!chess\+Game@{chess\+Game}}
+\subsubsection[{load\+Game}]{\setlength{\rightskip}{0pt plus 5cm}void chess\+Game\+::load\+Game (
+\begin{DoxyParamCaption}
+\item[{const {\bf chess\+Game\+State} \&}]{cgs}
+\end{DoxyParamCaption}
+)}\label{classchess_game_a7d444b87ac60a620f3ae3b03893478e1}
+
+
+load\+Game -\/ загружает игру 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em cgs} & -\/ состояние игры \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_game_a8c0d3a3a193aac0635d173b584c97bcd}{}\index{chess\+Game@{chess\+Game}!made\+Move@{made\+Move}}
+\index{made\+Move@{made\+Move}!chess\+Game@{chess\+Game}}
+\subsubsection[{made\+Move}]{\setlength{\rightskip}{0pt plus 5cm}void chess\+Game\+::made\+Move (
+\begin{DoxyParamCaption}
+\item[{{\bf board\+Move}}]{bm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classchess_game_a8c0d3a3a193aac0635d173b584c97bcd}
+
+
+made\+Move -\/ Был совершен ход 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bm} & -\/ Ход который был совершен \\
+\hline
+\end{DoxyParams}
+\hypertarget{classchess_game_a93374e1eee491081f54793b70563e0e9}{}\index{chess\+Game@{chess\+Game}!try\+Move@{try\+Move}}
+\index{try\+Move@{try\+Move}!chess\+Game@{chess\+Game}}
+\subsubsection[{try\+Move}]{\setlength{\rightskip}{0pt plus 5cm}bool chess\+Game\+::try\+Move (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Move} \&}]{bm}
+\end{DoxyParamCaption}
+)}\label{classchess_game_a93374e1eee491081f54793b70563e0e9}
+
+
+try\+Move -\/ попытаться сделать ход 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bm} & -\/ ход \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ успешность попытки 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/chessgame.\+h\item 
+Model/chessgame.\+cpp\end{DoxyCompactItemize}

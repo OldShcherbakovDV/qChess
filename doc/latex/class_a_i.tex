@@ -1,0 +1,223 @@
+\hypertarget{class_a_i}{}\section{Класс A\+I}
+\label{class_a_i}\index{A\+I@{A\+I}}
+
+
+The \hyperlink{class_a_i}{A\+I} class -\/ описывает игрока искуственного интелекта  
+
+
+
+
+{\ttfamily \#include $<$chessplayer.\+h$>$}
+
+Граф наследования\+:A\+I\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_i}
+\end{center}
+\end{figure}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_i_a6cda26d3bf7238b1a7ea3725bf4aabb7}{}virtual void {\bfseries new\+Game} ()\label{class_a_i_a6cda26d3bf7238b1a7ea3725bf4aabb7}
+
+\item 
+\hypertarget{class_a_i_a522cd4b638779e79a22bdca7c720117e}{}virtual void {\bfseries start\+Game} ()\label{class_a_i_a522cd4b638779e79a22bdca7c720117e}
+
+\item 
+\hypertarget{class_a_i_aa8be74c446a6c45782b751603eacfc9c}{}virtual void {\bfseries load\+Game} (const \hyperlink{classchess_game_state}{chess\+Game\+State} \&cgs)\label{class_a_i_aa8be74c446a6c45782b751603eacfc9c}
+
+\item 
+\hypertarget{class_a_i_a86e46248e15fae19e4e12905f2b57f29}{}virtual void {\bfseries opponent\+Move} (const \hyperlink{classboard_move}{board\+Move} \&move, const \hyperlink{classchess_game_state}{chess\+Game\+State} \&cgs)\label{class_a_i_a86e46248e15fae19e4e12905f2b57f29}
+
+\item 
+\hypertarget{class_a_i_a2f3438ffaf88c009c07fee1839fabd05}{}virtual void {\bfseries think} (const \hyperlink{classchess_game_state}{chess\+Game\+State} \&cgs)\label{class_a_i_a2f3438ffaf88c009c07fee1839fabd05}
+
+\item 
+\hypertarget{class_a_i_a4e39220413e38cc5ab65c127422cd5b1}{}virtual bool {\bfseries need\+Move} ()\label{class_a_i_a4e39220413e38cc5ab65c127422cd5b1}
+
+\item 
+\hypertarget{class_a_i_a7b9d1d6efcece382034e191ed9a6ed78}{}virtual void {\bfseries undo\+Move} ()\label{class_a_i_a7b9d1d6efcece382034e191ed9a6ed78}
+
+\item 
+\hypertarget{class_a_i_ad77351f99c6ad80f9d675b9affec7f44}{}int {\bfseries get\+Ply} ()\label{class_a_i_ad77351f99c6ad80f9d675b9affec7f44}
+
+\item 
+\hypertarget{class_a_i_a28d820a70a78d7ce290179c10a869c78}{}void {\bfseries set\+Ply} (int ply)\label{class_a_i_a28d820a70a78d7ce290179c10a869c78}
+
+\end{DoxyCompactItemize}
+\subsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_i_a1c6741642292f898fdf8d7ce6c13683f}{}int {\bfseries evaluate\+Board} (const \hyperlink{classboard}{board} \&b, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c)\label{class_a_i_a1c6741642292f898fdf8d7ce6c13683f}
+
+\item 
+\hypertarget{class_a_i_ad66d3b4e9d52d3025d3e043cb90dfd3e}{}int {\bfseries search} (\hyperlink{classboard}{board} b, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c, int depth, int alpha, int beta, \hyperlink{classboard_move}{board\+Move} \&bm)\label{class_a_i_ad66d3b4e9d52d3025d3e043cb90dfd3e}
+
+\item 
+\hypertarget{class_a_i_a748a22bb7df0c157ac1db36d1357a749}{}int {\bfseries pawn\+Bonus} (const \hyperlink{classboard_position}{board\+Position} \&bp, const \hyperlink{classboard}{board} \&b, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} turn, bool endgame)\label{class_a_i_a748a22bb7df0c157ac1db36d1357a749}
+
+\item 
+\hypertarget{class_a_i_a27427ae20aa7eb46effbd28fc29917e7}{}int {\bfseries knight\+Bonus} (const \hyperlink{classboard_position}{board\+Position} \&bp, const \hyperlink{classboard}{board} \&b, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} turn, bool endgame)\label{class_a_i_a27427ae20aa7eb46effbd28fc29917e7}
+
+\item 
+\hypertarget{class_a_i_a1c5a4f19af6bc2d2827db4c7df4b0927}{}int {\bfseries bishop\+Bonus} (const \hyperlink{classboard_position}{board\+Position} \&bp, const \hyperlink{classboard}{board} \&b, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} turn, bool endgame)\label{class_a_i_a1c5a4f19af6bc2d2827db4c7df4b0927}
+
+\item 
+\hypertarget{class_a_i_af25d9b4511e7c435c9593ca2c1f3335d}{}int {\bfseries rook\+Bonus} (const \hyperlink{classboard_position}{board\+Position} \&bp, const \hyperlink{classboard}{board} \&b, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} turn, bool endgame)\label{class_a_i_af25d9b4511e7c435c9593ca2c1f3335d}
+
+\item 
+\hypertarget{class_a_i_ada53e6fb423614dc425d33ae7f2f0dcf}{}int {\bfseries queen\+Bonus} (const \hyperlink{classboard_position}{board\+Position} \&bp, const \hyperlink{classboard}{board} \&b, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} turn, bool endgame)\label{class_a_i_ada53e6fb423614dc425d33ae7f2f0dcf}
+
+\item 
+\hypertarget{class_a_i_aa6c91d60f9d36a1edafadfb84b67baf5}{}int {\bfseries king\+Bonus} (const \hyperlink{classboard_position}{board\+Position} \&bp, const \hyperlink{classboard}{board} \&b, \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} turn, bool endgame)\label{class_a_i_aa6c91d60f9d36a1edafadfb84b67baf5}
+
+\item 
+\hypertarget{class_a_i_ab019ac70f41b6fc7a477286d3d65b9da}{}int {\bfseries num\+Attacked\+Squares} (const mask \&piece\+Attacks)\label{class_a_i_ab019ac70f41b6fc7a477286d3d65b9da}
+
+\item 
+\hypertarget{class_a_i_a320ff94f5b15c0ed83ba704326ca23d3}{}bool {\bfseries is\+Isolated\+Pawn} (const \hyperlink{classboard_position}{board\+Position} \&bp, const \hyperlink{classboard}{board} \&b)\label{class_a_i_a320ff94f5b15c0ed83ba704326ca23d3}
+
+\item 
+\hypertarget{class_a_i_acd477b147adb58a9878b3c1499bf6ea1}{}bool {\bfseries is\+Doubled\+Pawn} (const \hyperlink{classboard_position}{board\+Position} \&bp, const \hyperlink{classboard}{board} \&b)\label{class_a_i_acd477b147adb58a9878b3c1499bf6ea1}
+
+\end{DoxyCompactItemize}
+\subsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_a_i_a38e07f36c7574a06bf5e1001283fe404}{}int {\bfseries l\+Ply}\label{class_a_i_a38e07f36c7574a06bf5e1001283fe404}
+
+\end{DoxyCompactItemize}
+\subsection*{Статические защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries m\+\_\+bishop} \mbox{[}64\mbox{]}
+\item 
+static int {\bfseries m\+\_\+knight} \mbox{[}64\mbox{]}
+\item 
+static int {\bfseries m\+\_\+wpawn} \mbox{[}64\mbox{]}
+\item 
+static int {\bfseries m\+\_\+bpawn} \mbox{[}64\mbox{]}
+\item 
+static int {\bfseries m\+\_\+wking} \mbox{[}64\mbox{]}
+\item 
+static int {\bfseries m\+\_\+bking} \mbox{[}64\mbox{]}
+\item 
+static int {\bfseries m\+\_\+end\+\_\+king} \mbox{[}64\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{class_a_i}{A\+I} class -\/ описывает игрока искуственного интелекта 
+
+\subsection{Данные класса}
+\hypertarget{class_a_i_ab749c006dc52480c5a9a00d17318e533}{}\index{A\+I@{A\+I}!m\+\_\+bishop@{m\+\_\+bishop}}
+\index{m\+\_\+bishop@{m\+\_\+bishop}!A\+I@{A\+I}}
+\subsubsection[{m\+\_\+bishop}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::m\+\_\+bishop\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_a_i_ab749c006dc52480c5a9a00d17318e533}
+{\bfseries Инициализатор}
+\begin{DoxyCode}
+= \{
+    -5,-5,-5,-5,-5,-5,-5,-5,
+    -5,10,5,10,10,5,10,-5,
+    -5,5,3,12,12,3,5,-5,
+    -5,3,12,3,3,12,3,-5,
+    -5,3,12,3,3,12,3,-5,
+    -5,5,3,12,12,3,5,-5,
+    -5,10,5,10,10,5,10,-5,
+    -5,-5,-5,-5,-5,-5,-5,-5 \}
+\end{DoxyCode}
+\hypertarget{class_a_i_a816338121fb591918d66bdefb4cda805}{}\index{A\+I@{A\+I}!m\+\_\+bking@{m\+\_\+bking}}
+\index{m\+\_\+bking@{m\+\_\+bking}!A\+I@{A\+I}}
+\subsubsection[{m\+\_\+bking}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::m\+\_\+bking\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_a_i_a816338121fb591918d66bdefb4cda805}
+{\bfseries Инициализатор}
+\begin{DoxyCode}
+= \{
+    -55,-55,-89,-89,-89,-89,-55,-55,
+    -34,-34,-55,-55,-55,-55,-34,-34,
+    -21,-21,-34,-34,-34,-34,-21,-21,
+    -13,-13,-21,-21,-21,-21,-13,-13,
+    -8,-8,-13,-13,-13,-13,-8,-8,
+    -5,-5,-8,-8,-8,-8,-5,-5,
+    -3,-3,-5,-5,-5,-5,-3,-3,
+    2,10,4,0,0,7,10,2\}
+\end{DoxyCode}
+\hypertarget{class_a_i_aed628e02e8d5bdc970bfb01acd6162f2}{}\index{A\+I@{A\+I}!m\+\_\+bpawn@{m\+\_\+bpawn}}
+\index{m\+\_\+bpawn@{m\+\_\+bpawn}!A\+I@{A\+I}}
+\subsubsection[{m\+\_\+bpawn}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::m\+\_\+bpawn\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_a_i_aed628e02e8d5bdc970bfb01acd6162f2}
+{\bfseries Инициализатор}
+\begin{DoxyCode}
+= \{
+    0,0,0,0,0,0,0,0,
+    5,10,15,20,20,15,10,5,
+    4,8,12,16,16,12,8,4,
+    3,6,9,12,12,9,6,3,
+    2,4,6,8,8,6,4,2,
+    1,2,3,4,4,3,2,1,
+    0,0,0,-5,-5,0,0,0,
+    0,0,0,0,0,0,0,0 \}
+\end{DoxyCode}
+\hypertarget{class_a_i_aa578831d72d1539297b700dd5c6b37d6}{}\index{A\+I@{A\+I}!m\+\_\+end\+\_\+king@{m\+\_\+end\+\_\+king}}
+\index{m\+\_\+end\+\_\+king@{m\+\_\+end\+\_\+king}!A\+I@{A\+I}}
+\subsubsection[{m\+\_\+end\+\_\+king}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::m\+\_\+end\+\_\+king\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_a_i_aa578831d72d1539297b700dd5c6b37d6}
+{\bfseries Инициализатор}
+\begin{DoxyCode}
+= \{
+    -5,-3,-1,0,0,-1,-3,-5,
+    -3,5,5,5,5,5,5,-3,
+    -1,5,10,10,10,10,5,-1,
+    0,5,10,15,15,10,5,0,
+    0,5,10,15,15,10,5,0,
+    -1,5,10,10,10,10,5,-1,
+    -3,5,5,5,5,5,5,-3,
+    -5,-3,-1,0,0,-1,-3,-5\}
+\end{DoxyCode}
+\hypertarget{class_a_i_adbe96956dc1a50f47c828c04072cecfe}{}\index{A\+I@{A\+I}!m\+\_\+knight@{m\+\_\+knight}}
+\index{m\+\_\+knight@{m\+\_\+knight}!A\+I@{A\+I}}
+\subsubsection[{m\+\_\+knight}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::m\+\_\+knight\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_a_i_adbe96956dc1a50f47c828c04072cecfe}
+{\bfseries Инициализатор}
+\begin{DoxyCode}
+= \{
+    -10,-5,-5,-5,-5,-5,-5,-10,
+    -5,0,0,3,3,0,0,-5,
+    -5,0,5,5,5,5,0,-5,
+    -5,0,5,10,10,5,0,-5,
+    -5,0,5,10,10,5,0,-5,
+    -5,0,5,5,5,5,0,-5,
+    -5,0,0,3,3,0,0,-5,
+    -10,-5,-5,-5,-5,-5,-5,-10 \}
+\end{DoxyCode}
+\hypertarget{class_a_i_ac30650d294d82469e1c869e76ee7986f}{}\index{A\+I@{A\+I}!m\+\_\+wking@{m\+\_\+wking}}
+\index{m\+\_\+wking@{m\+\_\+wking}!A\+I@{A\+I}}
+\subsubsection[{m\+\_\+wking}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::m\+\_\+wking\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_a_i_ac30650d294d82469e1c869e76ee7986f}
+{\bfseries Инициализатор}
+\begin{DoxyCode}
+= \{
+    2,10,4,0,0,7,10,2,
+    -3,-3,-5,-5,-5,-5,-3,-3,
+    -5,-5,-8,-8,-8,-8,-5,-5,
+    -8,-8,-13,-13,-13,-13,-8,-8,
+    -13,-13,-21,-21,-21,-21,-13,-13,
+    -21,-21,-34,-34,-34,-34,-21,-21,
+    -34,-34,-55,-55,-55,-55,-34,-34,
+    -55,-55,-89,-89,-89,-89,-55,-55\}
+\end{DoxyCode}
+\hypertarget{class_a_i_afc5127e7859211a872a6df3fdbe971d0}{}\index{A\+I@{A\+I}!m\+\_\+wpawn@{m\+\_\+wpawn}}
+\index{m\+\_\+wpawn@{m\+\_\+wpawn}!A\+I@{A\+I}}
+\subsubsection[{m\+\_\+wpawn}]{\setlength{\rightskip}{0pt plus 5cm}int A\+I\+::m\+\_\+wpawn\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_a_i_afc5127e7859211a872a6df3fdbe971d0}
+{\bfseries Инициализатор}
+\begin{DoxyCode}
+= \{
+    0,0,0,0,0,0,0,0,
+    0,0,0,-5,-5,0,0,0,
+    1,2,3,4,4,3,2,1,
+    2,4,6,8,8,6,4,2,
+    3,6,9,12,12,9,6,3,
+    4,8,12,16,16,12,8,4,
+    5,10,15,20,20,15,10,5,
+    0,0,0,0,0,0,0,0 \}
+\end{DoxyCode}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/chessplayer.\+h\item 
+Model/chessplayer.\+cpp\end{DoxyCompactItemize}

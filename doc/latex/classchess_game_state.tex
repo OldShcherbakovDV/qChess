@@ -1,0 +1,164 @@
+\hypertarget{classchess_game_state}{}\section{Класс chess\+Game\+State}
+\label{classchess_game_state}\index{chess\+Game\+State@{chess\+Game\+State}}
+
+
+The \hyperlink{classchess_game_state}{chess\+Game\+State} class -\/ класс описывающий игровое соостояние  
+
+
+
+
+{\ttfamily \#include $<$chessgamestate.\+h$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classchess_game_state_a6cc0b8ba1e92e19ad235d1604ce3ff81}{}void \hyperlink{classchess_game_state_a6cc0b8ba1e92e19ad235d1604ce3ff81}{init} ()\label{classchess_game_state_a6cc0b8ba1e92e19ad235d1604ce3ff81}
+
+\begin{DoxyCompactList}\small\item\em init -\/ приводит игровую статистику к стартовому состаянию \end{DoxyCompactList}\item 
+void \hyperlink{classchess_game_state_a259cdc59bd56b6e9737d7d904a044cdd}{make\+Move} (const \hyperlink{classboard_move}{board\+Move} \&bm)
+\begin{DoxyCompactList}\small\item\em make\+Move -\/ сделать ход \end{DoxyCompactList}\item 
+\hyperlink{classboard}{board} \hyperlink{classchess_game_state_a711c3cf730b86934e2a194d34c0c5e16}{get\+Board} () const 
+\begin{DoxyCompactList}\small\item\em get\+Board -\/ получить доску \end{DoxyCompactList}\item 
+\hyperlink{classboard_move}{board\+Move} \hyperlink{classchess_game_state_af5b0dd9ad83beea6da4c951e0d09af03}{get\+Last\+Move} () const 
+\begin{DoxyCompactList}\small\item\em get\+Last\+Move -\/ получить последний совершенный ход \end{DoxyCompactList}\item 
+int \hyperlink{classchess_game_state_a49be350f4b7e8a10dab2ceff8753f529}{get\+Step\+Number} () const 
+\begin{DoxyCompactList}\small\item\em get\+Step\+Number -\/ получить номер хода \end{DoxyCompactList}\item 
+bool \hyperlink{classchess_game_state_a29925a54a671e3bb3bd51d1a87eb00ed}{is\+Chek} () const 
+\begin{DoxyCompactList}\small\item\em is\+Chek -\/ шах на доске \end{DoxyCompactList}\item 
+bool \hyperlink{classchess_game_state_a70098682d6f3a2cad6b2ac1832ae99c2}{is\+White\+Step} () const 
+\begin{DoxyCompactList}\small\item\em is\+White\+Step -\/ какой цвет сходил в последний раз \end{DoxyCompactList}\item 
+\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} \hyperlink{classchess_game_state_ab5011f008dbf3c7bc991a17edc4ceac1}{get\+Color} () const 
+\begin{DoxyCompactList}\small\item\em get\+Color -\/ вернуть цвет хода \end{DoxyCompactList}\item 
+bool \hyperlink{classchess_game_state_a2745c19291435d3fee468256b4f5c876}{is\+Position\+Selectable} (const \hyperlink{classboard_position}{board\+Position} \&bp) const 
+\begin{DoxyCompactList}\small\item\em is\+Position\+Selectable -\/ можно ли эту клетку \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{classchess_game_state}{chess\+Game\+State} class -\/ класс описывающий игровое соостояние 
+
+\subsection{Методы}
+\hypertarget{classchess_game_state_a711c3cf730b86934e2a194d34c0c5e16}{}\index{chess\+Game\+State@{chess\+Game\+State}!get\+Board@{get\+Board}}
+\index{get\+Board@{get\+Board}!chess\+Game\+State@{chess\+Game\+State}}
+\subsubsection[{get\+Board}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board} chess\+Game\+State\+::get\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_state_a711c3cf730b86934e2a194d34c0c5e16}
+
+
+get\+Board -\/ получить доску 
+
+\begin{DoxyReturn}{Возвращает}
+доска 
+\end{DoxyReturn}
+\hypertarget{classchess_game_state_ab5011f008dbf3c7bc991a17edc4ceac1}{}\index{chess\+Game\+State@{chess\+Game\+State}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!chess\+Game\+State@{chess\+Game\+State}}
+\subsubsection[{get\+Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf piece\+::color} chess\+Game\+State\+::get\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_state_ab5011f008dbf3c7bc991a17edc4ceac1}
+
+
+get\+Color -\/ вернуть цвет хода 
+
+\begin{DoxyReturn}{Возвращает}
+цвет 
+\end{DoxyReturn}
+\hypertarget{classchess_game_state_af5b0dd9ad83beea6da4c951e0d09af03}{}\index{chess\+Game\+State@{chess\+Game\+State}!get\+Last\+Move@{get\+Last\+Move}}
+\index{get\+Last\+Move@{get\+Last\+Move}!chess\+Game\+State@{chess\+Game\+State}}
+\subsubsection[{get\+Last\+Move}]{\setlength{\rightskip}{0pt plus 5cm}{\bf board\+Move} chess\+Game\+State\+::get\+Last\+Move (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_state_af5b0dd9ad83beea6da4c951e0d09af03}
+
+
+get\+Last\+Move -\/ получить последний совершенный ход 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ ход 
+\end{DoxyReturn}
+\hypertarget{classchess_game_state_a49be350f4b7e8a10dab2ceff8753f529}{}\index{chess\+Game\+State@{chess\+Game\+State}!get\+Step\+Number@{get\+Step\+Number}}
+\index{get\+Step\+Number@{get\+Step\+Number}!chess\+Game\+State@{chess\+Game\+State}}
+\subsubsection[{get\+Step\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int chess\+Game\+State\+::get\+Step\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_state_a49be350f4b7e8a10dab2ceff8753f529}
+
+
+get\+Step\+Number -\/ получить номер хода 
+
+\begin{DoxyReturn}{Возвращает}
+номер хода 
+\end{DoxyReturn}
+\hypertarget{classchess_game_state_a29925a54a671e3bb3bd51d1a87eb00ed}{}\index{chess\+Game\+State@{chess\+Game\+State}!is\+Chek@{is\+Chek}}
+\index{is\+Chek@{is\+Chek}!chess\+Game\+State@{chess\+Game\+State}}
+\subsubsection[{is\+Chek}]{\setlength{\rightskip}{0pt plus 5cm}bool chess\+Game\+State\+::is\+Chek (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_state_a29925a54a671e3bb3bd51d1a87eb00ed}
+
+
+is\+Chek -\/ шах на доске 
+
+\begin{DoxyReturn}{Возвращает}
+является ли положение шаховым 
+\end{DoxyReturn}
+\hypertarget{classchess_game_state_a2745c19291435d3fee468256b4f5c876}{}\index{chess\+Game\+State@{chess\+Game\+State}!is\+Position\+Selectable@{is\+Position\+Selectable}}
+\index{is\+Position\+Selectable@{is\+Position\+Selectable}!chess\+Game\+State@{chess\+Game\+State}}
+\subsubsection[{is\+Position\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool chess\+Game\+State\+::is\+Position\+Selectable (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+) const}\label{classchess_game_state_a2745c19291435d3fee468256b4f5c876}
+
+
+is\+Position\+Selectable -\/ можно ли эту клетку 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+можно ли 
+\end{DoxyReturn}
+\hypertarget{classchess_game_state_a70098682d6f3a2cad6b2ac1832ae99c2}{}\index{chess\+Game\+State@{chess\+Game\+State}!is\+White\+Step@{is\+White\+Step}}
+\index{is\+White\+Step@{is\+White\+Step}!chess\+Game\+State@{chess\+Game\+State}}
+\subsubsection[{is\+White\+Step}]{\setlength{\rightskip}{0pt plus 5cm}bool chess\+Game\+State\+::is\+White\+Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classchess_game_state_a70098682d6f3a2cad6b2ac1832ae99c2}
+
+
+is\+White\+Step -\/ какой цвет сходил в последний раз 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ был ли это белый цвет? 
+\end{DoxyReturn}
+\hypertarget{classchess_game_state_a259cdc59bd56b6e9737d7d904a044cdd}{}\index{chess\+Game\+State@{chess\+Game\+State}!make\+Move@{make\+Move}}
+\index{make\+Move@{make\+Move}!chess\+Game\+State@{chess\+Game\+State}}
+\subsubsection[{make\+Move}]{\setlength{\rightskip}{0pt plus 5cm}void chess\+Game\+State\+::make\+Move (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Move} \&}]{bm}
+\end{DoxyParamCaption}
+)}\label{classchess_game_state_a259cdc59bd56b6e9737d7d904a044cdd}
+
+
+make\+Move -\/ сделать ход 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bm} & -\/ ход \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/chessgamestate.\+h\item 
+Model/chessgamestate.\+cpp\end{DoxyCompactItemize}

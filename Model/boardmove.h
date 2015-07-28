@@ -22,7 +22,7 @@ public:
      * \param moved - фигура которая ходит
      * \param promote - тип вигуры в поле замены пешки
      */
-    boardMove(const boardPosition &start, const boardPosition &end, piece *moved, piece::type promote = piece::NOTYPE);
+    boardMove(const boardPosition &start, const boardPosition &end, piece *moved, piece::type promote = piece::QUEEN);
 
     // Методы доступа
     /*!
@@ -63,15 +63,39 @@ public:
      */
     bool isLegal(const QList<boardMove> &legals) const;
 
+    /*!
+     * \brief yDiff - Изменение положение по вертикали
+     * \return - Разница между начальным и конечным положением по Y
+     */
     inline int yDiff() const { return abs(lStart.y() - lEnd.y()); }
+    /*!
+     * \brief xDiff - Изменение положение по горизонтали
+     * \return - Разница между начальным и конечным положением по X
+     */
     inline int xDiff() const { return abs(lStart.x() - lEnd.x()); }
-
+    /*!
+     * \brief operator == - Оператор сравнения ходов
+     * \param other - Ход с которым сравниваем
+     * \return - Равны ли?
+     */
     inline bool operator == (const boardMove &other) const { return (lStart == other.lStart && lEnd == other.lEnd && lMovedPiece == other.lMovedPiece && lPromote == other.lPromote); }
 private:
-    boardPosition lStart; // Начало хода
-    boardPosition lEnd;   // Конец хода
-    piece *lMovedPiece;   // Фигура которая ходит
-    piece::type lPromote; // Тип фигуры которую хоти получить из пешки
+    /*!
+     * \brief lStart - Позиция начала хода
+     */
+    boardPosition lStart;
+    /*!
+     * \brief lEnd - Позиция конца хода
+     */
+    boardPosition lEnd;
+    /*!
+     * \brief lMovedPiece - Фигура, совершающая ход
+     */
+    piece *lMovedPiece;
+    /*!
+     * \brief lPromote -  Тип фигуры которую хоти получить из пешки
+     */
+    piece::type lPromote;
 
 };
 

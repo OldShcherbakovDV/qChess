@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Исходный файл Model/boardmove.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_312950da3f243a51cc00f4a947545131.html">Model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">boardmove.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BOARDMOVE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BOARDMOVE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//Самописные классы</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;boardposition.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;piece.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classboard_move.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboard_move.html">boardMove</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classboard_move.html#a2e7ec427f296755d8a2ff553802aa381">boardMove</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classboard_move.html#a2e7ec427f296755d8a2ff553802aa381">boardMove</a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;start, <span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;end, <a class="code" href="classpiece.html">piece</a> *moved, <a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">piece::type</a> promote = piece::QUEEN);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Методы доступа</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classboard_move.html#a5ff01edf33101210e4696df6da9deb96">   32</a></span>&#160;<span class="comment"></span>    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_move.html#a5ff01edf33101210e4696df6da9deb96">getStart</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lStart; }</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classboard_move.html#a4a4b131bae70142a31a43cfa3761c19d">   37</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_move.html#a4a4b131bae70142a31a43cfa3761c19d">getEnd</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lEnd; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classboard_move.html#a5d08192556a8167d800d43b5a69f6b6f">   42</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classpiece.html">piece</a> *<a class="code" href="classboard_move.html#a5d08192556a8167d800d43b5a69f6b6f">getMovedPiece</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lMovedPiece; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classboard_move.html#aaf7f4911fddc16bbd4555eafdd6321b2">   47</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">piece::type</a> <a class="code" href="classboard_move.html#aaf7f4911fddc16bbd4555eafdd6321b2">getPromote</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lPromote; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classboard_move.html#a8ce468f874b246675cb5b1449e7385af">   52</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classboard_move.html#a8ce468f874b246675cb5b1449e7385af">setPromote</a>(<span class="keyword">const</span> <a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">piece::type</a> &amp;t) { lPromote = t; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Методы работы с классом</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span>    <span class="keywordtype">bool</span> <a class="code" href="classboard_move.html#ac4a4970efc03ec1a3c8c488c3a0e23de">needPromotion</a>(<span class="keyword">const</span> QList&lt;boardMove&gt; &amp;legals) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classboard_move.html#aab1e6f7a49fafc05e17af43ce9ab975d">isLegal</a>(<span class="keyword">const</span> QList&lt;boardMove&gt; &amp;legals) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classboard_move.html#a8c8c96b47ef3afe63bca6d329003ec73">   70</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classboard_move.html#a8c8c96b47ef3afe63bca6d329003ec73">yDiff</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> abs(lStart.<a class="code" href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">y</a>() - lEnd.<a class="code" href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">y</a>()); }</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classboard_move.html#aef1b5f3e0bfc46deb712f411d18975e7">   75</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classboard_move.html#aef1b5f3e0bfc46deb712f411d18975e7">xDiff</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> abs(lStart.<a class="code" href="classboard_position.html#abf254ede46c202864a513b548bf980c3">x</a>() - lEnd.<a class="code" href="classboard_position.html#abf254ede46c202864a513b548bf980c3">x</a>()); }</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classboard_move.html#a23d6831f03a4a730061d5f278d2fdd57">   81</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classboard_move.html#a23d6831f03a4a730061d5f278d2fdd57">operator == </a>(<span class="keyword">const</span> <a class="code" href="classboard_move.html">boardMove</a> &amp;other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (lStart == other.lStart &amp;&amp; lEnd == other.lEnd &amp;&amp; lMovedPiece == other.lMovedPiece &amp;&amp; lPromote == other.lPromote); }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classboard_position.html">boardPosition</a> lStart;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classboard_position.html">boardPosition</a> lEnd;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classpiece.html">piece</a> *lMovedPiece;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">piece::type</a> lPromote;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif // BOARDMOVE_H</span></div>
+<div class="ttc" id="classpiece_html"><div class="ttname"><a href="classpiece.html">piece</a></div><div class="ttdoc">The piece class - класс шахматной фигуры </div><div class="ttdef"><b>Definition:</b> piece.h:15</div></div>
+<div class="ttc" id="classboard_move_html_a8ce468f874b246675cb5b1449e7385af"><div class="ttname"><a href="classboard_move.html#a8ce468f874b246675cb5b1449e7385af">boardMove::setPromote</a></div><div class="ttdeci">void setPromote(const piece::type &amp;t)</div><div class="ttdoc">setPromote - задает тип получаемой фигуры </div><div class="ttdef"><b>Definition:</b> boardmove.h:52</div></div>
+<div class="ttc" id="classboard_move_html_ac4a4970efc03ec1a3c8c488c3a0e23de"><div class="ttname"><a href="classboard_move.html#ac4a4970efc03ec1a3c8c488c3a0e23de">boardMove::needPromotion</a></div><div class="ttdeci">bool needPromotion(const QList&lt; boardMove &gt; &amp;legals) const </div><div class="ttdoc">needPromotion - необходимо ли задать тип замена </div><div class="ttdef"><b>Definition:</b> boardmove.cpp:14</div></div>
+<div class="ttc" id="classboard_move_html_a23d6831f03a4a730061d5f278d2fdd57"><div class="ttname"><a href="classboard_move.html#a23d6831f03a4a730061d5f278d2fdd57">boardMove::operator==</a></div><div class="ttdeci">bool operator==(const boardMove &amp;other) const </div><div class="ttdoc">operator == - Оператор сравнения ходов </div><div class="ttdef"><b>Definition:</b> boardmove.h:81</div></div>
+<div class="ttc" id="classboard_move_html_a5ff01edf33101210e4696df6da9deb96"><div class="ttname"><a href="classboard_move.html#a5ff01edf33101210e4696df6da9deb96">boardMove::getStart</a></div><div class="ttdeci">boardPosition getStart() const </div><div class="ttdoc">start - вернуть стартовую позицию </div><div class="ttdef"><b>Definition:</b> boardmove.h:32</div></div>
+<div class="ttc" id="classboard_move_html_a8c8c96b47ef3afe63bca6d329003ec73"><div class="ttname"><a href="classboard_move.html#a8c8c96b47ef3afe63bca6d329003ec73">boardMove::yDiff</a></div><div class="ttdeci">int yDiff() const </div><div class="ttdoc">yDiff - Изменение положение по вертикали </div><div class="ttdef"><b>Definition:</b> boardmove.h:70</div></div>
+<div class="ttc" id="classboard_position_html"><div class="ttname"><a href="classboard_position.html">boardPosition</a></div><div class="ttdoc">The boardPosition class - класс которы описывает позицию на доске </div><div class="ttdef"><b>Definition:</b> boardposition.h:7</div></div>
+<div class="ttc" id="classboard_move_html_aab1e6f7a49fafc05e17af43ce9ab975d"><div class="ttname"><a href="classboard_move.html#aab1e6f7a49fafc05e17af43ce9ab975d">boardMove::isLegal</a></div><div class="ttdeci">bool isLegal(const QList&lt; boardMove &gt; &amp;legals) const </div><div class="ttdoc">isLegal - проверяет можно ли произвести такой ход </div><div class="ttdef"><b>Definition:</b> boardmove.cpp:31</div></div>
+<div class="ttc" id="classboard_move_html_aef1b5f3e0bfc46deb712f411d18975e7"><div class="ttname"><a href="classboard_move.html#aef1b5f3e0bfc46deb712f411d18975e7">boardMove::xDiff</a></div><div class="ttdeci">int xDiff() const </div><div class="ttdoc">xDiff - Изменение положение по горизонтали </div><div class="ttdef"><b>Definition:</b> boardmove.h:75</div></div>
+<div class="ttc" id="classboard_move_html"><div class="ttname"><a href="classboard_move.html">boardMove</a></div><div class="ttdoc">The boardMove class - класс игрового хода </div><div class="ttdef"><b>Definition:</b> boardmove.h:11</div></div>
+<div class="ttc" id="classboard_move_html_a5d08192556a8167d800d43b5a69f6b6f"><div class="ttname"><a href="classboard_move.html#a5d08192556a8167d800d43b5a69f6b6f">boardMove::getMovedPiece</a></div><div class="ttdeci">piece * getMovedPiece() const </div><div class="ttdoc">getMovedPiece - вернуть фигуру </div><div class="ttdef"><b>Definition:</b> boardmove.h:42</div></div>
+<div class="ttc" id="classboard_position_html_a189ee18b8ce9691afc7cc4090e929837"><div class="ttname"><a href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">boardPosition::y</a></div><div class="ttdeci">int y() const </div><div class="ttdoc">y - вернуть Y </div><div class="ttdef"><b>Definition:</b> boardposition.h:43</div></div>
+<div class="ttc" id="classpiece_html_a60bdcec91f595c164fe08c6705f192d0"><div class="ttname"><a href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">piece::type</a></div><div class="ttdeci">type</div><div class="ttdoc">The type enum - типы фигур </div><div class="ttdef"><b>Definition:</b> piece.h:21</div></div>
+<div class="ttc" id="classboard_move_html_aaf7f4911fddc16bbd4555eafdd6321b2"><div class="ttname"><a href="classboard_move.html#aaf7f4911fddc16bbd4555eafdd6321b2">boardMove::getPromote</a></div><div class="ttdeci">piece::type getPromote() const </div><div class="ttdoc">getPromote - возвращает тип фигуры в поле end </div><div class="ttdef"><b>Definition:</b> boardmove.h:47</div></div>
+<div class="ttc" id="classboard_position_html_abf254ede46c202864a513b548bf980c3"><div class="ttname"><a href="classboard_position.html#abf254ede46c202864a513b548bf980c3">boardPosition::x</a></div><div class="ttdeci">int x() const </div><div class="ttdoc">x - вернуть Х </div><div class="ttdef"><b>Definition:</b> boardposition.h:38</div></div>
+<div class="ttc" id="classboard_move_html_a2e7ec427f296755d8a2ff553802aa381"><div class="ttname"><a href="classboard_move.html#a2e7ec427f296755d8a2ff553802aa381">boardMove::boardMove</a></div><div class="ttdeci">boardMove()</div><div class="ttdoc">boardMove - конструктор по умолчанию </div><div class="ttdef"><b>Definition:</b> boardmove.cpp:3</div></div>
+<div class="ttc" id="classboard_move_html_a4a4b131bae70142a31a43cfa3761c19d"><div class="ttname"><a href="classboard_move.html#a4a4b131bae70142a31a43cfa3761c19d">boardMove::getEnd</a></div><div class="ttdeci">boardPosition getEnd() const </div><div class="ttdoc">end - вернуть конечную позицию </div><div class="ttdef"><b>Definition:</b> boardmove.h:37</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,171 @@
+\hypertarget{classbit_board}{}\section{Класс bit\+Board}
+\label{classbit_board}\index{bit\+Board@{bit\+Board}}
+
+
+The \hyperlink{classbit_board}{bit\+Board} class -\/ побитовая карта доски. (т.\+к. тип unsigned long long содержит 64 бита, что равно кол ву полей на доске)  
+
+
+
+
+{\ttfamily \#include $<$bitboard.\+h$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classbit_board_a1da2ef5a1d5e5ceb731dd5b7fbbbf386}{}\hyperlink{classbit_board_a1da2ef5a1d5e5ceb731dd5b7fbbbf386}{bit\+Board} ()\label{classbit_board_a1da2ef5a1d5e5ceb731dd5b7fbbbf386}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbit_board}{bit\+Board} -\/ конструктор в результате которого все биты опущены \end{DoxyCompactList}\item 
+\hyperlink{classbit_board_abac32dec74ed2dd32995955a07422198}{bit\+Board} (const unsigned long long \&\hyperlink{classboard}{board})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classbit_board}{bit\+Board} -\/ конструктор который копирует исходную битовую маску \end{DoxyCompactList}\item 
+void \hyperlink{classbit_board_a3ec51b1e23ec2a8903c7f9fbf7e79889}{set\+Bit} (const \hyperlink{classboard_position}{board\+Position} \&bp)
+\begin{DoxyCompactList}\small\item\em set\+Bit -\/ устанавливает бит в заданной позиции в поднятое положение \end{DoxyCompactList}\item 
+void \hyperlink{classbit_board_a931987de9741781789d2dd20bd9aef62}{unset\+Bit} (const \hyperlink{classboard_position}{board\+Position} \&bp)
+\begin{DoxyCompactList}\small\item\em unset\+Bit -\/ устанавливает бит в заданной позиции в опущенное положение \end{DoxyCompactList}\item 
+\hypertarget{classbit_board_af8359ea0e11d66aa70667a521569c6f0}{}void \hyperlink{classbit_board_af8359ea0e11d66aa70667a521569c6f0}{invert} ()\label{classbit_board_af8359ea0e11d66aa70667a521569c6f0}
+
+\begin{DoxyCompactList}\small\item\em invert -\/ переворачивает все биты доски \end{DoxyCompactList}\item 
+unsigned long long \hyperlink{classbit_board_afe3388c61bf3046f85ce48f287f2d912}{get\+Board} () const 
+\begin{DoxyCompactList}\small\item\em get\+Board -\/ вернуть битовую маску \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned long long \hyperlink{classbit_board_a31dd95717cbb107a4fe6d334407dfd4e}{get\+X\+Mask} (const \hyperlink{classboard_position}{board\+Position} \&bp)
+\begin{DoxyCompactList}\small\item\em get\+X\+Mask -\/ вернет все битовую маску для всех позицы с координатой х равной bp.\+x() \end{DoxyCompactList}\item 
+static unsigned long long \hyperlink{classbit_board_acc9d2cf1cd3af85481f5a26ffc656794}{get\+Y\+Mask} (const \hyperlink{classboard_position}{board\+Position} \&bp)
+\begin{DoxyCompactList}\small\item\em get\+Y\+Mask -\/ вернет все битовую маску для всех позицы с координатой y равной bp.\+x() \end{DoxyCompactList}\item 
+static unsigned long long \hyperlink{classbit_board_a2476b527524fbf53a6c55554e1225b76}{get\+Mask} (const \hyperlink{classboard_position}{board\+Position} \&bp)
+\begin{DoxyCompactList}\small\item\em get\+Mask -\/ возвращает маску заданного бита \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The \hyperlink{classbit_board}{bit\+Board} class -\/ побитовая карта доски. (т.\+к. тип unsigned long long содержит 64 бита, что равно кол ву полей на доске) 
+
+\subsection{Конструктор(ы)}
+\hypertarget{classbit_board_abac32dec74ed2dd32995955a07422198}{}\index{bit\+Board@{bit\+Board}!bit\+Board@{bit\+Board}}
+\index{bit\+Board@{bit\+Board}!bit\+Board@{bit\+Board}}
+\subsubsection[{bit\+Board}]{\setlength{\rightskip}{0pt plus 5cm}bit\+Board\+::bit\+Board (
+\begin{DoxyParamCaption}
+\item[{const unsigned long long \&}]{board}
+\end{DoxyParamCaption}
+)}\label{classbit_board_abac32dec74ed2dd32995955a07422198}
+
+
+\hyperlink{classbit_board}{bit\+Board} -\/ конструктор который копирует исходную битовую маску 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em board} & -\/ битовая маска \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\hypertarget{classbit_board_afe3388c61bf3046f85ce48f287f2d912}{}\index{bit\+Board@{bit\+Board}!get\+Board@{get\+Board}}
+\index{get\+Board@{get\+Board}!bit\+Board@{bit\+Board}}
+\subsubsection[{get\+Board}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long bit\+Board\+::get\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbit_board_afe3388c61bf3046f85ce48f287f2d912}
+
+
+get\+Board -\/ вернуть битовую маску 
+
+\begin{DoxyReturn}{Возвращает}
+-\/ битовая маска 
+\end{DoxyReturn}
+\hypertarget{classbit_board_a2476b527524fbf53a6c55554e1225b76}{}\index{bit\+Board@{bit\+Board}!get\+Mask@{get\+Mask}}
+\index{get\+Mask@{get\+Mask}!bit\+Board@{bit\+Board}}
+\subsubsection[{get\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long bit\+Board\+::get\+Mask (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbit_board_a2476b527524fbf53a6c55554e1225b76}
+
+
+get\+Mask -\/ возвращает маску заданного бита 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция бита \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+маска где понят или опущен необходимый бит, остальные опущены 
+\end{DoxyReturn}
+\hypertarget{classbit_board_a31dd95717cbb107a4fe6d334407dfd4e}{}\index{bit\+Board@{bit\+Board}!get\+X\+Mask@{get\+X\+Mask}}
+\index{get\+X\+Mask@{get\+X\+Mask}!bit\+Board@{bit\+Board}}
+\subsubsection[{get\+X\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long bit\+Board\+::get\+X\+Mask (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbit_board_a31dd95717cbb107a4fe6d334407dfd4e}
+
+
+get\+X\+Mask -\/ вернет все битовую маску для всех позицы с координатой х равной bp.\+x() 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ текущая позиция \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ битовая маска 
+\end{DoxyReturn}
+\hypertarget{classbit_board_acc9d2cf1cd3af85481f5a26ffc656794}{}\index{bit\+Board@{bit\+Board}!get\+Y\+Mask@{get\+Y\+Mask}}
+\index{get\+Y\+Mask@{get\+Y\+Mask}!bit\+Board@{bit\+Board}}
+\subsubsection[{get\+Y\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long bit\+Board\+::get\+Y\+Mask (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbit_board_acc9d2cf1cd3af85481f5a26ffc656794}
+
+
+get\+Y\+Mask -\/ вернет все битовую маску для всех позицы с координатой y равной bp.\+x() 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ текущая позиция \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ битовая маска 
+\end{DoxyReturn}
+\hypertarget{classbit_board_a3ec51b1e23ec2a8903c7f9fbf7e79889}{}\index{bit\+Board@{bit\+Board}!set\+Bit@{set\+Bit}}
+\index{set\+Bit@{set\+Bit}!bit\+Board@{bit\+Board}}
+\subsubsection[{set\+Bit}]{\setlength{\rightskip}{0pt plus 5cm}void bit\+Board\+::set\+Bit (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+)}\label{classbit_board_a3ec51b1e23ec2a8903c7f9fbf7e79889}
+
+
+set\+Bit -\/ устанавливает бит в заданной позиции в поднятое положение 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция \\
+\hline
+\end{DoxyParams}
+\hypertarget{classbit_board_a931987de9741781789d2dd20bd9aef62}{}\index{bit\+Board@{bit\+Board}!unset\+Bit@{unset\+Bit}}
+\index{unset\+Bit@{unset\+Bit}!bit\+Board@{bit\+Board}}
+\subsubsection[{unset\+Bit}]{\setlength{\rightskip}{0pt plus 5cm}void bit\+Board\+::unset\+Bit (
+\begin{DoxyParamCaption}
+\item[{const {\bf board\+Position} \&}]{bp}
+\end{DoxyParamCaption}
+)}\label{classbit_board_a931987de9741781789d2dd20bd9aef62}
+
+
+unset\+Bit -\/ устанавливает бит в заданной позиции в опущенное положение 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em bp} & -\/ позиция \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/bitboard.\+h\item 
+Model/bitboard.\+cpp\end{DoxyCompactItemize}

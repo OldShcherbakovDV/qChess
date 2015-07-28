@@ -1,0 +1,160 @@
+\hypertarget{classpiece}{}\section{Класс piece}
+\label{classpiece}\index{piece@{piece}}
+
+
+The piece class -\/ класс шахматной фигуры  
+
+
+
+
+{\ttfamily \#include $<$piece.\+h$>$}
+
+\subsection*{Открытые типы}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpiece_a60bdcec91f595c164fe08c6705f192d0}{}enum \hyperlink{classpiece_a60bdcec91f595c164fe08c6705f192d0}{type} \{ \\*
+{\bfseries P\+A\+W\+N}, 
+{\bfseries R\+O\+O\+K}, 
+{\bfseries K\+N\+I\+G\+H\+T}, 
+{\bfseries B\+I\+S\+H\+O\+P}, 
+\\*
+{\bfseries Q\+U\+E\+E\+N}, 
+{\bfseries K\+I\+N\+G}, 
+{\bfseries N\+O\+T\+Y\+P\+E}
+ \}\label{classpiece_a60bdcec91f595c164fe08c6705f192d0}
+
+\begin{DoxyCompactList}\small\item\em The type enum -\/ типы фигур \end{DoxyCompactList}\item 
+\hypertarget{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{}enum \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{color} \{ {\bfseries B\+L\+A\+C\+K}, 
+{\bfseries W\+H\+I\+T\+E}, 
+{\bfseries N\+O\+C\+O\+L\+O\+R}
+ \}\label{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}
+
+\begin{DoxyCompactList}\small\item\em The сolor enum -\/ цвета фигур \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpiece_ab950ed5525196aa83c59cfe04f5891db}{piece} (\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{piece\+::color} c, \hyperlink{classpiece_a60bdcec91f595c164fe08c6705f192d0}{type} t)
+\begin{DoxyCompactList}\small\item\em piece -\/ конструктор \end{DoxyCompactList}\item 
+\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{color} \hyperlink{classpiece_a71cc356d37aaadad54d0c20714a4f407}{get\+Color} () const 
+\begin{DoxyCompactList}\small\item\em get\+Color -\/ вернуть цвет \end{DoxyCompactList}\item 
+\hyperlink{classpiece_a60bdcec91f595c164fe08c6705f192d0}{type} \hyperlink{classpiece_a60c80dd266bdd0a51df294263ee639d4}{get\+Type} () const 
+\begin{DoxyCompactList}\small\item\em get\+Type -\/ вернуть тип \end{DoxyCompactList}\item 
+\hypertarget{classpiece_a72b1969c42c8fa89f41cb8c54b2438c3}{}void \hyperlink{classpiece_a72b1969c42c8fa89f41cb8c54b2438c3}{clear\+State} ()\label{classpiece_a72b1969c42c8fa89f41cb8c54b2438c3}
+
+\begin{DoxyCompactList}\small\item\em clear\+State -\/ отчистка статистики \end{DoxyCompactList}\item 
+void \hyperlink{classpiece_a4771f62c2b12989f5051d7e96387159f}{turn\+Pawn\+To\+Other\+Piece} (\hyperlink{classpiece_a60bdcec91f595c164fe08c6705f192d0}{type} t)
+\begin{DoxyCompactList}\small\item\em turn\+Pawn\+To\+Other\+Piece -\/ превращает пешку в фигуру с заданным типом кроме короля \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{color} \hyperlink{classpiece_abc6324159644ab0c0aad7f2c84e122e5}{opponent\+Color} (\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{color} c)
+\begin{DoxyCompactList}\small\item\em opponent\+Color -\/ возвращает противоположный цвет \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpiece_a454fc10cb5287d35c1cea5890061ce41}{}\hyperlink{classpiece_a60bdcec91f595c164fe08c6705f192d0}{type} \hyperlink{classpiece_a454fc10cb5287d35c1cea5890061ce41}{l\+Type}\label{classpiece_a454fc10cb5287d35c1cea5890061ce41}
+
+\begin{DoxyCompactList}\small\item\em l\+Type -\/ Тип фигуры \end{DoxyCompactList}\item 
+\hypertarget{classpiece_a8a250da59070e11f3e301c623afffac6}{}\hyperlink{classpiece_a0e121e5952345fd0e7014a8e6a1fbbda}{color} \hyperlink{classpiece_a8a250da59070e11f3e301c623afffac6}{l\+Color}\label{classpiece_a8a250da59070e11f3e301c623afffac6}
+
+\begin{DoxyCompactList}\small\item\em l\+Color -\/ Цвет фигуры \end{DoxyCompactList}\item 
+\hypertarget{classpiece_afa0cccea76767519bb297420eb12bf1b}{}Q\+Stack$<$ \hyperlink{classstat_snapshot}{stat\+Snapshot} $>$ \hyperlink{classpiece_afa0cccea76767519bb297420eb12bf1b}{l\+Stat}\label{classpiece_afa0cccea76767519bb297420eb12bf1b}
+
+\begin{DoxyCompactList}\small\item\em l\+Stat -\/ Хранит статистику \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+The piece class -\/ класс шахматной фигуры 
+
+\subsection{Конструктор(ы)}
+\hypertarget{classpiece_ab950ed5525196aa83c59cfe04f5891db}{}\index{piece@{piece}!piece@{piece}}
+\index{piece@{piece}!piece@{piece}}
+\subsubsection[{piece}]{\setlength{\rightskip}{0pt plus 5cm}piece\+::piece (
+\begin{DoxyParamCaption}
+\item[{{\bf piece\+::color}}]{c, }
+\item[{{\bf piece\+::type}}]{t}
+\end{DoxyParamCaption}
+)}\label{classpiece_ab950ed5525196aa83c59cfe04f5891db}
+
+
+piece -\/ конструктор 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ цвет \\
+\hline
+{\em t} & -\/ тип \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\hypertarget{classpiece_a71cc356d37aaadad54d0c20714a4f407}{}\index{piece@{piece}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!piece@{piece}}
+\subsubsection[{get\+Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf color} piece\+::get\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_a71cc356d37aaadad54d0c20714a4f407}
+
+
+get\+Color -\/ вернуть цвет 
+
+\begin{DoxyReturn}{Возвращает}
+-\/цвет 
+\end{DoxyReturn}
+\hypertarget{classpiece_a60c80dd266bdd0a51df294263ee639d4}{}\index{piece@{piece}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!piece@{piece}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf type} piece\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classpiece_a60c80dd266bdd0a51df294263ee639d4}
+
+
+get\+Type -\/ вернуть тип 
+
+\begin{DoxyReturn}{Возвращает}
+тип 
+\end{DoxyReturn}
+\hypertarget{classpiece_abc6324159644ab0c0aad7f2c84e122e5}{}\index{piece@{piece}!opponent\+Color@{opponent\+Color}}
+\index{opponent\+Color@{opponent\+Color}!piece@{piece}}
+\subsubsection[{opponent\+Color}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf color} piece\+::opponent\+Color (
+\begin{DoxyParamCaption}
+\item[{{\bf color}}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classpiece_abc6324159644ab0c0aad7f2c84e122e5}
+
+
+opponent\+Color -\/ возвращает противоположный цвет 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em c} & -\/ цвет \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+-\/ противоположный цвет 
+\end{DoxyReturn}
+\hypertarget{classpiece_a4771f62c2b12989f5051d7e96387159f}{}\index{piece@{piece}!turn\+Pawn\+To\+Other\+Piece@{turn\+Pawn\+To\+Other\+Piece}}
+\index{turn\+Pawn\+To\+Other\+Piece@{turn\+Pawn\+To\+Other\+Piece}!piece@{piece}}
+\subsubsection[{turn\+Pawn\+To\+Other\+Piece}]{\setlength{\rightskip}{0pt plus 5cm}void piece\+::turn\+Pawn\+To\+Other\+Piece (
+\begin{DoxyParamCaption}
+\item[{{\bf piece\+::type}}]{t}
+\end{DoxyParamCaption}
+)}\label{classpiece_a4771f62c2b12989f5051d7e96387159f}
+
+
+turn\+Pawn\+To\+Other\+Piece -\/ превращает пешку в фигуру с заданным типом кроме короля 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em t} & -\/ тип фигуры \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+Model/piece.\+h\item 
+Model/piece.\+cpp\end{DoxyCompactItemize}

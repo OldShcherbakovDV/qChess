@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Класс piece</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="classpiece-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс piece</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The piece class - класс шахматной фигуры  
+ <a href="classpiece.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="piece_8h_source.html">piece.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a60bdcec91f595c164fe08c6705f192d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60bdcec91f595c164fe08c6705f192d0"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a> { <br />
+&#160;&#160;<b>PAWN</b>, 
+<b>ROOK</b>, 
+<b>KNIGHT</b>, 
+<b>BISHOP</b>, 
+<br />
+&#160;&#160;<b>QUEEN</b>, 
+<b>KING</b>, 
+<b>NOTYPE</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a60bdcec91f595c164fe08c6705f192d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type enum - типы фигур <br /></td></tr>
+<tr class="separator:a60bdcec91f595c164fe08c6705f192d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e121e5952345fd0e7014a8e6a1fbbda"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e121e5952345fd0e7014a8e6a1fbbda"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a> { <b>BLACK</b>, 
+<b>WHITE</b>, 
+<b>NOCOLOR</b>
+ }</td></tr>
+<tr class="memdesc:a0e121e5952345fd0e7014a8e6a1fbbda"><td class="mdescLeft">&#160;</td><td class="mdescRight">The сolor enum - цвета фигур <br /></td></tr>
+<tr class="separator:a0e121e5952345fd0e7014a8e6a1fbbda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ab950ed5525196aa83c59cfe04f5891db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#ab950ed5525196aa83c59cfe04f5891db">piece</a> (<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a> c, <a class="el" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a> t)</td></tr>
+<tr class="memdesc:ab950ed5525196aa83c59cfe04f5891db"><td class="mdescLeft">&#160;</td><td class="mdescRight">piece - конструктор  <a href="#ab950ed5525196aa83c59cfe04f5891db">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab950ed5525196aa83c59cfe04f5891db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71cc356d37aaadad54d0c20714a4f407"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#a71cc356d37aaadad54d0c20714a4f407">getColor</a> () const </td></tr>
+<tr class="memdesc:a71cc356d37aaadad54d0c20714a4f407"><td class="mdescLeft">&#160;</td><td class="mdescRight">getColor - вернуть цвет  <a href="#a71cc356d37aaadad54d0c20714a4f407">Подробнее...</a><br /></td></tr>
+<tr class="separator:a71cc356d37aaadad54d0c20714a4f407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60c80dd266bdd0a51df294263ee639d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#a60c80dd266bdd0a51df294263ee639d4">getType</a> () const </td></tr>
+<tr class="memdesc:a60c80dd266bdd0a51df294263ee639d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">getType - вернуть тип  <a href="#a60c80dd266bdd0a51df294263ee639d4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a60c80dd266bdd0a51df294263ee639d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b1969c42c8fa89f41cb8c54b2438c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72b1969c42c8fa89f41cb8c54b2438c3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#a72b1969c42c8fa89f41cb8c54b2438c3">clearState</a> ()</td></tr>
+<tr class="memdesc:a72b1969c42c8fa89f41cb8c54b2438c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">clearState - отчистка статистики <br /></td></tr>
+<tr class="separator:a72b1969c42c8fa89f41cb8c54b2438c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4771f62c2b12989f5051d7e96387159f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#a4771f62c2b12989f5051d7e96387159f">turnPawnToOtherPiece</a> (<a class="el" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a> t)</td></tr>
+<tr class="memdesc:a4771f62c2b12989f5051d7e96387159f"><td class="mdescLeft">&#160;</td><td class="mdescRight">turnPawnToOtherPiece - превращает пешку в фигуру с заданным типом кроме короля  <a href="#a4771f62c2b12989f5051d7e96387159f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4771f62c2b12989f5051d7e96387159f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:abc6324159644ab0c0aad7f2c84e122e5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#abc6324159644ab0c0aad7f2c84e122e5">opponentColor</a> (<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a> c)</td></tr>
+<tr class="memdesc:abc6324159644ab0c0aad7f2c84e122e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">opponentColor - возвращает противоположный цвет  <a href="#abc6324159644ab0c0aad7f2c84e122e5">Подробнее...</a><br /></td></tr>
+<tr class="separator:abc6324159644ab0c0aad7f2c84e122e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a454fc10cb5287d35c1cea5890061ce41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a454fc10cb5287d35c1cea5890061ce41"></a>
+<a class="el" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#a454fc10cb5287d35c1cea5890061ce41">lType</a></td></tr>
+<tr class="memdesc:a454fc10cb5287d35c1cea5890061ce41"><td class="mdescLeft">&#160;</td><td class="mdescRight">lType - Тип фигуры <br /></td></tr>
+<tr class="separator:a454fc10cb5287d35c1cea5890061ce41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a250da59070e11f3e301c623afffac6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a250da59070e11f3e301c623afffac6"></a>
+<a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#a8a250da59070e11f3e301c623afffac6">lColor</a></td></tr>
+<tr class="memdesc:a8a250da59070e11f3e301c623afffac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">lColor - Цвет фигуры <br /></td></tr>
+<tr class="separator:a8a250da59070e11f3e301c623afffac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa0cccea76767519bb297420eb12bf1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa0cccea76767519bb297420eb12bf1b"></a>
+QStack&lt; <a class="el" href="classstat_snapshot.html">statSnapshot</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiece.html#afa0cccea76767519bb297420eb12bf1b">lStat</a></td></tr>
+<tr class="memdesc:afa0cccea76767519bb297420eb12bf1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">lStat - Хранит статистику <br /></td></tr>
+<tr class="separator:afa0cccea76767519bb297420eb12bf1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>The piece class - класс шахматной фигуры </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="ab950ed5525196aa83c59cfe04f5891db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">piece::piece </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">piece::color</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">piece::type</a>&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>piece - конструктор </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- цвет </td></tr>
+    <tr><td class="paramname">t</td><td>- тип </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a71cc356d37aaadad54d0c20714a4f407"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a> piece::getColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getColor - вернуть цвет </p>
+<dl class="section return"><dt>Возвращает</dt><dd>-цвет </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a60c80dd266bdd0a51df294263ee639d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">type</a> piece::getType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getType - вернуть тип </p>
+<dl class="section return"><dt>Возвращает</dt><dd>тип </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abc6324159644ab0c0aad7f2c84e122e5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a> piece::opponentColor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a0e121e5952345fd0e7014a8e6a1fbbda">color</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>opponentColor - возвращает противоположный цвет </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- цвет </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>- противоположный цвет </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4771f62c2b12989f5051d7e96387159f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void piece::turnPawnToOtherPiece </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpiece.html#a60bdcec91f595c164fe08c6705f192d0">piece::type</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>turnPawnToOtherPiece - превращает пешку в фигуру с заданным типом кроме короля </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>- тип фигуры </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>Model/<a class="el" href="piece_8h_source.html">piece.h</a></li>
+<li>Model/piece.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:13. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

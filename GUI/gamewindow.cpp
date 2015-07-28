@@ -1,14 +1,15 @@
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
 
-gameWindow::gameWindow(QWidget *parent) :
-    QMainWindow(parent),
+gameWindow::gameWindow(options *o, QWidget *p) :
+    QMainWindow(p),
     ui(new Ui::gameWindow)
 {
     ui->setupUi(this);
 
     //Инициализация игрового процесса
-    opts = new options;
+    opts = o;
+    this->p = p;
     game = new chessGame(chessPlayer::create(opts->getPlayer1()), chessPlayer::create(opts->getPlayer2()));
     game->newGame();
     game->startGame();
@@ -29,6 +30,7 @@ gameWindow::gameWindow(QWidget *parent) :
 
 gameWindow::~gameWindow()
 {
+    p->show();
     delete ui;
 }
 

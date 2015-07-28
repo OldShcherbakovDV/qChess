@@ -159,32 +159,78 @@ public:
      * \return
      */
     serialBoard serialize() const;
-
+    /*!
+     * \brief getKing - Вернуть позицию короля заданного цвета
+     * \param c - Цвет
+     * \return - Позиция короля
+     */
     boardPosition getKing(piece::color c) const;
-
+    /*!
+     * \brief haveCastling - проверяет возможность левой или правой роккировки для фигур заданного цвета
+     * \param c - цвет
+     * \param isLeft - Левая ли роккировка проверяется
+     * \return возможна ли такая роккировка
+     */
     bool haveCastling(piece::color c, bool isLeft) const;
-
+    /*!
+     * \brief getYState - вернуть статус горизонтали
+     * \param bp - позиция через которую проходит горизонталь
+     * \return статус
+     */
     inline int getYState (const boardPosition &bp) const {
         return ((lColors[piece::WHITE] | lColors[piece::BLACK]) >> bp.y()*8) & 0xff;
     }
-
+    /*!
+     * \brief getYState - вернуть статус вертикали
+     * \param bp - позиция через которую проходит вертикаль
+     * \return статус
+     */
     int getXState (const boardPosition &bp) const;
-
+    /*!
+     * \brief getLeftTopDiagState - вернуть статус левой верхней наклонной
+     * \param bp - позиция через которую проходит наклонная
+     * \return статус
+     */
     int getLeftTopDiagState (const boardPosition &bp) const;
-
+    /*!
+     * \brief getLeftTopDiagState - вернуть статус правой верхней наклонной
+     * \param bp - позиция через которую проходит наклонная
+     * \return статус
+     */
     int getRightTopDiagState (const boardPosition &bp) const;
 
 
     // Возможные маски атак.
+    /*!
+     * \brief pawnAttacks - Атаки пешек по цветам
+     */
     static mask pawnAttacks[2][64];
+    /*!
+     * \brief knightAttacks - атаки королей
+     */
     static mask knightAttacks[64];
+    /*!
+     * \brief kingAttacks - атаки короля
+     */
     static mask kingAttacks[64];
+    /*!
+     * \brief xAttacks - атаки по горизонтали
+     */
     static mask xAttacks[64][256];
+    /*!
+     * \brief yAttacks - атаки по вертикали
+     */
     static mask yAttacks[64][256];
+    /*!
+     * \brief diagAttacksLeftTop - Атаки лежащии на левой верхней диаганали
+     */
     static mask diagAttacksLeftTop[64][256];
+    /*!
+     * \brief diagAttacksRightTop - Атаки лежащии на правой верхней диаганали
+     */
     static mask diagAttacksRightTop[64][256];
     /*!
-     * \brief pow2 - Необходима для прощета шахов
+     * \brief pow2 - Необходима для оценки приоритетов блоком ии
      */
     static int pow2[8];
     friend class AI;

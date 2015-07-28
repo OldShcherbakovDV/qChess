@@ -90,15 +90,35 @@ public:
      */
     inline bool canCur(const boardPosition &bp) const { return getBoard().getPiece(bp) && getBoard().getPiece(bp)->getColor() == getColor(); }
 signals:
+    /*!
+     * \brief madeMove - Был совершен ход
+     * \param bm - Ход который был совершен
+     */
     void madeMove(boardMove bm);
 private:
+    /*!
+     * \brief player1 - Указатель на белого игрока
+     */
     chessPlayer *player1;
+    /*!
+     * \brief player2 - Указатель на черного игрока
+     */
     chessPlayer *player2;
+    /*!
+     * \brief state - Состояние игры
+     */
     chessGameState state;
-
+    /*!
+     * \brief history - История состояний
+     */
     QList<chessGameState> history;
+    /*!
+     * \brief redo - Список отмененых ходов
+     */
     QList<chessGameState> redo;
-
+    /*!
+     * \brief lIsGameInProgress - Идет ли игра?
+     */
     bool lIsGameInProgress;
 };
 

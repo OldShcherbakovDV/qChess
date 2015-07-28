@@ -64,6 +64,9 @@ public:
 
 
 private:
+    /*!
+     * \brief lBoard - представление доски набором бит
+     */
     unsigned long long lBoard;
 };
 

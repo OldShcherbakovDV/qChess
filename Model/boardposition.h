@@ -135,10 +135,26 @@ public:
      */
     inline boardPosition getRightBottom() const { return boardPosition(lX + 1, lY - 1); }
 
+    /*!
+     * \brief operator == - Оператор сравнения двух позиций
+     * \param other - Другая позиция
+     * \return - Равны ли?
+     */
     inline bool operator == (const boardPosition &other) const { return (lX == other.lX && lY == other.lY); }
+    /*!
+     * \brief operator == - Оператор сравнения двух позиций
+     * \param other - Другая позиция
+     * \return - Не равны ли?
+     */
     inline bool operator != (const boardPosition &other) const { return !(*this == other); }
 private:
+    /*!
+     * \brief lX - позиция по горизонтали
+     */
     int lX;
+    /*!
+     * \brief lY - позиция по вертикали
+     */
     int lY;
 };
 

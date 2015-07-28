@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>qChess: Исходный файл Model/boardposition.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">qChess
+   &#160;<span id="projectnumber">0.1a</span>
+   </div>
+   <div id="projectbrief">Шахмоты</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_312950da3f243a51cc00f4a947545131.html">Model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">boardposition.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BOARDPOSITION_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BOARDPOSITION_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classboard_position.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classboard_position.html">boardPosition</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classboard_position.html#abf254ede46c202864a513b548bf980c3">x</a>, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">y</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> &amp;x, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;y);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classboard_position.html#afb83b12885a2ec552cecb067573011d4">number</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Методы доступа</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classboard_position.html#abf254ede46c202864a513b548bf980c3">   38</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classboard_position.html#abf254ede46c202864a513b548bf980c3">x</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lX; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">   43</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">y</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lY; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classboard_position.html#afb83b12885a2ec552cecb067573011d4">   48</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classboard_position.html#afb83b12885a2ec552cecb067573011d4">number</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (8*lY + lX); }</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classboard_position.html#a2f2f70653d4ef7e098b974e33c4fdcc2">   53</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">char</span> <a class="code" href="classboard_position.html#a2f2f70653d4ef7e098b974e33c4fdcc2">xToChar</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lX + <span class="charliteral">&#39;a&#39;</span>; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classboard_position.html#a1128782cfef05468807b3a4449226894">   58</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">char</span> <a class="code" href="classboard_position.html#a1128782cfef05468807b3a4449226894">xToNumber</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lX + 1; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classboard_position.html#afce067f97792757bd643a58762e3d362">   63</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classboard_position.html#afce067f97792757bd643a58762e3d362">yToNumber</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lY + 1; }</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classboard_position.html#a1715f2dcd0e8f94dd71998c5c4fd971a">   68</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classboard_position.html#a1715f2dcd0e8f94dd71998c5c4fd971a">setX</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;x) { lX = <a class="code" href="classboard_position.html#abf254ede46c202864a513b548bf980c3">x</a>; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classboard_position.html#af6ecff0221a8d5952e7fb6fe69f756a2">   73</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classboard_position.html#af6ecff0221a8d5952e7fb6fe69f756a2">setX</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> &amp;x) { lX = x - <span class="charliteral">&#39;a&#39;</span>; }</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classboard_position.html#ac587538a440a0db117090492d6ee9a48">   78</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classboard_position.html#ac587538a440a0db117090492d6ee9a48">setY</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;y) { lY = <a class="code" href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">y</a>; }</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classboard_position.html#a9e97897840e379e2206d18cf79c04d1f">   83</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classboard_position.html#a9e97897840e379e2206d18cf79c04d1f">setNuber</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;number) { lX = number % 8; lY = number / 8; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classboard_position.html#a0b6c1e580902f8b4d7aff1477741841c">   87</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classboard_position.html#a0b6c1e580902f8b4d7aff1477741841c">setInvalidData</a>() { lX = -1; lY = -1; }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Методы работы с классом</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classboard_position.html#a4a404ab23f49b541ce25941d69472582">   95</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classboard_position.html#a4a404ab23f49b541ce25941d69472582">isValid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (lX &gt;= 0 &amp;&amp; lX &lt; 8 &amp;&amp; lY &gt;= 0 &amp;&amp; lY &lt; 8); }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classboard_position.html#a0eb1fa8e303bc9def2547cd3bb2d2ef7">  101</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_position.html#a0eb1fa8e303bc9def2547cd3bb2d2ef7">getRight</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(lX + 1, lY); }</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classboard_position.html#a7bd99b1681779f7af040a9da8aec659a">  106</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_position.html#a7bd99b1681779f7af040a9da8aec659a">getRightTop</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(lX + 1, lY + 1); }</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classboard_position.html#a4454d72951643a9ea1baf28473219927">  111</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_position.html#a4454d72951643a9ea1baf28473219927">getTop</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(lX, lY + 1); }</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classboard_position.html#a04b42f0b30728baa2377bc96fd4bb77f">  116</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_position.html#a04b42f0b30728baa2377bc96fd4bb77f">getLeftTop</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(lX - 1, lY + 1); }</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classboard_position.html#aa119bc1c9a676d2dae7e04983e8d77dd">  121</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_position.html#aa119bc1c9a676d2dae7e04983e8d77dd">getLeft</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(lX - 1, lY); }</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classboard_position.html#ae553cedeba595f4e968ca32830f65d80">  126</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_position.html#ae553cedeba595f4e968ca32830f65d80">getLeftBottom</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(lX - 1, lY - 1); }</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classboard_position.html#a781e1db951f0fd907d96b5d71c115a35">  131</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_position.html#a781e1db951f0fd907d96b5d71c115a35">getBottom</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(lX, lY - 1); }</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classboard_position.html#a4d667aa60ded8c0a9bfbee9f5c9bd43f">  136</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classboard_position.html">boardPosition</a> <a class="code" href="classboard_position.html#a4d667aa60ded8c0a9bfbee9f5c9bd43f">getRightBottom</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition</a>(lX + 1, lY - 1); }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classboard_position.html#aed1e4bc43298000671a6dd7266fb7db8">  143</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classboard_position.html#aed1e4bc43298000671a6dd7266fb7db8">operator == </a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (lX == other.lX &amp;&amp; lY == other.lY); }</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classboard_position.html#a51f7343be2f9bf9964f97f147d2c2f21">  149</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classboard_position.html#a51f7343be2f9bf9964f97f147d2c2f21">operator != </a>(<span class="keyword">const</span> <a class="code" href="classboard_position.html">boardPosition</a> &amp;other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">int</span> lX;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">int</span> lY;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;};</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#endif // BOARDPOSITION_H</span></div>
+<div class="ttc" id="classboard_position_html_a1128782cfef05468807b3a4449226894"><div class="ttname"><a href="classboard_position.html#a1128782cfef05468807b3a4449226894">boardPosition::xToNumber</a></div><div class="ttdeci">char xToNumber() const </div><div class="ttdoc">xToNumber - вернуть Х в виде позиции от 1 </div><div class="ttdef"><b>Definition:</b> boardposition.h:58</div></div>
+<div class="ttc" id="classboard_position_html_a4a404ab23f49b541ce25941d69472582"><div class="ttname"><a href="classboard_position.html#a4a404ab23f49b541ce25941d69472582">boardPosition::isValid</a></div><div class="ttdeci">bool isValid() const </div><div class="ttdoc">isValid - проверяет является ли данная позиция позицией доски </div><div class="ttdef"><b>Definition:</b> boardposition.h:95</div></div>
+<div class="ttc" id="classboard_position_html_afce067f97792757bd643a58762e3d362"><div class="ttname"><a href="classboard_position.html#afce067f97792757bd643a58762e3d362">boardPosition::yToNumber</a></div><div class="ttdeci">int yToNumber() const </div><div class="ttdoc">yToNumber - вернуть Y в виде позиции от 1 </div><div class="ttdef"><b>Definition:</b> boardposition.h:63</div></div>
+<div class="ttc" id="classboard_position_html_ac587538a440a0db117090492d6ee9a48"><div class="ttname"><a href="classboard_position.html#ac587538a440a0db117090492d6ee9a48">boardPosition::setY</a></div><div class="ttdeci">void setY(const int &amp;y)</div><div class="ttdoc">setY - Задвет позицию по вертикале </div><div class="ttdef"><b>Definition:</b> boardposition.h:78</div></div>
+<div class="ttc" id="classboard_position_html_a781e1db951f0fd907d96b5d71c115a35"><div class="ttname"><a href="classboard_position.html#a781e1db951f0fd907d96b5d71c115a35">boardPosition::getBottom</a></div><div class="ttdeci">boardPosition getBottom() const </div><div class="ttdoc">getBottom - возвращает значение позиции на одну клетку ниже </div><div class="ttdef"><b>Definition:</b> boardposition.h:131</div></div>
+<div class="ttc" id="classboard_position_html_a0eb1fa8e303bc9def2547cd3bb2d2ef7"><div class="ttname"><a href="classboard_position.html#a0eb1fa8e303bc9def2547cd3bb2d2ef7">boardPosition::getRight</a></div><div class="ttdeci">boardPosition getRight() const </div><div class="ttdoc">getRight - возвращает значение позиции на одну клетку правее </div><div class="ttdef"><b>Definition:</b> boardposition.h:101</div></div>
+<div class="ttc" id="classboard_position_html_a04b42f0b30728baa2377bc96fd4bb77f"><div class="ttname"><a href="classboard_position.html#a04b42f0b30728baa2377bc96fd4bb77f">boardPosition::getLeftTop</a></div><div class="ttdeci">boardPosition getLeftTop() const </div><div class="ttdoc">getLeftTop - - возвращает значение позиции на одну клетку левее и выше </div><div class="ttdef"><b>Definition:</b> boardposition.h:116</div></div>
+<div class="ttc" id="classboard_position_html_a4d667aa60ded8c0a9bfbee9f5c9bd43f"><div class="ttname"><a href="classboard_position.html#a4d667aa60ded8c0a9bfbee9f5c9bd43f">boardPosition::getRightBottom</a></div><div class="ttdeci">boardPosition getRightBottom() const </div><div class="ttdoc">getRightBottom- возвращает значение позиции на одну клетку правее ниже </div><div class="ttdef"><b>Definition:</b> boardposition.h:136</div></div>
+<div class="ttc" id="classboard_position_html_a4454d72951643a9ea1baf28473219927"><div class="ttname"><a href="classboard_position.html#a4454d72951643a9ea1baf28473219927">boardPosition::getTop</a></div><div class="ttdeci">boardPosition getTop() const </div><div class="ttdoc">getTop - - возвращает значение позиции на одну клетку выше </div><div class="ttdef"><b>Definition:</b> boardposition.h:111</div></div>
+<div class="ttc" id="classboard_position_html"><div class="ttname"><a href="classboard_position.html">boardPosition</a></div><div class="ttdoc">The boardPosition class - класс которы описывает позицию на доске </div><div class="ttdef"><b>Definition:</b> boardposition.h:7</div></div>
+<div class="ttc" id="classboard_position_html_aa90987bb8610bc941f7211d503d95e1d"><div class="ttname"><a href="classboard_position.html#aa90987bb8610bc941f7211d503d95e1d">boardPosition::boardPosition</a></div><div class="ttdeci">boardPosition()</div><div class="ttdoc">boardPosition - будет получена позиция (-1,-1) </div><div class="ttdef"><b>Definition:</b> boardposition.cpp:3</div></div>
+<div class="ttc" id="classboard_position_html_a2f2f70653d4ef7e098b974e33c4fdcc2"><div class="ttname"><a href="classboard_position.html#a2f2f70653d4ef7e098b974e33c4fdcc2">boardPosition::xToChar</a></div><div class="ttdeci">char xToChar() const </div><div class="ttdoc">xToChar - вернуть Х в виде символа </div><div class="ttdef"><b>Definition:</b> boardposition.h:53</div></div>
+<div class="ttc" id="classboard_position_html_aed1e4bc43298000671a6dd7266fb7db8"><div class="ttname"><a href="classboard_position.html#aed1e4bc43298000671a6dd7266fb7db8">boardPosition::operator==</a></div><div class="ttdeci">bool operator==(const boardPosition &amp;other) const </div><div class="ttdoc">operator == - Оператор сравнения двух позиций </div><div class="ttdef"><b>Definition:</b> boardposition.h:143</div></div>
+<div class="ttc" id="classboard_position_html_afb83b12885a2ec552cecb067573011d4"><div class="ttname"><a href="classboard_position.html#afb83b12885a2ec552cecb067573011d4">boardPosition::number</a></div><div class="ttdeci">int number() const </div><div class="ttdoc">number - возвращает номер позиции </div><div class="ttdef"><b>Definition:</b> boardposition.h:48</div></div>
+<div class="ttc" id="classboard_position_html_a189ee18b8ce9691afc7cc4090e929837"><div class="ttname"><a href="classboard_position.html#a189ee18b8ce9691afc7cc4090e929837">boardPosition::y</a></div><div class="ttdeci">int y() const </div><div class="ttdoc">y - вернуть Y </div><div class="ttdef"><b>Definition:</b> boardposition.h:43</div></div>
+<div class="ttc" id="classboard_position_html_a7bd99b1681779f7af040a9da8aec659a"><div class="ttname"><a href="classboard_position.html#a7bd99b1681779f7af040a9da8aec659a">boardPosition::getRightTop</a></div><div class="ttdeci">boardPosition getRightTop() const </div><div class="ttdoc">getRightTop - возвращает значение позиции на одну клетку правее и выше </div><div class="ttdef"><b>Definition:</b> boardposition.h:106</div></div>
+<div class="ttc" id="classboard_position_html_ae553cedeba595f4e968ca32830f65d80"><div class="ttname"><a href="classboard_position.html#ae553cedeba595f4e968ca32830f65d80">boardPosition::getLeftBottom</a></div><div class="ttdeci">boardPosition getLeftBottom() const </div><div class="ttdoc">getLeftBottom - возвращает значение позиции на одну клетку левее и ниже </div><div class="ttdef"><b>Definition:</b> boardposition.h:126</div></div>
+<div class="ttc" id="classboard_position_html_a9e97897840e379e2206d18cf79c04d1f"><div class="ttname"><a href="classboard_position.html#a9e97897840e379e2206d18cf79c04d1f">boardPosition::setNuber</a></div><div class="ttdeci">void setNuber(const int &amp;number)</div><div class="ttdoc">setNuber - задает координаты из номера позиции номер определяется формулой : x*8 + y ...</div><div class="ttdef"><b>Definition:</b> boardposition.h:83</div></div>
+<div class="ttc" id="classboard_position_html_a51f7343be2f9bf9964f97f147d2c2f21"><div class="ttname"><a href="classboard_position.html#a51f7343be2f9bf9964f97f147d2c2f21">boardPosition::operator!=</a></div><div class="ttdeci">bool operator!=(const boardPosition &amp;other) const </div><div class="ttdoc">operator == - Оператор сравнения двух позиций </div><div class="ttdef"><b>Definition:</b> boardposition.h:149</div></div>
+<div class="ttc" id="classboard_position_html_af6ecff0221a8d5952e7fb6fe69f756a2"><div class="ttname"><a href="classboard_position.html#af6ecff0221a8d5952e7fb6fe69f756a2">boardPosition::setX</a></div><div class="ttdeci">void setX(const char &amp;x)</div><div class="ttdoc">setX - Задает горизонтальную позицию по букве </div><div class="ttdef"><b>Definition:</b> boardposition.h:73</div></div>
+<div class="ttc" id="classboard_position_html_a1715f2dcd0e8f94dd71998c5c4fd971a"><div class="ttname"><a href="classboard_position.html#a1715f2dcd0e8f94dd71998c5c4fd971a">boardPosition::setX</a></div><div class="ttdeci">void setX(const int &amp;x)</div><div class="ttdoc">setX - задает горизонтальную позицию по координате </div><div class="ttdef"><b>Definition:</b> boardposition.h:68</div></div>
+<div class="ttc" id="classboard_position_html_abf254ede46c202864a513b548bf980c3"><div class="ttname"><a href="classboard_position.html#abf254ede46c202864a513b548bf980c3">boardPosition::x</a></div><div class="ttdeci">int x() const </div><div class="ttdoc">x - вернуть Х </div><div class="ttdef"><b>Definition:</b> boardposition.h:38</div></div>
+<div class="ttc" id="classboard_position_html_aa119bc1c9a676d2dae7e04983e8d77dd"><div class="ttname"><a href="classboard_position.html#aa119bc1c9a676d2dae7e04983e8d77dd">boardPosition::getLeft</a></div><div class="ttdeci">boardPosition getLeft() const </div><div class="ttdoc">getLeft - возвращает значение позиции на одну клетку левее </div><div class="ttdef"><b>Definition:</b> boardposition.h:121</div></div>
+<div class="ttc" id="classboard_position_html_a0b6c1e580902f8b4d7aff1477741841c"><div class="ttname"><a href="classboard_position.html#a0b6c1e580902f8b4d7aff1477741841c">boardPosition::setInvalidData</a></div><div class="ttdeci">void setInvalidData()</div><div class="ttdoc">setInvalidData задает координаты не принадлежащие доске </div><div class="ttdef"><b>Definition:</b> boardposition.h:87</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по qChess. Последние изменения: Вт 28 Июл 2015 16:58:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>
