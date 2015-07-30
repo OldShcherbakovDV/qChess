@@ -73,7 +73,7 @@ signals:
 /*!
  * \brief The human class - описывает игрока человека
  */
-class human : private chessPlayer {
+class human : public chessPlayer {
     Q_OBJECT
 public:
     human(chessPlayer *p = NULL) : chessPlayer(p){

@@ -1,6 +1,6 @@
 #include "piece.h"
 
-piece::piece(piece::color c, piece::type t) : lColor(c), lType(t)
+piece::piece(piece::color c, piece::type t) : lType(t), lColor(c)
 {
 
 }
