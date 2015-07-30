@@ -11,6 +11,12 @@ chessGame::chessGame(chessPlayer *p1, chessPlayer *p2) : lIsGameInProgress(true)
     player2 = p2;
     player1->setIsWhite(true);
     player2->setIsWhite(false);
+    if (!player1->isHuman())
+        connect(player1, SIGNAL(haveMove()), this, SLOT(tM1()));
+    if (!player2->isHuman())
+        connect(player2, SIGNAL(haveMove()), this, SLOT(tM2()));
+    cantStep = !player1->isHuman();
+    player1->think(state);
 }
 
 chessGame::~chessGame()
@@ -34,12 +40,6 @@ void chessGame::newGame()
 
 }
 
-void chessGame::loadGame(const chessGameState &cgs)
-{
-    player1->loadGame(cgs);
-    player2->loadGame(cgs);
-}
-
 void chessGame::startGame()
 {
     player1->startGame();
@@ -57,12 +57,22 @@ bool chessGame::tryMove(const boardMove &bm)
 
         emit madeMove(bm);
 
-        if (!getCurrentPlayer()->isHuman()){
+        cantStep = !getCurrentPlayer()->isHuman();
+        if (cantStep){
             getCurrentPlayer()->think(state);
-            tryMove(getCurrentPlayer()->getMove());
         }
     }
     return false;
+}
+
+void chessGame::tM1()
+{
+    tryMove(player1->getMove());
+}
+
+void chessGame::tM2()
+{
+    tryMove(player2->getMove());
 }
 
 void chessGame::undoMove()

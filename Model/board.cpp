@@ -755,7 +755,7 @@ QList<boardMove> board::getKingLegalMoves(const boardPosition &bp) const
     }
     move = boardMove(bp, bp.getRightTop(), curPiece);
     if (move.getEnd().isValid()){
-        if ((lCastlingFlags & bitBoard::getMask(bp)) && (lCastlingFlags & bitBoard::getMask(boardPosition(7, bp.y())))){
+        if (!isOccupied(move.getEnd()) || getPiece(move.getEnd())->getColor() != curPiece->getColor()){
             moves.append(move);
         }
     }

@@ -7,6 +7,7 @@ menuWindow::menuWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     opt = new options;
+    on_cansle_clicked();
 }
 
 menuWindow::~menuWindow()
@@ -23,11 +24,15 @@ void menuWindow::on_options_clicked()
 void menuWindow::on_ai1_clicked()
 {
     ui->cofW1->show();
+    ui->humen2->setChecked(true);
+    ui->cofW2->hide();
 }
 
 void menuWindow::on_ai2_clicked()
 {
     ui->cofW2->show();
+    ui->humen1->setChecked(true);
+    ui->cofW1->hide();
 }
 
 void menuWindow::on_humen1_clicked()
@@ -86,4 +91,9 @@ void menuWindow::on_newGame_clicked()
     game = new gameWindow(opt, (QWidget *)this);
     game->show();
     hide();
+}
+
+void menuWindow::on_exit_clicked()
+{
+    close();
 }

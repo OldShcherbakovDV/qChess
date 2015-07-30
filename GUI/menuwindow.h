@@ -36,6 +36,8 @@ private slots:
 
     void on_newGame_clicked();
 
+    void on_exit_clicked();
+
 private:
     /*!
      * \brief ui - указатель на виджет

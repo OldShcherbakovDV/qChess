@@ -30,11 +30,6 @@ public:
      */
     void newGame();
     /*!
-     * \brief loadGame - загружает игру
-     * \param cgs - состояние игры
-     */
-    void loadGame(const chessGameState &cgs);
-    /*!
      * \brief startGame - начинает новую партию
      */
     void startGame();
@@ -73,12 +68,7 @@ public:
      * \return цвет
      */
     inline piece::color getColor() const { return state.getColor(); }
-    /*!
-     * \brief tryMove - попытаться сделать ход
-     * \param bm - ход
-     * \return - успешность попытки
-     */
-    bool tryMove(const boardMove &bm);
+
     /*!
      * \brief undoMove - отменяет последний ход
      */
@@ -89,6 +79,17 @@ public:
      * \return - можо или нет
      */
     inline bool canCur(const boardPosition &bp) const { return getBoard().getPiece(bp) && getBoard().getPiece(bp)->getColor() == getColor(); }
+    bool cantStep;
+
+public slots:
+    /*!
+     * \brief tryMove - попытаться сделать ход
+     * \param bm - ход
+     * \return - успешность попытки
+     */
+    bool tryMove(const boardMove &bm);
+    void tM1();
+    void tM2();
 signals:
     /*!
      * \brief madeMove - Был совершен ход

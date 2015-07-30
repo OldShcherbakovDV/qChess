@@ -13,6 +13,7 @@ gameWindow::gameWindow(options *o, QWidget *p) :
     game = new chessGame(chessPlayer::create(opts->getPlayer1()), chessPlayer::create(opts->getPlayer2()));
     game->newGame();
     game->startGame();
+    lastGoodCurCell.setInvalidData();
 
     //Инициализация таблици
     for (int i = 0; i < 8; ++i){
@@ -30,7 +31,6 @@ gameWindow::gameWindow(options *o, QWidget *p) :
 
 gameWindow::~gameWindow()
 {
-    p->show();
     delete ui;
 }
 
@@ -99,9 +99,15 @@ QString gameWindow::getUnicodPiece(const piece &p) const
 void gameWindow::on_board_cellClicked(int y, int x)
 {
     boardPosition curCell(x, 7 - y);
-    if (game->canCur(curCell)){
+    if (game->canCur(curCell) && !lastGoodCurCell.isValid() && !game->cantStep){
         lastGoodCurCell = curCell;
-        paintSet(game->getBoard().getLegalMoves(lastGoodCurCell), true);
+        QList<boardMove> lgm = game->getBoard().getLegalMoves(lastGoodCurCell);
+        if (lgm.isEmpty()){
+            ui->board->setCurrentCell(-1, -1);
+            lastGoodCurCell.setInvalidData();
+        }
+        else
+            paintSet(lgm, true);
     }
     else if (lastGoodCurCell.isValid()){
         boardMove bm(lastGoodCurCell, curCell, game->getBoard().getPiece(lastGoodCurCell));
@@ -111,9 +117,12 @@ void gameWindow::on_board_cellClicked(int y, int x)
             ui->board->setCurrentCell(8,8);
             game->tryMove(bm);
         }
+        else{
+            ui->board->setCurrentCell(7 - lastGoodCurCell.y(), lastGoodCurCell.x());
+        }
     }
     else{
-        ui->board->setCurrentCell(8,8);
+        ui->board->setCurrentCell(7 - lastGoodCurCell.y(), lastGoodCurCell.x());
     }
 }
 
@@ -145,4 +154,15 @@ void gameWindow::makeMove(boardMove bm)
     else{
         ui->sit->clear();
     }
+}
+
+void gameWindow::closeEvent(QCloseEvent *e)
+{
+    p->show();
+    QMainWindow::closeEvent(e);
+}
+
+void gameWindow::on_surrender_clicked()
+{
+    close();
 }

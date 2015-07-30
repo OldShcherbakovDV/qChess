@@ -19,5 +19,8 @@ options::options()
     blackCellCanMove  = QColor(99,159,23);
     whiteCellCanMove  = QColor(126,216,106);
     deadCell          = QColor(198,155,155);
+    p = this;
 }
+
+options *options::p = nullptr;
 

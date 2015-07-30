@@ -58,6 +58,11 @@ private slots:
      */
     void makeMove(boardMove bm);
 
+private slots:
+    void closeEvent(QCloseEvent *e);
+
+    void on_surrender_clicked();
+
 private:
     /*!
      * \brief ui - Указатель на виджет

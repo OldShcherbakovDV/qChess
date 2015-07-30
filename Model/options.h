@@ -11,6 +11,7 @@
 class options
 {
 public:
+    static inline options* get() { return p; }
     /*!
      * \brief options - Конструктор по умолчанию (в результате получается игра с параметрами по умолчанию)
      */
@@ -154,6 +155,7 @@ private:
      * \brief aiCof2 - коофициент сложности ИИ черного игрока
      */
     int aiCof2;
+    static options *p;
 };
 
 #endif // OPTIONS_H

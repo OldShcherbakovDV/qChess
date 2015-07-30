@@ -4,77 +4,79 @@
 //Библиотеки QT
 #include <QString>
 #include <QDebug>
+#include <QThread>
 
 //Самописные классы
 #include "chessgamestate.h"
+#include "options.h"
 
 /*!
  * \brief The chessPlayer class - абстрактный класс игрока
  */
-class chessPlayer
+class chessPlayer : public QObject
 {
+    Q_OBJECT
 public:
 
-   static chessPlayer *create(QString typeName);
+    static chessPlayer *create(QString typeName);
 
-   virtual ~chessPlayer();
+    virtual ~chessPlayer();
 
-   virtual void newGame() = 0;
+    virtual void newGame() = 0;
 
-   virtual void startGame() = 0;
+    virtual void startGame() = 0;
 
-   virtual void loadGame(const chessGameState &cgs) = 0;
+    inline bool isThinking() const
+    { return lIsThinking; }
 
-   virtual void opponentMove(const boardMove &move, const chessGameState &cgs) = 0;
+    inline bool isHuman() const
+    { return lIsHuman; }
 
-   inline bool isThinking() const
-       { return lIsThinking; }
+    virtual void think(const chessGameState &cgs) = 0;
 
-   inline bool isHuman() const
-       { return lIsHuman; }
+    inline boardMove getMove()
+    { return lMove; }
 
-   virtual void think(const chessGameState &cgs) = 0;
+    inline void interruptThinking()
+    { lIsThinking = false; }
 
-   inline boardMove getMove()
-       { return lMove; }
+    virtual bool needMove() = 0;
 
-   inline void interruptThinking()
-       { lIsThinking = false; }
+    inline void sendMove(const boardMove &bm) { lMove = bm; }
 
-   virtual bool needMove() = 0;
+    virtual void undoMove() = 0;
 
-   inline void sendMove(const boardMove &bm) { lMove = bm; }
+    inline void setIsWhite(bool isWhite)
+    { lIsWhite = isWhite; }
 
-   virtual void undoMove() = 0;
+    inline bool isWhite() const
+    { return lIsWhite; }
 
-   inline void setIsWhite(bool isWhite)
-       { lIsWhite = isWhite; }
+    inline bool isTrustworthy() const
+    { return lIsTrustworthy; }
 
-   inline bool isWhite() const
-       { return lIsWhite; }
-
-   inline bool isTrustworthy() const
-       { return lIsTrustworthy; }
-
-   inline piece::color getColor() const
-       { return (lIsWhite ? piece::WHITE : piece::BLACK); }
+    inline piece::color getColor() const
+    { return (lIsWhite ? piece::WHITE : piece::BLACK); }
 
 protected:
-   chessPlayer();
+    chessPlayer(QObject *p);
 
-   bool lIsWhite;
-   bool lIsThinking;
-   bool lIsHuman;
-   bool lIsTrustworthy;
-   boardMove lMove;
+    bool lIsWhite;
+    bool lIsThinking;
+    bool lIsHuman;
+    bool lIsTrustworthy;
+    boardMove lMove;
+signals:
+    void haveMove();
 };
 
 /*!
  * \brief The human class - описывает игрока человека
  */
 class human : private chessPlayer {
+    Q_OBJECT
 public:
-    human(){
+    human(chessPlayer *p = NULL) : chessPlayer(p){
         lIsThinking = false;
         lIsHuman = true;
         lIsTrustworthy = true;
@@ -84,8 +86,6 @@ public:
     virtual void newGame();
 
     virtual void startGame();
-
-    virtual void loadGame(const chessGameState &cgs);
 
     virtual void opponentMove(const boardMove &move, const chessGameState &cgs);
 
@@ -100,20 +100,17 @@ public:
  * \brief The AI class - описывает игрока искуственного интелекта
  */
 class AI : private chessPlayer {
+    Q_OBJECT
 public:
-    AI(){
+    AI(chessPlayer *p = NULL) : chessPlayer(p){
         lIsHuman = false;
         lIsTrustworthy = true;
-        lPly = 3;
+        lPly = isWhite() ? options::get()->getAiCof1() : options::get()->getAiCof2();
     }
 
     virtual void newGame();
 
     virtual void startGame();
-
-    virtual void loadGame(const chessGameState &cgs);
-
-    virtual void opponentMove(const boardMove &move, const chessGameState &cgs);
 
     virtual void think(const chessGameState &cgs);
 
@@ -124,6 +121,7 @@ public:
     int getPly() { return lPly; }
     void setPly(int ply) { lPly = ply; }
 
+    AI &operator = (const AI &o);
 protected:
     int evaluateBoard(const board & b, piece::color c);
     int search(board b, piece::color c, int depth, int alpha, int beta, boardMove& bm);
@@ -149,6 +147,14 @@ protected:
     static int m_end_king[64];
 
     int lPly;
+private slots:
+    void aiPlay();
+    void quit();
+
+private:
+    board b;
+    AI *thPl;
+    QThread *th;
 };
 
 #endif // CHESSPLAYER_H

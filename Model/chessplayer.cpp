@@ -16,7 +16,7 @@ chessPlayer::~chessPlayer()
 
 }
 
-chessPlayer::chessPlayer() : lIsThinking(false), lIsHuman(false), lIsTrustworthy(false), lIsWhite(false)
+chessPlayer::chessPlayer(QObject *p) : QObject(p), lIsThinking(false), lIsHuman(false), lIsTrustworthy(false), lIsWhite(false)
 {}
 
 
@@ -27,11 +27,6 @@ void human::newGame()
 }
 
 void human::startGame()
-{
-
-}
-
-void human::loadGame(const chessGameState &cgs)
 {
 
 }
@@ -48,7 +43,7 @@ void human::think(const chessGameState &cgs)
 
 bool human::needMove()
 {
-
+    return true;
 }
 
 void human::undoMove()
@@ -66,32 +61,40 @@ void AI::startGame()
 
 }
 
-void AI::loadGame(const chessGameState &cgs)
-{
-
-}
-
-void AI::opponentMove(const boardMove &move, const chessGameState &cgs)
-{
-
-}
 
 void AI::think(const chessGameState &cgs)
 {
-    boardMove move;
-    board b = cgs.getBoard();
-    search(b, getColor(), lPly, -INT_MAX, INT_MAX, move);
-    lMove  = move;
+    thPl = new AI();
+    *thPl = *this;
+    thPl->b = cgs.getBoard();
+    th = new QThread;
+    thPl->moveToThread(th);
+    connect(th, SIGNAL(started()), thPl, SLOT(aiPlay()));
+    //connect(th, SIGNAL(finished()), thPl, SLOT(quit()));
+    connect(thPl, SIGNAL(haveMove()), this, SLOT(quit()));
+    connect(th, SIGNAL(finished()), thPl, SLOT(deleteLater()));
+    connect(th, SIGNAL(finished()), th, SLOT(deleteLater()));
+    th->start();
 }
 
 bool AI::needMove()
 {
-
+    return true;
 }
 
 void AI::undoMove()
 {
 
+}
+
+AI &AI::operator =(const AI &o)
+{
+    this->lIsWhite = o.lIsWhite;
+    this->lIsHuman = o.lIsHuman;
+    this->lIsTrustworthy = o.lIsTrustworthy;
+    this->lIsThinking = o.lIsThinking;
+    this->lPly = o.lPly;
+    return *this;
 }
 
 int AI::evaluateBoard(const board &b, piece::color c)
@@ -340,6 +343,20 @@ bool AI::isIsolatedPawn(const boardPosition &bp, const board &b)
 bool AI::isDoubledPawn(const boardPosition &bp, const board &b)
 {
     return false;
+}
+
+void AI::aiPlay()
+{
+    boardMove move;
+    search(b, getColor(), lPly, -INT_MAX, INT_MAX, move);
+    lMove  = move;
+    emit haveMove();
+}
+
+void AI::quit()
+{
+    lMove = thPl->lMove;
+    emit haveMove();
 }
 
 int AI::m_bishop[64] = {
