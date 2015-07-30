@@ -16,8 +16,14 @@ chessPlayer::~chessPlayer()
 
 }
 
-chessPlayer::chessPlayer(QObject *p) : QObject(p), lIsThinking(false), lIsHuman(false), lIsTrustworthy(false), lIsWhite(false)
-{}
+void chessPlayer::think(const chessGameState &cgs)
+{
+    cgs.getLastMove();
+}
+
+chessPlayer::chessPlayer(QObject *p) : QObject(p), lIsWhite(false), lIsThinking(false), lIsHuman(false), lIsTrustworthy(false)
+{
+}
 
 
 
@@ -27,16 +33,6 @@ void human::newGame()
 }
 
 void human::startGame()
-{
-
-}
-
-void human::opponentMove(const boardMove &move, const chessGameState &cgs)
-{
-
-}
-
-void human::think(const chessGameState &cgs)
 {
 
 }
@@ -161,16 +157,16 @@ int AI::evaluateBoard(const board &b, piece::color c)
         balance += queenBonus(locations[piece::QUEEN][i], b, c, endgame);
     }
     for(int i=0; i < locations[piece::ROOK].size(); i++) {
-        balance += rookBonus(locations[piece::ROOK][i], b, c, endgame);
+        balance += rookBonus(locations[piece::ROOK][i], b);
     }
     for(int i=0; i < locations[piece::BISHOP].size(); i++) {
-        balance += bishopBonus(locations[piece::BISHOP][i], b, c, endgame);
+        balance += bishopBonus(locations[piece::BISHOP][i], b, c);
     }
     for(int i=0; i < locations[piece::KNIGHT].size(); i++) {
-        balance += knightBonus(locations[piece::KNIGHT][i], b, c, endgame);
+        balance += knightBonus(locations[piece::KNIGHT][i], b, c);
     }
     for(int i=0; i < locations[piece::PAWN].size(); i++) {
-        balance += pawnBonus(locations[piece::PAWN][i], b, c, endgame);
+        balance += pawnBonus(locations[piece::PAWN][i], b, c);
     }
     for(int i=0; i < locations[piece::KING].size(); i++) {
         balance += kingBonus(locations[piece::KING][i], b, c, endgame);
@@ -218,7 +214,7 @@ int AI::search(board b, piece::color c, int depth, int alpha, int beta, boardMov
     return bestScore;
 }
 
-int AI::pawnBonus(const boardPosition &bp, const board &b, piece::color turn, bool endgame)
+int AI::pawnBonus(const boardPosition &bp, const board &b, piece::color turn)
 {
     piece::color c = b.getPiece(bp)->getColor();
     int bonus = (c == piece::WHITE) ? m_wpawn[bp.number()] : m_bpawn[bp.number()];
@@ -242,7 +238,7 @@ int AI::pawnBonus(const boardPosition &bp, const board &b, piece::color turn, bo
     return (turn == c) ? bonus : -bonus;
 }
 
-int AI::knightBonus(const boardPosition &bp, const board &b, piece::color turn, bool endgame)
+int AI::knightBonus(const boardPosition &bp, const board &b, piece::color turn)
 {
     piece::color c = b.getPiece(bp)->getColor();
     int bonus = m_knight[bp.number()];
@@ -250,7 +246,7 @@ int AI::knightBonus(const boardPosition &bp, const board &b, piece::color turn, 
     return (turn == c) ? bonus : -bonus;
 }
 
-int AI::bishopBonus(const boardPosition &bp, const board &b, piece::color turn, bool endgame)
+int AI::bishopBonus(const boardPosition &bp, const board &b, piece::color turn)
 {
     piece::color c = b.getPiece(bp)->getColor();
     int bonus = m_bishop[bp.number()];
@@ -258,7 +254,7 @@ int AI::bishopBonus(const boardPosition &bp, const board &b, piece::color turn, 
     return (turn == c) ? bonus : -bonus;
 }
 
-int AI::rookBonus(const boardPosition &bp, const board &b, piece::color turn, bool endgame)
+int AI::rookBonus(const boardPosition &bp, const board &b)
 {
     int bonus = 0;
 
@@ -342,6 +338,8 @@ bool AI::isIsolatedPawn(const boardPosition &bp, const board &b)
 
 bool AI::isDoubledPawn(const boardPosition &bp, const board &b)
 {
+    b.getKing(piece::WHITE);
+    bp.getBottom();
     return false;
 }
 

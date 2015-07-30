@@ -32,7 +32,7 @@ public:
     inline bool isHuman() const
     { return lIsHuman; }
 
-    virtual void think(const chessGameState &cgs) = 0;
+    virtual void think(const chessGameState &cgs);
 
     inline boardMove getMove()
     { return lMove; }
@@ -87,10 +87,6 @@ public:
 
     virtual void startGame();
 
-    virtual void opponentMove(const boardMove &move, const chessGameState &cgs);
-
-    virtual void think(const chessGameState &cgs);
-
     virtual bool needMove();
 
     virtual void undoMove();
@@ -125,10 +121,10 @@ public:
 protected:
     int evaluateBoard(const board & b, piece::color c);
     int search(board b, piece::color c, int depth, int alpha, int beta, boardMove& bm);
-    int pawnBonus(const boardPosition & bp, const board & b,  piece::color turn, bool endgame);
-    int knightBonus(const boardPosition & bp, const board & b,  piece::color turn, bool endgame);
-    int bishopBonus(const boardPosition & bp, const board & b,  piece::color turn, bool endgame);
-    int rookBonus(const boardPosition & bp, const board & b,  piece::color turn, bool endgame);
+    int pawnBonus(const boardPosition & bp, const board & b,  piece::color turn);
+    int knightBonus(const boardPosition & bp, const board & b,  piece::color turn);
+    int bishopBonus(const boardPosition & bp, const board & b,  piece::color turn);
+    int rookBonus(const boardPosition & bp, const board & b);
     int queenBonus(const boardPosition & bp, const board & b,  piece::color turn, bool endgame);
     int kingBonus(const boardPosition & bp, const board & b,  piece::color turn, bool endgame);
 
